@@ -1,7 +1,7 @@
 ---
 title: Laravel的本地化
 urlname: laravel-localization
-date: 2018-05-16 15:11:14
+date: 2018-05-12 15:11:14
 category: laravel
 tags: laravel
 ---

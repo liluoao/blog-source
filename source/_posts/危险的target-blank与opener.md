@@ -1,7 +1,7 @@
 ---
 title: 危险的target="_blank"与"opener"
 urlname: target-blank-should-be-used-with-caution
-date: 2018-04-12 16:16:35
+date: 2018-02-15 16:16:35
 tags: javascript
 ---
 原文链接：[https://juejin.im/post/5a9f8425f265da239a5f57f8](https://juejin.im/post/5a9f8425f265da239a5f57f8)

@@ -1,7 +1,7 @@
 ---
 title: PHP的运行模式（转）
 urlname: php-sapi
-date: 2018-04-27 11:46:52
+date: 2018-02-18 11:46:52
 tags: sapi
 ---
 原文链接：[https://segmentfault.com/a/1190000014547406](https://segmentfault.com/a/1190000014547406)

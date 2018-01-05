@@ -1,7 +1,7 @@
 ---
 title: 重定向HTTP到HTTPS
 urlname: rewrite-http-to-https
-date: 2018-05-17 14:29:41
+date: 2018-03-07 14:29:41
 tags: [apache,linux]
 ---
 使用阿里云提供的证书：

@@ -1,7 +1,7 @@
 ---
 title: PHPStorm使用FTP
 urlname: phpstorm-use-ftp
-date: 2018-04-28 16:51:42
+date: 2018-02-04 16:51:42
 tags: tool
 ---
 打开PHPStorm，点击 `Tools—>Deployment—>Cofiguration`

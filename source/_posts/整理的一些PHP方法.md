@@ -1,7 +1,7 @@
 ---
 title: 整理的一些PHP方法
 urlname: some-php-functions
-date: 2018-05-19 11:32:25
+date: 2018-02-17 11:32:25
 tags: php
 ---
 ## 获取文件扩展名

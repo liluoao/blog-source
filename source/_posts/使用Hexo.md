@@ -1,7 +1,7 @@
 ---
 title: 使用Hexo
 urlname: use-hexo
-date: 2018-03-01 10:37:19
+date: 2018-02-01 10:37:19
 ---
 中文文档：[https://hexo.io/zh-cn/docs/](https://hexo.io/zh-cn/docs/)
 

@@ -1,7 +1,7 @@
 ---
 title: Laravel使用PHPUnit
 urlname: laravel-phpunit
-date: 2018-05-28 10:44:40
+date: 2018-05-27 10:44:40
 category: laravel
 tags: laravel
 ---

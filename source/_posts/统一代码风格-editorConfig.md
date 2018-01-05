@@ -1,7 +1,7 @@
 ---
 title: 统一代码风格-editorConfig
 urlname: how-to-use-editorconfig
-date: 2018-05-18 11:10:22
+date: 2018-02-19 11:10:22
 tags: tool
 ---
 [EditorConfig官网](http://editorconfig.org/)
