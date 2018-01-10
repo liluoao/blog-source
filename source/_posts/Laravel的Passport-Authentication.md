@@ -1,11 +1,11 @@
 ---
 title: Laravel的Passport-Authentication
-urlname: create-api-authentication-with-passport-of-laravel
+urlname: create-rest-api-in-laravel-with-authentication-using-passport
 date: 2018-05-23 14:33:42
 category: laravel
 tags: laravel
 ---
-
+## Create REST API in Laravel with authentication using Passport
 1. Install Laravel
 ```bash
 laravel new auth
@@ -23,7 +23,8 @@ php artisan migrate
 php artisan passport:install
 ```
 <!-- more -->
-运行这个命令会在 `App\User` 模型中加入 `Laravel\Passport\HasApiTokens` trait
+运行这个命令后需要在 `App\User` 模型中加入 `Laravel\Passport\HasApiTokens` Trait
+这个 Trait 会给你的模型提供一些辅助函数，用于检查已认证用户的令牌和使用范围：
 ```php
 <?php
 
@@ -39,7 +40,8 @@ class User extends Authenticatable
 }
 ```
 5. Passport Config
-在 `AuthServiceProvider` 的 `boot()` 方法中加入：
+在 `AuthServiceProvider` 的 `boot()` 方法中加入 `Passport::routes`
+这个函数会注册发出访问令牌并撤销访问令牌、客户端和个人访问令牌所必需的路由：
 ```php
 use Laravel\Passport\Passport;
 
@@ -50,13 +52,12 @@ public function boot()
     Passport::routes();
 }
 ```
-在 `config/auth.php` 配置中设置：
+在 `config/auth.php` 配置中
+授权看守器 `guards` 的 `api` 的 `driver` 选项改为 `passport`
+此调整会让你的应用程序在在验证传入的 API 的请求时使用 Passport 的 `TokenGuard` 来处理：
 ```php
 'guards' => [
-    'web' => [
-        'driver' => 'session',
-        'provider' => 'users',
-    ],
+    //...
     'api' => [
         'driver' => 'passport',
         'provider' => 'users',
