@@ -5,7 +5,11 @@ date: 2018-05-07 16:13:07
 category: laravel
 tags: laravel
 ---
-错误日志级别：_debug, info, notice, warning, error, critical, alert, emergency_
+Laravel 的日志系统基于 [Monolog](https://github.com/Seldaek/monolog) 库
+
+错误日志级别（[RFC5424](https://tools.ietf.org/html/rfc5424)定义）：_debug, info, notice, warning, error, critical, alert, emergency_
+
+Laravel的日志默认保存在 `storage/logs/laravel.log`
 ```php
 use Illuminate\Support\Facades\Log;
 
