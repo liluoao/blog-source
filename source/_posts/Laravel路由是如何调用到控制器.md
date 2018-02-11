@@ -1,5 +1,6 @@
 ---
 title: Laravel 路由调用控制器（转）
+urlname: laravel-route-to-controller
 date: 2018-03-13 10:37:19
 category: laravel
 tags: laravel

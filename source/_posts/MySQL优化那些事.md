@@ -1,5 +1,6 @@
 ---
 title: MySQL优化那些事儿（转）
+urlname: mysql-optimize
 date: 2018-03-14 10:37:19
 category: mysql
 tags: mysql

@@ -1,5 +1,6 @@
 ---
 title: Laravel的Queue
+urlname: laravel-queue
 date: 2018-05-08 09:08:48
 category: laravel
 tags: laravel

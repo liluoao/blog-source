@@ -1,5 +1,6 @@
 ---
 title: 使用AppVeyor持续集成本博客
+urlname: use-appveyor-ci
 date: 2018-03-02 11:37:55
 tags: ci
 ---

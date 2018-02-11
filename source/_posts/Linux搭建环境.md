@@ -1,5 +1,6 @@
 ---
 title: Linux搭建环境
+urlname: linux-environment
 date: 2018-03-04 09:09:04
 tags: linux
 category: linux

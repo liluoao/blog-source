@@ -1,5 +1,6 @@
 ---
 title: PHPStorm使用FTP
+urlname: phpstorm-use-ftp
 date: 2018-04-28 16:51:42
 tags: tool
 ---

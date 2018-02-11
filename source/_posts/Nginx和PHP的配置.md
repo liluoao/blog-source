@@ -1,5 +1,6 @@
 ---
 title: Nginx和PHP的配置（转）
+urlname: nginx-and-php-config
 date: 2018-03-06 09:59:26
 tags: linux
 ---

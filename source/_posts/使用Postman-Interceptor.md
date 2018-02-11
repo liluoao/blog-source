@@ -1,5 +1,6 @@
 ---
 title: 使用Postman-Interceptor
+urlname: use-postman-interceptor
 date: 2018-05-04 14:57:06
 tags: tool
 ---

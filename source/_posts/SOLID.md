@@ -1,5 +1,6 @@
 ---
 title: SOLID
+urlname: php-solid
 date: 2018-03-29 15:50:39
 tags: [solid,clean-code]
 ---

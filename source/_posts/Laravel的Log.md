@@ -1,5 +1,6 @@
 ---
 title: Laravel的Log
+urlname: laravel-log
 date: 2018-05-07 16:13:07
 category: laravel
 tags: laravel

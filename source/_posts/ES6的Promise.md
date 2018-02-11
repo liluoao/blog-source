@@ -1,5 +1,6 @@
 ---
 title: ES6的Promise（转）
+urlname: es6-promise
 date: 2018-04-19 15:51:13
 tags: javascript
 ---

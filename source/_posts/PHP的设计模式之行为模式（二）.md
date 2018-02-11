@@ -1,5 +1,6 @@
 ---
 title: PHP的设计模式之行为模式（二）
+urlname: php-behavioral-design-patterns-part2
 date: 2018-04-05 14:52:10
 tags: design-patterns
 ---

@@ -1,5 +1,6 @@
 ---
 title: Laravel的Config
+urlname: laravel-config
 date: 2018-05-06 16:08:10
 category: laravel
 tags: laravel

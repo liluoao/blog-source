@@ -1,5 +1,6 @@
 ---
 title: PHP的设计模式之架构模式（二）
+urlname: php-structural-design-patterns-part2
 date: 2018-04-03 16:03:46
 tags: design-patterns
 ---

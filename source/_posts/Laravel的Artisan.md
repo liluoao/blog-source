@@ -1,5 +1,6 @@
 ---
 title: Laravel的Artisan
+urlname: laravel-artisan
 date: 2018-05-08 09:17:13
 category: laravel
 tags: laravel

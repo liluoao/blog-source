@@ -1,5 +1,6 @@
 ---
 title: Laravel的表单验证
+urlname: laravel-form-validation
 date: 2018-05-15 14:48:33
 category: laravel
 tags: laravel

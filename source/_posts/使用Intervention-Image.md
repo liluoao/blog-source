@@ -1,5 +1,6 @@
 ---
 title: 使用Intervention-Image
+urlname: use-intervention-image
 date: 2018-05-03 14:36:58
 category: laravel
 tags: laravel

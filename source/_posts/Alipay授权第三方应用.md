@@ -1,5 +1,6 @@
 ---
 title: Alipay授权第三方应用
+urlname: alipay-authorize-3rd-app
 date: 2018-05-08 10:41:33
 tags: alipay
 ---
