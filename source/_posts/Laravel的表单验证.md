@@ -23,6 +23,7 @@ public function rules() {
 
 }
 ```
+<!-- more -->
 
 #### 验证数组
 通常我们的 `tags` 前端通常会写成这个样子：
