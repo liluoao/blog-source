@@ -1,5 +1,5 @@
 ---
-title: Laravel 路由是如何调用到控制器
+title: Laravel 路由调用控制器（转）
 date: 2018-03-13 10:37:19
 category: laravel
 tags: laravel

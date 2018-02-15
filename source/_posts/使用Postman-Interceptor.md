@@ -1,7 +1,7 @@
 ---
 title: 使用Postman-Interceptor
-date: 2018-05-05 14:57:06
-tags: postman
+date: 2018-05-04 14:57:06
+tags: tool
 ---
 
 目前的Postman插件如果想正常使用，必须安装 `Postman Interceptor` 插件，这样才能直接使用Chrome浏览器的**cookie**等信息，否则Postman是无法完成老版本的功能的。

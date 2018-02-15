@@ -1,6 +1,6 @@
 ---
 title: Linux搭建环境
-date: 2018-04-13 09:09:04
+date: 2018-03-04 09:09:04
 tags: linux
 category: linux
 ---

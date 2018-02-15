@@ -1,7 +1,7 @@
 ---
 title: PHPStorm使用FTP
 date: 2018-04-28 16:51:42
-tags: phpstorm
+tags: tool
 ---
 打开PHPStorm，点击 `Tools—>Deployment—>Cofiguration`
 ![](/images/phpstorm-ftp.png)

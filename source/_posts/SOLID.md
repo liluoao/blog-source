@@ -1,6 +1,6 @@
 ---
 title: SOLID
-date: 2018-04-25 15:50:39
+date: 2018-03-29 15:50:39
 tags: [solid,clean-code]
 ---
 **SOLID** 是Michael Feathers推荐的便于记忆的首字母简写，它代表了Robert Martin命名的最重要的五个面对对象编码设计原则

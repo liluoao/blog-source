@@ -1,6 +1,6 @@
 ---
 title: PHP的设计模式之架构模式
-date: 2018-04-17 09:23:38
+date: 2018-04-02 09:23:38
 tags: design-patterns
 ---
 原文链接：[https://www.imooc.com/article/17118](https://www.imooc.com/article/17118)

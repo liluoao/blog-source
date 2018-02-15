@@ -1,6 +1,6 @@
 ---
 title: PHP的设计模式之行为模式（二）
-date: 2018-04-25 14:52:10
+date: 2018-04-05 14:52:10
 tags: design-patterns
 ---
 原文链接：[https://www.imooc.com/article/17844](https://www.imooc.com/article/17844)

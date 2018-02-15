@@ -1,6 +1,6 @@
 ---
 title: PHP的设计模式之创建模式
-date: 2018-04-15 22:50:50
+date: 2018-04-01 22:50:50
 tags: design-patterns
 ---
 原文链接：[https://www.devbattles.com/en/sand/post-1306-Design+Patterns+in+PHP](https://www.devbattles.com/en/sand/post-1306-Design+Patterns+in+PHP)

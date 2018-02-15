@@ -1,5 +1,5 @@
 ---
-title: PHP运行模式
+title: PHP的运行模式（转）
 date: 2018-04-27 11:46:52
 tags: sapi
 ---

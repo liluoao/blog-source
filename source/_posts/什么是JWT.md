@@ -1,7 +1,7 @@
 ---
-title: 什么是 JWT
+title: 什么是 JWT（转）
 date: 2018-03-16 10:37:19
-tags: 安全
+tags: jwt
 ---
 原文链接：[https://www.jianshu.com/p/576dbf44b2ae](https://www.jianshu.com/p/576dbf44b2ae)
 

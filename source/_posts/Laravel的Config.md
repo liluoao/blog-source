@@ -1,6 +1,6 @@
 ---
 title: Laravel的Config
-date: 2018-05-07 16:08:10
+date: 2018-05-06 16:08:10
 category: laravel
 tags: laravel
 ---

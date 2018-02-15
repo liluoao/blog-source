@@ -1,6 +1,6 @@
 ---
-title: ES6的Promise
-date: 2018-05-07 15:51:13
+title: ES6的Promise（转）
+date: 2018-04-19 15:51:13
 tags: javascript
 ---
 原文链接：[大白话讲解Promise（一）](https://www.cnblogs.com/lvdabao/p/es6-promise-1.html)

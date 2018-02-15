@@ -1,6 +1,6 @@
 ---
 title: 使用AppVeyor持续集成本博客
-date: 2018-03-29 11:37:55
+date: 2018-03-02 11:37:55
 tags: ci
 ---
 ## 创建AppVeyor账号

@@ -1,7 +1,7 @@
 ---
-title: Nginx和PHP的配置
-date: 2018-04-27 09:59:26
-tags: nginx
+title: Nginx和PHP的配置（转）
+date: 2018-03-06 09:59:26
+tags: linux
 ---
 原文链接：[https://segmentfault.com/a/1190000014610688](https://segmentfault.com/a/1190000014610688)
 
