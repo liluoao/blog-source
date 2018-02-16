@@ -8,6 +8,8 @@ tags: alipay
 
 💻[API文档](https://docs.open.alipay.com/api_9/alipay.open.auth.token.app)
 
+<!-- more -->
+
 ![第三方应用授权](
 https://raw.githubusercontent.com/liluoao/simple/master/images/alipay.jpg)
 
