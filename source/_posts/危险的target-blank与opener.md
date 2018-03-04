@@ -1,7 +1,7 @@
 ---
 title: 危险的target="_blank"与"opener"
 date: 2018-04-11 16:16:35
-category: 安全
+tags: 安全
 ---
 原文链接：[https://juejin.im/post/5a9f8425f265da239a5f57f8](https://juejin.im/post/5a9f8425f265da239a5f57f8)
 > 在网页中使用链接时，如果想要让浏览器自动在新的标签页打开指定的地址，通常的做法就是在 a 标签上添加 target等于"_blank" 属性。

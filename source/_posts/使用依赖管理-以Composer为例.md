@@ -1,7 +1,7 @@
 ---
 title: 使用依赖管理——以Composer为例
 date: 2018-03-18 10:37:19
-category: composer
+tags: composer
 ---
 中文文档：[http://docs.phpcomposer.com/](http://docs.phpcomposer.com/)
 
