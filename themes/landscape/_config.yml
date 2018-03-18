@@ -4,7 +4,7 @@ menu:
   文章列表: /archives
   Laravel: /categories/laravel
   Phalcon: /categories/phalcon
-  MySQL: /categories/mysql
+  Wechat: /categories/wechat
   关于作者: /me.html
 
 # Content
@@ -14,11 +14,10 @@ fancybox: true
 # Sidebar
 sidebar: left
 widgets:
+- recent_posts
 - category
 - tag
-- tagcloud
 - archive
-- recent_posts
 
 # display widgets at the bottom of index pages (pagination == 2)
 index_widgets:
