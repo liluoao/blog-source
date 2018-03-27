@@ -1,0 +1,23 @@
+<footer id="footer">
+  <% if (theme.sidebar === 'bottom'){ %>
+    <%- partial('_partial/sidebar') %>
+  <% } %>
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      <div class="footer-copyright">
+        &copy; <%= date(new Date(), 'YYYY') %> <%= config.author || config.title %><br>
+        <%= __('powered_by') %> <a href="http://hexo.io/" target="_blank">Hexo</a>
+      </div>
+      <div class="footer-about-me">
+        关于作者<br>
+        <a href="https://github.com/liluoao" target="_blank" title="GitHub">GitHub</a><br>
+        <a href="https://segmentfault.com/u/liluoao" target="_blank" title="SegmentFault">SegmentFault</a><br>
+        <a href="https://laravel-china.org/users/7144" target="_blank" title="LaravelChina">LaravelChina</a><br>
+        <a href="https://gitee.com/liluoao" target="_blank" title="码云">码云</a><br>
+        <a href="https://juejin.im/user/5a19374cf265da4332274600" target="_blank" title="掘金">掘金</a><br>
+        <a href="https://packagist.org/users/liluoao/" target="_blank" title="Packagist">Packagist</a><br>
+        <a href="https://www.gitbook.com/@liluoao" target="_blank" title="GitBook">GitBook</a>
+      </div>
+    </div>
+  </div>
+</footer>
