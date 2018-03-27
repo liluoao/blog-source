@@ -4,6 +4,7 @@ environment:
     access_token:
         secure: 855kciMXrCGEcKW+P87C5nMrvYN47FH/Zjz9yHjZ53yeijLyb6/0oZ4CVv7j0VbE
 install:
+    - ps: Install-Product node 6.9
     - node --version
     - npm --version
     - npm install
@@ -26,4 +27,6 @@ on_success:
     - for /d %%p IN (*) do rmdir "%%p" /s /q
     - SETLOCAL EnableDelayedExpansion & robocopy "%APPVEYOR_BUILD_FOLDER%\public" "%TEMP%\static-site" /e & IF !ERRORLEVEL! EQU 1 (exit 0) ELSE (IF !ERRORLEVEL! EQU 3 (exit 0) ELSE (exit 1))
     - git add -A
-    - if "%APPVEYOR_REPO_BRANCH%"=="master" if not defined APPVEYOR_PULL_REQUEST_NUMBER (git diff --quiet --exit-code --cached || git commit -m "Update Static Site" && git push origin %TARGET_BRANCH% && appveyor AddMessage "Static Site Updated")
+    - git commit -m "Update Static Site"
+    - git push origin %TARGET_BRANCH%
+    - appveyor AddMessage "Static Site Updated"
