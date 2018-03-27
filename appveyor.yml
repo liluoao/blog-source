@@ -2,7 +2,7 @@ clone_depth: 5
 
 environment:
     access_token:
-    secure: [Your GitHub Access Token]
+        secure: 855kciMXrCGEcKW+P87C5nMrvYN47FH/Zjz9yHjZ53yeijLyb6/0oZ4CVv7j0VbE
 install:
     - node --version
     - npm --version
