@@ -18,14 +18,20 @@ composer require intervention/image
     // ...
     Intervention\Image\ImageServiceProvider::class,
     // ...
-  ],
+],
 
 // 将下面代码添加到 aliases 数组中
 'aliases' => [
     // ...
     'Image' => Intervention\Image\Facades\Image::class,
     // ...
-  ],
+],
+```
+
+- 发布
+会创建一个 `config/image.php`
+```
+php artisan vendor:publish
 ```
 
 - 配置
@@ -37,29 +43,12 @@ composer require intervention/image
 在使用 Intervention Image 的时候, 你只需要给 ImageManager 传一个数组参数就可以完成 GD 和 Imagick 库之间的互相切换. 
 
 如下：
-```
-// 引入 composer autoload
-require 'vendor/autoload.php';
-
-// 导入 Intervention Image Manager Class
-use Intervention\Image\ImageManager;
-
+```php
 // 通过指定 driver 来创建一个 image manager 实例
 $manager = new ImageManager(array('driver' => 'imagick'));
 
 // 最后创建 image 实例
 $image = $manager->make('public/foo.jpg')->resize(300, 200);
-```
-
-- 生成` config/image.php `配置文件:
-```
-php artisan vendor:publish --provider="Intervention\Image\ImageServiceProviderLaravel5"
-```
-运行上面的命令后, 会在项目中生成 config/image.php 配置文件
-```php
-return array(
-    'driver' => 'imagick'
-);
 ```
 
 - 除上文介绍的基本用法之外, 此扩展包还支持:
