@@ -2,7 +2,7 @@
 title: 统一代码风格-editorConfig
 urlname: how-to-use-editorconfig
 date: 2018-05-18 11:10:22
-tags: editor-config
+tags: tool
 ---
 [EditorConfig官网](http://editorconfig.org/)
 在团队开发中，统一的代码格式是必要的。但是不同开发人员的代码风格不同，代码编辑工具的默认格式也不相同，这样就造成代码的 differ。而 **editorConfig** 可以帮助开发人员在不同的编辑器和 IDE 中定义和维护一致的编码风格。本文将详细介绍统一代码风格工具 **editorConfig**
