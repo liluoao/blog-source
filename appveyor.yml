@@ -4,9 +4,10 @@ environment:
     access_token:
         secure: 855kciMXrCGEcKW+P87C5nMrvYN47FH/Zjz9yHjZ53yeijLyb6/0oZ4CVv7j0VbE
 install:
-    - ps: Install-Product node 6.9
+    - ps: Install-Product node 8.11
     - node --version
     - npm --version
+    - npm i npm@latest -g
     - npm install
     - npm install hexo-cli -g
     
