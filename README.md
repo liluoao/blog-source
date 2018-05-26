@@ -3,5 +3,6 @@
 
 [![AppVeyor](https://img.shields.io/appveyor/ci/liluoao/blog-source.svg?logo=appveyor)](https://ci.appveyor.com/project/liluoao/blog-source)
 [![license](https://img.shields.io/github/license/liluoao/blog-source.svg)](https://github.com/liluoao/blog-source/blob/master/LICENSE)
+[![](https://github.styleci.io/repos/126924538/shield?branch=master)](https://github.styleci.io/analyses/zEvZ6G#)
 
 本项目为 [liluoao/liluoao.github.io](https://github.com/liluoao/liluoao.github.io) 项目源文件仓库，使用 [AppVeyor](https://ci.appveyor.com) 持续集成。
