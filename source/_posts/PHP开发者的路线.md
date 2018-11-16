@@ -1,5 +1,5 @@
 ---
-title: PHP开发者的路线
+title: PHP新手开发者的路线
 urlname: a-php-developer-roadmap
 date: 2018-08-03 16:29:51
 tags: php
@@ -8,6 +8,8 @@ tags: php
 在昨天（`2018-08-02`）已经发布了[PHP 7.3.0.beta1 Released](http://php.net/archive/2018.php#id2018-08-02-1)
 
 如果你还没有使用 **PHP7** ，那真的很遗憾。2018年PHP开发者应该熟练使用 PHP7，并且知道版本更新内容。
+
+<!-- more -->
 
 ## 使用Composer
 如果你在想使用一个扩展包时，还在下载源码，并尝试修改命名空间来嵌入你的项目中，你应该改变了。

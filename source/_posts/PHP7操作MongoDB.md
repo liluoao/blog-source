@@ -12,6 +12,8 @@ tags: [php,mongo]
 
 但是随着 **PHP5** 升级到 **PHP7**，官方不再支持 **Mongo** 扩展，只支持 **MongoDB**，而 **PHP7** 的性能提升巨大，让人无法割舍，所以怎么把 **Mongo** 替换成 **MongoDB** 成为了一个亟待解决的问题。**MongoDB** 引入了命名空间，但是功能封装非常差，如果非要用原生的扩展，几乎意味着写原生的 *Mongo* 语句。这种想法很违背 *ORM* 简化 DB `IO` 操作带来的语法问题而专注逻辑优化的思路。
 
+<!-- more -->
+
 详情也可参见官方手册：[mongodb.php](http://php.net/manual/zh/set.mongodb.php)
 
 在这种情况之下，MongoDB 官方忍不住了，为了方便使用，增加市场占有率，推出了基于MongoDB 扩展的库：[mongo-php-library](https://github.com/mongodb/mongo-php-library)
@@ -24,7 +26,7 @@ composer require mongodb/mongodb
 ```
 ## MongoDB 驱动
 如果使用原驱动的话，大致语法如下：
-<!-- more -->
+
 ```php
 <?php
 
