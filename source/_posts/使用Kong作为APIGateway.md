@@ -2,7 +2,7 @@
 title: 使用Kong作为APIGateway
 urlname: use-kong-for-api-gateway
 date: 2018-11-09 20:17:07
-tags: [lua,nginx,kong,openresty]
+tags: [lua,kong,openresty]
 ---
 
 ## 为什么需要 API 网关

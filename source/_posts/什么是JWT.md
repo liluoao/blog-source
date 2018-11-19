@@ -2,7 +2,6 @@
 title: 什么是 JWT（转）
 urlname: what-is-jwt
 date: 2018-02-09 10:37:19
-tags: jwt
 ---
 原文链接：[https://www.jianshu.com/p/576dbf44b2ae](https://www.jianshu.com/p/576dbf44b2ae)
 

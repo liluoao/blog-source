@@ -2,7 +2,6 @@
 title: 使用Composer管理依赖
 urlname: use-composer
 date: 2018-03-18 10:37:19
-tags: composer
 ---
 中文文档：[http://docs.phpcomposer.com/](http://docs.phpcomposer.com/)
 

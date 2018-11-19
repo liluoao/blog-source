@@ -2,7 +2,6 @@
 title: 使用AppVeyor持续集成本博客
 urlname: use-appveyor-ci
 date: 2018-02-02 11:37:55
-tags: ci
 ---
 ## 创建AppVeyor账号
 进入[AppVeyor官网](https://ci.appveyor.com)，游客会跳转到 `/login` 页，这里可以注册，也可以使用 `GitHub` 账号授权登陆。
