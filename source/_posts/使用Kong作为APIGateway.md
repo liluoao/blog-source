@@ -6,6 +6,7 @@ tags: [lua,kong,openresty]
 ---
 
 ## 为什么需要 API 网关
+
 ![](/images/different-of-kong.png)
 
 <!-- more -->
@@ -61,7 +62,9 @@ Kong 的插件机制是其高可扩展性的根源，Kong 可以很方便地为�
   |– singletons.lua [单例模式，存放公共对象]
 
 ## 执行入口
+
 在 `/templates/nginx_kong.lua` 中提供了一份示例配置：
+
 ```
 init_by_lua_block {
     Kong = require 'kong'
@@ -121,11 +124,14 @@ server {
 ```
 
 #### ngx_lua 的 11 个用户可介入阶段
+
 ![](/images/openresty_phases.png)
 
 
 #### Kong 入口
+
 `init.lua`
+
 ```lua
 local Kong = {}
 
@@ -186,3 +192,9 @@ end
 
 return Kong
 ```
+
+#### 推荐阅读
+
+[kong源码导读](http://techblog.ppdai.com/2018/04/16/20180416/)
+
+[有赞API网关实践](https://tech.youzan.com/api-gateway-in-practice/)
