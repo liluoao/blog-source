@@ -195,6 +195,6 @@ return Kong
 
 #### 推荐阅读
 
-[kong源码导读](http://techblog.ppdai.com/2018/04/16/20180416/)
+[kong源码导读 -- 拍拍贷团队](http://techblog.ppdai.com/2018/04/16/20180416/)
 
-[有赞API网关实践](https://tech.youzan.com/api-gateway-in-practice/)
+[有赞API网关实践 -- 有赞网关](https://tech.youzan.com/api-gateway-in-practice/)
