@@ -14,6 +14,8 @@ Kong附带了一个用于管理的内部 RESTful Admin API。可以将对 Admin 
 
 此 API 专为内部使用而设置，在设置 Kong 环境时应谨慎，避免把API暴露给外部。
 
+<!-- more -->
+
 ## 基础信息
 
 ### 节点信息
