@@ -131,6 +131,7 @@ HTTP 201 Created
 地址：`PATCH /services/{name or id}`
 
 |字段|说明|
+|-|
 |name or id（必需）|The id or the name attribute of the Service to update.|
 
 响应：
@@ -160,6 +161,7 @@ HTTP 200 OK
 地址：`DELETE /services/{name or id}`
 
 |字段|说明|
+|-|
 |name or id（必需）|The id or the name attribute of the Service to update.|
 
 响应：
