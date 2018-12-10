@@ -13,7 +13,7 @@ tags: [lua,kong,openresty]
 
 在微服务架构之下，服务被拆的非常零散，降低了耦合度的同时也给服务的统一管理增加了难度。如上图左所示，在旧的服务治理体系之下，鉴权，限流，日志，监控等通用功能需要在每个服务中单独实现，这使得系统维护者没有一个全局的视图来统一管理这些功能。API 网关致力于解决的问题便是为微服务纳管这些通用的功能，在此基础上提高系统的可扩展性。如右图所示，微服务搭配上 API 网关，可以使得服务本身更专注于自己的领域，很好地对服务调用者和服务提供者做了隔离。
 
-## 为什么是 Kong
+## 为什么选 Kong
 
 Kong 的插件机制是其高可扩展性的根源，Kong 可以很方便地为路由和服务提供各种插件，网关所需要的基本特性，Kong 都如数支持：
 
@@ -88,7 +88,7 @@ server {
     ssl_certificate_by_lua_block {
         Kong.ssl_certificate()
     }
-    location / {     
+    location / {
         rewrite_by_lua_block {
             kong.rewrite()
         }
@@ -126,7 +126,6 @@ server {
 #### ngx_lua 的 11 个用户可介入阶段
 
 ![](/images/openresty_phases.png)
-
 
 #### Kong 入口
 
@@ -187,6 +186,7 @@ function Kong.handle_error()
 end
 
 -- content_by_lua_block
+-- 提供AdminAPI功能
 function Kong.serve_admin_api(options)
 end
 
@@ -195,6 +195,12 @@ return Kong
 
 #### 推荐阅读
 
-[kong源码导读 -- 拍拍贷团队](http://techblog.ppdai.com/2018/04/16/20180416/)
+[kong源码导读 -- 拍拍贷](http://techblog.ppdai.com/2018/04/16/20180416/)
 
-[有赞API网关实践 -- 有赞网关](https://tech.youzan.com/api-gateway-in-practice/)
+[有赞API网关实践 -- 有赞](https://tech.youzan.com/api-gateway-in-practice/)
+
+[选择Kong作为你的API网关 -- IT程序猿](https://www.itcodemonkey.com/article/5980.html)
+
+[apigateway-kong(一)简介及部署 -- zhoujie](https://www.cnblogs.com/zhoujie/p/kong1.html)
+
+[OpenResty 最佳实践](https://moonbingbing.gitbooks.io/openresty-best-practices/content/)
