@@ -10,6 +10,8 @@ Yii2 官方文档中对于[大数据处理](https://www.yiiframework.com/doc/gui
 
 但是，下面有非常显眼的 **WARNING** ：`MySQL 批处理查询的实现存在已知的局限性`
 
+<!-- more -->
+
 以为批量查一次 5000 条可能就这么简单：
 
 ```php
