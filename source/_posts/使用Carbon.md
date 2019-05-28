@@ -1,5 +1,5 @@
 ---
-title: 使用Carbon
+title: 使用Carbon时间类
 urlname: use-carbon
 date: 2018-05-01 14:11:35
 category: laravel

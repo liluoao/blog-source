@@ -1,5 +1,5 @@
 ---
-title: 使用Hexo
+title: 使用Hexo写博客
 urlname: use-hexo
 date: 2018-02-01 10:37:19
 ---

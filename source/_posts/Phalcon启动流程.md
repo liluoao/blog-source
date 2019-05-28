@@ -1,5 +1,5 @@
 ---
-title: Phalcon 启动流程（转）
+title: Phalcon 启动流程
 urlname: phalcon-start-process
 date: 2018-03-15 10:37:19
 category: phalcon

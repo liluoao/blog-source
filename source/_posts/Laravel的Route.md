@@ -1,5 +1,5 @@
 ---
-title: Laravel的Route
+title: Laravel的路由
 urlname: laravel-route
 date: 2018-05-04 10:55:55
 category: laravel

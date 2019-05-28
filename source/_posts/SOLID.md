@@ -1,5 +1,5 @@
 ---
-title: SOLID
+title: 面向对象的SOLID原则
 urlname: php-solid
 date: 2018-02-16 15:50:39
 ---

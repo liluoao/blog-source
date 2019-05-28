@@ -1,5 +1,5 @@
 ---
-title: Laravel的Task-Scheduling
+title: Laravel的任务调度
 urlname: laravel-task-scheduling
 date: 2018-05-10 09:37:40
 category: laravel

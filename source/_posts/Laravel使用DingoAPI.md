@@ -1,5 +1,5 @@
 ---
-title: Laravel使用DingoAPI
+title: 使用DingoAPI
 urlname: laravel-use-dingo-api
 date: 2018-05-28 11:52:27
 category: laravel

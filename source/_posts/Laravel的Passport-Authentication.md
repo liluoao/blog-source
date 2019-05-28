@@ -1,5 +1,5 @@
 ---
-title: Laravel的Passport-Authentication
+title: 使用Passport-Authentication
 urlname: create-rest-api-in-laravel-with-authentication-using-passport
 date: 2018-05-23 14:33:42
 category: laravel

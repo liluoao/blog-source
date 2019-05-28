@@ -1,5 +1,5 @@
 ---
-title: Laravel的Middleware
+title: Laravel的中间件
 urlname: laravel-middleware
 date: 2018-05-22 14:58:37
 category: laravel

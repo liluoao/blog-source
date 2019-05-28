@@ -1,5 +1,5 @@
 ---
-title: Laravel的Config
+title: Laravel的配置
 urlname: laravel-config
 date: 2018-05-06 16:08:10
 category: laravel
@@ -12,7 +12,7 @@ tags: laravel
 $value = config('app.timezone');
 ```
 
-新增配置文件后，如 `config/aboutus.php`，使用 `config('aboutus.xxx')` 读取
+新增配置文件后，如 `config/wechat.php`，使用 `config('wechat.xxx')` 读取
 <!-- more -->
 如何合并、缓存所有配置文件？
 ```cmd

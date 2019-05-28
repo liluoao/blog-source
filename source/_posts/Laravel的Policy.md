@@ -1,5 +1,5 @@
 ---
-title: Laravel的Policy
+title: Laravel的策略
 urlname: laravel-policy
 date: 2018-05-24 11:25:43
 category: laravel

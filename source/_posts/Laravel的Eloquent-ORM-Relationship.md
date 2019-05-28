@@ -1,5 +1,5 @@
 ---
-title: Laravel的Eloquent-ORM-Relationship
+title: Eloquent-ORM-Relationship
 urlname: laravel-eloquent-orm-relationship
 date: 2018-05-05 09:04:19
 category: laravel

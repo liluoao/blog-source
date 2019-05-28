@@ -1,5 +1,5 @@
 ---
-title: Laravel 路由调用控制器（转）
+title: 路由如何调用到控制器
 urlname: laravel-route-to-controller
 date: 2018-03-13 10:37:19
 category: laravel

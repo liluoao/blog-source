@@ -1,5 +1,5 @@
 ---
-title: Laravel自定义验证规则
+title: 自定义验证规则
 urlname: laravel-custom-validation-rules
 date: 2018-05-16 11:24:10
 category: laravel

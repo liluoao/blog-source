@@ -1,5 +1,5 @@
 ---
-title: PHP的运行模式（转）
+title: PHP的运行模式
 urlname: php-sapi
 date: 2018-02-18 11:46:52
 ---

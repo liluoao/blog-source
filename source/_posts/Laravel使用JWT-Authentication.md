@@ -1,5 +1,5 @@
 ---
-title: Laravel使用JWT-Authentication
+title: 使用JWT-Authentication
 urlname: restful-api-in-laravel-56-using-jwt-authentication
 date: 2018-05-25 11:35:27
 category: laravel

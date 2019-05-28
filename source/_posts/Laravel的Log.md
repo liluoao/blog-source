@@ -1,5 +1,5 @@
 ---
-title: Laravel的Log
+title: Laravel的日志
 urlname: laravel-log
 date: 2018-05-07 16:13:07
 category: laravel

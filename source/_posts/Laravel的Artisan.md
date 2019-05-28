@@ -1,5 +1,5 @@
 ---
-title: Laravel的Artisan
+title: Laravel的命令行
 urlname: laravel-artisan
 date: 2018-05-09 09:17:13
 category: laravel
