@@ -11,6 +11,8 @@ tags: [php,yaf]
 
 ![Yaf执行流程](/images/yaf-life-cycle.png)
 
+<!-- more -->
+
 ## 实现Laravel结构
 
 可以通过修改配置来变更代码结构，例如在 `public/index.php` 入口修改配置文件夹
