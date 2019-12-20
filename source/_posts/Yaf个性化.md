@@ -1,5 +1,5 @@
 ---
-title: Yaf个性化
+title: Yaf框架结构个性化
 urlname: yaf-individualization
 date: 2019-09-21 14:14:44
 tags: [php,yaf]
@@ -7,11 +7,11 @@ tags: [php,yaf]
 
 ## 执行流程
 
-由于 Yaf 只提供一个 MVC 的基本骨架，所以我们有很大的开发自由度，来实现一个最适合自己的项目。
-
-![Yaf执行流程](/images/yaf-life-cycle.png)
+由于 Yaf 只提供一个 MVC 的基本骨架，所以我们有很大的开发自由度，可以实现一个自己最习惯的项目。
 
 <!-- more -->
+
+![Yaf执行流程](/images/yaf-life-cycle.png)
 
 ## 实现Laravel结构
 

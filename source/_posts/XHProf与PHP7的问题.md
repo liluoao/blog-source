@@ -15,6 +15,8 @@ XHProf 是 **Facebook** 开源的一个轻量级的 PHP 性能分析工具，跟
 
 经过一段时间排查后发现是 XHProf 造成的，关闭后就可以了。
 
+<!-- more -->
+
 ## 解决方法
 
 **Facebook** 推出这个工具时 PHP 还是他们技术栈重要的一份子。因为 PHP 7 与 PHP 5 存在很大的兼容性问题，Facebook 的 HHVM 团队决定改用 Hack 开发 HHVM。通过减少使用 PHP，HHVM 团队希望 HHVM 和 Hack 能给开发者提供一个更好、更高性能的体验。所以 XHProf 在 PHP7 上有问题也是意料之中的，这个扩展在 https://pecl.php.net/package/xhprof 上处于年久失修的状态。

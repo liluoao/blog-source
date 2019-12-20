@@ -1,38 +1,52 @@
 ---
-title: MongoDB的聚合Aggregation
+title: 使用MongoDB的聚合
 urlname: mongodb-aggregation
 date: 2019-05-28 10:15:54
 tags: mongo
 ---
 
-这里分享的是管道方式，Map-Reduce和单用途聚合可以查看[官方文档](https://docs.mongodb.com/manual/aggregation/)
-![Map-Reduce方式](https://docs.mongodb.com/manual/_images/map-reduce.bakedsvg.svg)
-
 ## 引子
-在做一个统计功能的时候，需要对Mongo里的集合进行求和。在查出来想循环求和时，数据量太大导致内存溢出，需要换一种实现方式。
 
-<!-- more -->
+最近需要做个统计，计算一个销售或部门（n 个销售），在一段时间内（n 天）的成交数据。数据在 Mongo，大致结构如下：
 
-## 数据格式
-每个销售每天一条记录，有个大数组存放了每个产品的成交数量，暂时忽略其中数据
 ```php
 [
-    'si_id' => xxx,
-    'date' => '2019-05-28',
+    'si_id' => 1,//销售ID
+    'date' => '2019-05-28',//Y-m-d时间
     'data' => [
         0 => [
             'product_name' => '产品A',
             'product_id' => 1,
             'num' => 123
         ],
-        //...
-    ]
+        1 => [
+            'product_name' => '产品B',
+            'product_id' => 2,
+            'num' => 123
+        ],
+        //more..
+    ],
 ]
 ```
-需要统计一个销售或部门（包含很多销售），在一段时间内（包含很多天）的成交数据
+
+每个销售每天一条记录（*si_id* 和 *date* 组合索引），*data* 数组存放了每个产品的成交数量。简单分析后，我们需要得到的就是每个 *product_id* 的 *num* 之和。
+
+在查询出来后，进行循环处理，结果由于数据量太大导致**内存溢出**。能不能像 MySQL 中直接进行 `GROUP BY` + `SUM()` 呢？
+
+<!-- more -->
+
+## 管道模式
+
+查看文档后发现了 Mongo 的聚合 Aggregation，其中有几种实现方式。这里分享的是管道方式，Map-Reduce和单用途聚合可以查看[官方文档](https://docs.mongodb.com/manual/aggregation/)
+
+![Map-Reduce方式](https://docs.mongodb.com/manual/_images/map-reduce.bakedsvg.svg)
+
+管道模式顾名思义就是像个 `pipeline` 一样，经过层层筛选，最终得到你想要的结果。下面看下具体如何使用。
 
 ## 第一阶段
-首先使用 `$match` 查询条件内的记录
+
+首先使用 `$match` 添加查询条件，把销售 ID 条件和 时间条件写上：
+
 ```php
 [
     '$match' => [
@@ -48,7 +62,9 @@ tags: mongo
 ```
 
 ## 第二阶段
-如果需要，使用 `$project` 指定查询列
+
+如果需要，使用 `$project` 指定查询列，例如我们想分次查，一次求一个产品的和：
+
 ```php
 [
     '$project' => [
@@ -58,8 +74,8 @@ tags: mongo
                 'as' => 'temp',
                 'cond' => [
                     '$eq' => [
-                        '$$temp.product_id', 1
-                    ]//只查询产品ID为1的记录
+                        '$$temp.product_id', 1 //只查询产品ID为1的记录
+                    ]
                 ]
             ]
         ]
@@ -67,7 +83,8 @@ tags: mongo
 ]
 ```
 
-由于需要处理数组，所以要加上 `$unwind`
+由于我们的数据结构特殊，需要处理数组，所以要加上 `$unwind`
+
 ```php
 [
     '$unwind' => '$data'
@@ -75,19 +92,33 @@ tags: mongo
 ```
 
 ## 第三阶段
-使用 `$group` 进行求和
+
+使用 `$group` 进行求和，也就是我们需要的结果：
+
 ```php
 [
     '$group' => [
         '_id' => '$data.product_id',
         'num' => [
-            '$sum' => '$data.num'
-        ]//对num字段进行求和
+            '$sum' => '$data.num' //对num字段进行求和
+        ]
     ]
 ]
 ```
 
-## 结束
+意犹未尽的你可以再去看看文档，是否能进一步优化你的日常开发。
+
+![聚合介绍](/images/mongo-aggregation.jpg)
+
+|步骤|作用|SQL等价运算符|
+|-|-|-|
+|$match|过滤|WHERE|
+|$project|投影|AS|
+|$sort|排序|ORDER BY|
+|$group|分组|GROUP BY|
+|$skip/$limit|结果限制|SKIP/LIMIT|
+|$lookup|左外连接|LEFT OUTER JOIN|
+
 ```php
 see MongoDB\Collection::aggregate()
 ```
