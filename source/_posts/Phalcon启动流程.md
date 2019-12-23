@@ -2,7 +2,7 @@
 title: Phalcon 启动流程
 urlname: phalcon-start-process
 date: 2018-03-15 10:37:19
-category: phalcon
+category: PHP框架
 tags: phalcon
 ---
 原文链接：[https://avnpc.com/pages/phalcon-mvc-process](https://avnpc.com/pages/phalcon-mvc-process)

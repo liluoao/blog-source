@@ -1,7 +1,8 @@
 ---
-title: Nginx和PHP的配置（转）
+title: Nginx和PHP的配置
 urlname: nginx-and-php-config
 date: 2018-03-06 09:59:26
+category: 服务器
 tags: linux
 ---
 原文链接：[https://segmentfault.com/a/1190000014610688](https://segmentfault.com/a/1190000014610688)

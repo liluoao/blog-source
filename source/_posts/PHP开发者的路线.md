@@ -2,6 +2,7 @@
 title: PHP新手开发者的路线
 urlname: a-php-developer-roadmap
 date: 2018-08-03 16:29:51
+category: 杂谈
 tags: php
 ---
 ## 前言

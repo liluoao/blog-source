@@ -2,9 +2,10 @@
 title: Linux搭建环境
 urlname: linux-environment
 date: 2018-03-04 09:09:04
+category: 服务器
 tags: linux
-category: linux
 ---
+
 在阿里云买了个低配云服务器，系统为Ubuntu 16.4，需要安装基础环境。
 
 ## 更新源

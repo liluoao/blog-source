@@ -2,6 +2,7 @@
 title: Alipay授权第三方应用
 urlname: alipay-authorize-3rd-app
 date: 2018-04-08 10:41:33
+category: 支付宝开发
 tags: alipay
 ---
 >1、商户对开发者进行应用授权后，开发者可以帮助商户完成相应的业务逻辑，例如代替商户发起当面付的收单请求。

@@ -2,6 +2,7 @@
 title: Alipay条码支付及查询
 urlname: alipay-barpay-and-query
 date: 2018-04-07 16:05:52
+category: 支付宝开发
 tags: alipay
 ---
 

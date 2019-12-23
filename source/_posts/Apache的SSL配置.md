@@ -2,7 +2,7 @@
 title: Apache的SSL配置
 urlname: apache-ssl-config
 date: 2018-03-05 15:15:45
-category: linux
+category: 服务器
 tags: [apache,linux]
 ---
 ## 安装Apache

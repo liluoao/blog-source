@@ -2,6 +2,7 @@
 title: 如何用工具保证代码风格
 urlname: use-code-sniffer-in-phpstorm
 date: 2019-07-02 14:25:53
+category: 工具
 tags: tool
 ---
 

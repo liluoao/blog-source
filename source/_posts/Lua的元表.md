@@ -1,7 +1,8 @@
 ---
-title: Lua的元表
+title: Lua的元表及元方法学习
 urlname: lua-metatable
 date: 2018-11-19 13:51:56
+category: Lua
 tags: lua
 ---
 

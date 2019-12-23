@@ -2,6 +2,7 @@
 title: Yaf框架结构个性化
 urlname: yaf-individualization
 date: 2019-09-21 14:14:44
+category: PHP框架
 tags: [php,yaf]
 ---
 

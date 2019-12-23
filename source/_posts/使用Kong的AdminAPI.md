@@ -1,7 +1,8 @@
 ---
-title: 使用Kong的AdminAPI
+title: Kong框架的AdminAPI
 urlname: use-kong-admin-api
 date: 2018-12-07 11:24:33
+category: Lua
 tags: [lua,kong,openresty]
 ---
 

@@ -2,6 +2,7 @@
 title: PHP的设计模式之创建模式
 urlname: php-creational-design-patterns
 date: 2018-04-01 22:50:50
+category: 设计模式
 tags: design-patterns
 ---
 原文链接：[https://www.devbattles.com/en/sand/post-1306-Design+Patterns+in+PHP](https://www.devbattles.com/en/sand/post-1306-Design+Patterns+in+PHP)

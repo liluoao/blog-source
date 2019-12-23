@@ -1,13 +1,15 @@
 ---
-title: Kong集群间数据同步
+title: Kong框架的集群间数据同步
 urlname: kong-cluster-event
 date: 2018-11-23 14:45:28
+category: Lua
 tags: [lua,kong,openresty]
 ---
 
 ## 概览
 
-  kong 的代码运行于 nginx 的 worker 进程中。kong 对数据的修改会在一个 worker 中进行，数据被修改后需要通知给本地的其他 worker 进程和其他机器上的 worker 进程。kong 使用的进程间通信主要方式有：
+Kong 的代码运行于 Nginx 的 worker 进程中。Kong 对数据的修改会在一个 worker 中进行，数据被修改后需要通知给本地的其他 worker 进程和其他机器上的 worker 进程。Kong 使用的进程间通信主要方式有：
+
 1. 本机间通信-共享内存
 2. 跨机器通信-数据库
 
@@ -15,13 +17,13 @@ tags: [lua,kong,openresty]
 
 ## 数据共享
 
-  kong 的数据存储在数据库中，同时在缓存中保留一份。当数据库的中的数据被修改时，需要发出相应的事件通知其他 worker。其他 worker 接收事件后，删除缓存中对应的数据。下次从缓存读数据时发现没有的话，就从数据库加载出来。
-  事件分为本地事件和集群事件。本地事件用于通知在一台机器上的 worker，集群事件用于通知在多台机器上的 worker。
+kong 的数据存储在数据库中，同时在缓存中保留一份。当数据库的中的数据被修改时，需要发出相应的事件通知其他 worker。其他 worker 接收事件后，删除缓存中对应的数据。下次从缓存读数据时发现没有的话，就从数据库加载出来。
+事件分为本地事件和集群事件。本地事件用于通知在一台机器上的 worker，集群事件用于通知在多台机器上的 worker。
 
 ### 共享内存
 
-  本地事件通过共享内存实现。kong 实现了一套基于 nginx 共享内存的 **事件发布-订阅** 机制，源码见仓库 [lua-resty-worker-events](https://github.com/Kong/lua-resty-worker-events)。该包提供 `post_local` 方法在 worker 进程内进行事件发布，提供 `post` 方法在同属于一台机器上的 worker 进程间进行事件发布。这2个方法需要指定 source 和 event 来确定事件源。
-  kong 的数据访问层 [dao.lua](https://github.com/Kong/kong/blob/master/kong/dao/dao.lua) 封装了 `insert、update 和 delete` 三个对数据操作的方法。这三个方法分别会使用 `post_local` 发出 **source 为 dao:crud，event 为 `insert、delete、update`** 的数据增、删、改的事件。
+本地事件通过共享内存实现。kong 实现了一套基于 nginx 共享内存的 **事件发布-订阅** 机制，源码见仓库 [lua-resty-worker-events](https://github.com/Kong/lua-resty-worker-events)。该包提供 `post_local` 方法在 worker 进程内进行事件发布，提供 `post` 方法在同属于一台机器上的 worker 进程间进行事件发布。这2个方法需要指定 source 和 event 来确定事件源。
+kong 的数据访问层 [dao.lua](https://github.com/Kong/kong/blob/master/kong/dao/dao.lua) 封装了 `insert、update 和 delete` 三个对数据操作的方法。这三个方法分别会使用 `post_local` 发出 **source 为 dao:crud，event 为 `insert、delete、update`** 的数据增、删、改的事件。
 
 事件的数据格式如下:
 
@@ -33,7 +35,7 @@ tags: [lua,kong,openresty]
 }
 ```
 
-  worker 进程启动的时候会在 init_worker 阶段注册这些事件的订阅方法，见 [worker_events.register()](https://github.com/Kong/kong/blob/master/kong/runloop/handler.lua#L172)。订阅方法中把所有的 dao:crud 事件按表名称使用 post_local 再进行分发。所以从 dao:crud 分发的事件如下:
+worker 进程启动的时候会在 init_worker 阶段注册这些事件的订阅方法，见 [worker_events.register()](https://github.com/Kong/kong/blob/master/kong/runloop/handler.lua#L172)。订阅方法中把所有的 dao:crud 事件按表名称使用 post_local 再进行分发。所以从 dao:crud 分发的事件如下:
 
 - `source=crud, event=apis`
 
@@ -61,7 +63,7 @@ tags: [lua,kong,openresty]
 
 ### 数据库
 
-  集群事件通过数据库实现。数据库表 **cluster_events** 存放用于集群间分发的事件。**cluster_events** 表结构如下:
+集群事件通过数据库实现。数据库表 **cluster_events** 存放用于集群间分发的事件。**cluster_events** 表结构如下:
 
 ```sql
 CREATE TABLE cluster_events (

@@ -2,6 +2,7 @@
 title: PHP的设计模式之行为模式（二）
 urlname: php-behavioral-design-patterns-part2
 date: 2018-04-05 14:52:10
+category: 设计模式
 tags: design-patterns
 ---
 原文链接：[https://www.imooc.com/article/17844](https://www.imooc.com/article/17844)

@@ -2,6 +2,7 @@
 title: XHProf与PHP7的问题
 urlname: problem-about-xhprof-in-php7
 date: 2019-01-18 13:35:48
+category: 工具
 tags: tool
 ---
 

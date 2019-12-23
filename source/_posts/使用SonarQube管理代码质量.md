@@ -2,6 +2,7 @@
 title: 使用SonarQube管理代码质量
 urlname: use-sonarqube-continuous-code-quality
 date: 2018-12-25 16:21:24
+category: 工具
 tags: tool
 ---
 

@@ -1,7 +1,8 @@
 ---
-title: 使用Kong作为APIGateway
+title: 使用Kong框架作为API网关
 urlname: use-kong-for-api-gateway
 date: 2018-11-09 20:17:07
+category: Lua
 tags: [lua,kong,openresty]
 ---
 

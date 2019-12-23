@@ -2,6 +2,7 @@
 title: PHP的设计模式之架构模式（二）
 urlname: php-structural-design-patterns-part2
 date: 2018-04-03 16:03:46
+category: 设计模式
 tags: design-patterns
 ---
 原文链接：[https://www.imooc.com/article/17276](https://www.imooc.com/article/17276)

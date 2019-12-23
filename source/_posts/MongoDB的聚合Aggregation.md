@@ -2,6 +2,7 @@
 title: 使用MongoDB的聚合
 urlname: mongodb-aggregation
 date: 2019-05-28 10:15:54
+category: 数据库
 tags: mongo
 ---
 

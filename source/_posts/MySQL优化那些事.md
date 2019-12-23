@@ -1,8 +1,8 @@
 ---
-title: MySQL优化那些事儿（转）
+title: MySQL优化那些事儿
 urlname: mysql-optimize
 date: 2018-02-11 10:37:19
-category: mysql
+category: 数据库
 tags: mysql
 ---
 原文链接：https://juejin.im/post/5a9b6342f265da23a2289281

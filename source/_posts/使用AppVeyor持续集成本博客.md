@@ -1,22 +1,40 @@
 ---
-title: 使用AppVeyor持续集成本博客
+title: 使用持续集成维护博客
 urlname: use-appveyor-ci
 date: 2018-02-02 11:37:55
+category: 工具
 ---
-## 创建AppVeyor账号
-进入[AppVeyor官网](https://ci.appveyor.com)，游客会跳转到 `/login` 页，这里可以注册，也可以使用 `GitHub` 账号授权登陆。
 
-![](/images/appveyor_login.png)
+## 持续集成介绍
+
+持续集成（Continuous integration，简称 CI）是一种软件开发实践，即团队开发成员经常集成他们的工作，通常每个成员每天至少集成一次，也就意味着每天可能会发生多次集成。每次集成都通过自动化的构建（包括编译，发布，自动化测试）来验证，从而尽早地发现集成错误。
+
+减少重复的过程可以节省时间、费用和工作量。说起来简单，做起来难。这些浪费时间的重复劳动可能在我们的项目活动的任何一个环节发生，包括代码编译、数据库集成、测试、审查、部署及反馈。通过自动化的持续集成可以将这些重复的动作都变成自动化的，无需太多人工干预，让人们的时间更多的投入到动脑筋的、更高价值的事情上。
+
+市面上常见的持续集成工具有 [Jenkins](https://jenkins.io/zh/)，[TravisCI](https://www.travis-ci.org/)，和本文要使用的 [AppVeyor](https://ci.appveyor.com)。
+一般代码管理平台也支持 CI/CD
+
 <!-- more -->
+
 ## 创建CI项目
+
+可以使用 `GitHub` 账号授权登陆，快速导入自己的项目。
+
+![登录](/images/appveyor_login.png)
+
 在 `/projects` 页面选择你的博客源码仓库
 
-![](/images/appveyor_select_repo.png)
+![选择仓库](/images/appveyor_select_repo.png)
 
-## 配置CI项目
+## 配置项目
+
 点击项目中 `SETTINGS` 选项卡，如果项目分支不是默认的，修改 `Default branch` 。
 
-再点击 `Environment` 栏目，设置4个环境变量：
+再点击 `Environment` 栏目，设置如下 4 个环境变量：
+
+![项目环境变量](/images/appveyor_project_env.png)
+
+变量解释：
 
 |name|value|
 |---|---|
@@ -25,28 +43,32 @@ date: 2018-02-02 11:37:55
 |GIT_USER_EMAIL|Github用户邮箱|
 |GIT_USER_NAME|Github用户名|
 
-![](/images/appveyor_project_env.png)
-
 设置好后点击 `Save` 保存。
 
-## 获取AccessToken
+## 获取 GitHub 的 AccessToken
+
 打开 `GitHub` 个人设置
 
-![](/images/github_setting.png)
+![设置按钮](/images/github_setting.png)
 
-点击 `Developer settings` 栏目，再点击 `Personal access tokens` 选项卡，可以看到已有的Token，这里点击 `Generate new token` 按钮创建一个博客专用的token。
+点击 `Developer settings` 栏目，再点击 `Personal access tokens` 选项卡，可以看到已有的Token。
+这里点击 `Generate new token` 按钮创建一个博客专用的token。
 
-![](/images/github_token.png)
+![个人TOKEN](/images/github_token.png)
 
-可以参考[官方文档](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/)
+阅读[官方文档](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/)了解更多。
 
-## 加密AccessToken
-由于这个AccessToken可以直接操作你的仓库的，而且配置文件是公开的，所以这时就要求对AccessToken进行加密。可到[AppVeyor Token加密页面](https://ci.appveyor.com/tools/encrypt)进行加密。把加密后的字符串填入下一步中的配置文件里。
+## 加密 AccessToken
 
-![](/images/appveyor_encrypt.png)
+由于这个 AccessToken 可以直接操作代码仓库，而且项目的配置文件是公开的，所以最好对它进行加密。
+AppVeyor 提供了专门的[加密功能](https://ci.appveyor.com/tools/encrypt)，我们可以将 Token 填进去。
 
-## 配置CI
-在项目中新建 `appveyor.yml` 文件，用于配置持续集成的命令
+![TOKEN加密](/images/appveyor_encrypt.png)
+
+## 配置构建命令
+
+在项目中新建 AppVeyor 的指定配置文件 *appveyor.yml*，以我的配置为例：
+
 ```yml
 clone_depth: 5
 
@@ -59,13 +81,13 @@ install:
     - npm --version
     - npm install
     - npm install hexo-cli -g
-    
+
 build_script:
     - hexo generate
-    
+
 artifacts:
     - path: public
-    
+
 on_success:
     - git config --global credential.helper store
     - ps: Add-Content "$env:USERPROFILE\.git-credentials" "https://$($env:access_token):x-oauth-basic@github.com`n"
@@ -77,11 +99,16 @@ on_success:
     - for /d %%p IN (*) do rmdir "%%p" /s /q
     - SETLOCAL EnableDelayedExpansion & robocopy "%APPVEYOR_BUILD_FOLDER%\public" "%TEMP%\static-site" /e & IF !ERRORLEVEL! EQU 1 (exit 0) ELSE (IF !ERRORLEVEL! EQU 3 (exit 0) ELSE (exit 1))
     - git add -A
-    - git commit -m "Update Static Site"
+    - git commit -m "" # 自定义注释
     - git push origin %TARGET_BRANCH%
-- appveyor AddMessage "Static Site Updated"
+    - appveyor AddMessage "Static Site Updated"
 ```
-大致的意思是从github仓库的当前分支拉取下来，编译成静态文件后，在push到目标分支。由于AppVeyor环境中是通过Access Token访问我们的仓库的，而Hexo自带的部署则在访问的过程中需要我们输入帐号密码，所以 `Hexo g -d` 的命令就不适合在这里使用。需要先编译成静态文件，再把public文件夹的静态文件push到目标分支。
 
-## 完成
-![](/images/appveyor_build.png)
+意思是从仓库的当前分支拉取下来，使用 `hexo generate` 命令编译成静态文件后，再 push 到目标项目。
+由于 Hexo 自带的部署 `hexo g -d` 在访问的过程中需要我们输入帐号密码，所以不适合在这里使用。
+
+hexo 命令可以阅读[上一篇文章](use-hexo.html)
+
+## 完成效果
+
+![构建结果](/images/appveyor_build.png)

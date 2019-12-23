@@ -2,6 +2,7 @@
 title: Yii批处理查询
 urlname: yii-batch-query
 date: 2019-02-19 15:39:11
+category: PHP框架
 tags: [yii,php]
 ---
 

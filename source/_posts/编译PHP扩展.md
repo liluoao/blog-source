@@ -2,6 +2,7 @@
 title: 编译PHP扩展
 urlname: compile-php-extension
 date: 2018-07-17 14:52:19
+category: 服务器
 tags: [linux,php]
 ---
 在 **Windows** 下我们需要开启某个扩展，很容易。一般情况下，*dll* 文件都已经安静地躺在 *extension* 目录下，只等待你在 *php.ini* 里将它前面的 **;** 去掉。
