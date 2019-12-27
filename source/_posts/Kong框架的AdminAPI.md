@@ -6,7 +6,7 @@ category: Lua
 tags: [lua,kong,openresty]
 ---
 
-# 介绍
+## 介绍
 
 Kong附带了一个用于管理的内部 RESTful Admin API。可以将对 Admin API 的请求发送到集群中的任何节点，并且 Kong 将使所有节点上的配置保持一致。[admin_listen 默认端口配置](https://github.com/Kong/kong/blob/master/kong/templates/kong_defaults.lua#L13)
 
