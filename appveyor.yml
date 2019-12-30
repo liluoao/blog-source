@@ -12,6 +12,7 @@ install:
     - npm install hexo-cli -g
     
 build_script:
+    - hexo clean
     - hexo generate
     
 artifacts:
