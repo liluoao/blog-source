@@ -2,7 +2,7 @@
 title: Laravel中操作Excel
 urlname: use-laravel-excel
 date: 2018-05-02 15:42:19
-category: Laravel
+category: PHP框架
 tags: laravel
 ---
 

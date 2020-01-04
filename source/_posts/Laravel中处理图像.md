@@ -2,7 +2,7 @@
 title: Laravel中处理图像
 urlname: use-intervention-image
 date: 2018-05-03 14:36:58
-category: Laravel
+category: PHP框架
 tags: laravel
 ---
 

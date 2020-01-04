@@ -2,7 +2,7 @@
 title: Laravel单元测试
 urlname: laravel-phpunit
 date: 2018-05-27 10:44:40
-category: Laravel
+category: PHP框架
 tags: laravel
 ---
 

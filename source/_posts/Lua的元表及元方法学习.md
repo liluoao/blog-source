@@ -6,7 +6,7 @@ category: Lua
 tags: lua
 ---
 
-在 Lua 5.1 语言中，元表 *(metatable)* 的表现行为类似于 C++ 语言中的操作符重载，例如我们可以重载 "\_\_add" 元方法 *(metamethod)*，来计算两个 Lua 数组的并集；或者重载 "\_\_index" 方法，来定义我们自己的 Hash 函数。Lua 提供了两个十分重要的用来处理元表的方法，如下：
+在 Lua 5.1 中，元表 *(metatable)* 的表现行为类似于 C++ 语言中的操作符重载，例如我们可以重载 "\_\_add" 元方法 *(metamethod)*，来计算两个 Lua 数组的并集；或者重载 "\_\_index" 方法，来定义我们自己的 Hash 函数。Lua 提供了两个十分重要的用来处理元表的方法，如下：
 
 - setmetatable(table, metatable)：此方法用于为一个表设置元表。
 - getmetatable(table)：此方法用于获取表的元表对象。
