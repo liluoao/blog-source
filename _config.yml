@@ -3,8 +3,8 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: To be a Web Artisan
-subtitle:
+title: 码之力，三段
+subtitle: To be a Web Artisan
 description: 李罗奥的博客
 author: 李罗奥
 language: zh-CN
@@ -53,7 +53,7 @@ index_generator:
   order_by: -date
   
 # Category & Tag
-default_category: uncategorized
+default_category: 杂谈
 category_map:
 tag_map:
 
