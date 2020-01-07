@@ -12,7 +12,7 @@ tags: tool
 
 这里以在线运行为例，进入[SonarCloud](https://sonarcloud.io/about/sq)，使用 GitHub 账号登录。在 `Create Organization` 创建组织后，可以开始 `Analyze projects` 分析你的项目了。
 
-![](/images/sonar-add-project.png)
+![添加项目](/images/sonar-add-project.png)
 
 这里由于是测试项目，我选择 *Free plan*，上传后所有人都可以看到源码与分析结果。开始分析后，SonarCloud 会 `Provide a token` 创建一个 Token，在分析时填写。创建完后，下面要选择项目主要使用的语言，使用的操作系统，还需要下载一个[SonarQube Scanner](https://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner)
 
@@ -135,7 +135,7 @@ INFO: ------------------------------------------------------------------------
 
 分析结果如下：
 
-![](/images/sonar-result.png)
+![质量分析结果](/images/sonar-result.png)
 
 完成后可以添加 Badge
 
