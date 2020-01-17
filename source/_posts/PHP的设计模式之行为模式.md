@@ -62,53 +62,6 @@ foreach($container as $a => $dynasty){
 
 为何实现一个Iterator接口就必须实现current那些方法呢？其实foreach容器对象的时候，PHP是自动帮我们依次调用了，valid，next这些方法。
 
-#### Strategy（策略模式）
-定义一系列算法，将每一个算法封装起来，并让它们可以相互替换。策略模式让算法独立于使用它的客户而变化，也称为政策模式(Policy)
-```php
-<?php 
-//抽象策略接口
-abstract class Strategy{ 
-    abstract function peddle(); 
-} 
-//具体封装的策略方法
-// 女性用户策略
-class ConcreteStrategyA extends Strategy { 
-    public function peddle(){ 
-        echo '美女穿这件衣服肯定很好看'.PHP_EOL; 
-    } 
-} 
-//男性用户策略
-class ConcreteStrategyB extends Strategy { 
-    public function peddle(){ 
-        echo '每一个男人都需要一个工具箱，充实工具箱，从购买各种螺丝刀开始'.PHP_EOL; 
-    } 
-} 
-//未知性别用户策略
-class ConcreteStrategyC extends Strategy { 
-    public function peddle(){ 
-        echo '骨骼清奇，这本《葵花宝典》最适合你'.PHP_EOL; 
-    } 
-} 
-//环境类
-class Context{ 
-    protected $strategy; 
-    public function __construct(Strategy $strategy) { 
-        $this->strategy = $strategy; 
-    } 
-    public function request() { 
-        $this->strategy->peddle($this); 
-    } 
-} 
-//若处于女性用户环境
-$female_context = new Context(new ConcreteStrategyA); 
-$female_context->request(); 
-//若处于男性用户环境
-$male_context = new Context(new ConcreteStrategyB); 
-$male_context->request(); 
-//若处于未知性别用户环境
-$unknow_context = new Context(new ConcreteStrategyC); 
-$unknow_context->request();
-```
 #### Observer（观察者模式）
 某个对象可以被设置为是可观察的，只要通过某种方式允许其他对象注册为观察者。每当被观察的对象改变时，会发送信息给观察者。
 ```php

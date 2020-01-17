@@ -1,12 +1,10 @@
 ---
-title: 架构型模式之装饰器
+title: 装饰器模式（Decorator）
 urlname: php-structural-design-patterns-decorator
-date: 2018-06-18 09:23:38
+date: 2019-04-18 09:23:38
 category: 设计模式
 tags: design-patterns
 ---
-
-#### 装饰器模式（Decorator）
 
 装饰器模式允许我们根据运行时不同的情景动态地为某个对象调用前后添加不同的行为动作。
 以奇迹暖暖这种换装游戏为例，我们需要实现动态的换套装，或者混搭。

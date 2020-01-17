@@ -1,12 +1,10 @@
 ---
-title: 架构型模式之适配器
+title: 适配器模式（Adapter）
 urlname: php-structural-design-patterns-adapter
 date: 2018-06-18 09:23:38
 category: 设计模式
 tags: design-patterns
 ---
-
-#### 适配器模式（Adapter）
 
 适配器使原本由于接口不兼容而不能一起工作的那些类可以一起工作。
 例如之前是使用 Redis 作缓存，现在想改为文件系统缓存，两者的使用方式天差地别。

@@ -27,101 +27,25 @@ D:\WWW\Sm>sonar-scanner.bat
 -D"sonar.login={你的Token}"
 ```
 
-输出结果如下：
+部分输出结果如下：
 ```
-INFO: Scanner configuration file: D:\sonar-scanner-3.2.0.1227-windows\bin\..\con
-f\sonar-scanner.properties
-INFO: Project root configuration file: NONE
 INFO: SonarQube Scanner 3.2.0.1227
-INFO: Java 1.8.0_121 Oracle Corporation (64-bit)
-INFO: Windows 7 6.1 amd64
-INFO: User cache: C:\Users\viruser.v-desktop\.sonar\cache
-INFO: SonarQube server 7.6.0
-INFO: Default locale: "zh_CN", source code encoding: "GBK" (analysis is platform
- dependent)
-INFO: Publish mode
-INFO: Load global settings
-INFO: Load global settings (done) | time=1567ms
-INFO: Server id: BD367519-AWHW8ct9-T_TB3XqouNu
-INFO: User cache: C:\Users\viruser.v-desktop\.sonar\cache
-INFO: Load/download plugins
-INFO: Load plugins index
-INFO: Load plugins index (done) | time=331ms
-INFO: Load/download plugins (done) | time=868ms
-INFO: Loaded core extensions: branch-scanner
-INFO: Process project properties
-INFO: Execute project builders
-INFO: Execute project builders (done) | time=12ms
-INFO: Load project branches
-INFO: Load project branches (done) | time=301ms
-INFO: Load project pull requests
-INFO: Load project pull requests (done) | time=286ms
-INFO: Load branch configuration
-INFO: Load branch configuration (done) | time=5ms
-INFO: Load project repositories
-INFO: Load project repositories (done) | time=359ms
-INFO: Load quality profiles
-INFO: Load quality profiles (done) | time=2319ms
-INFO: Load active rules
-INFO: Load active rules (done) | time=12946ms
-INFO: Load metrics repository
-INFO: Load metrics repository (done) | time=288ms
 INFO: Project key: royal-flush-crm_mei-crm
-INFO: Project base dir: D:\WWW\Sm
 INFO: Organization key: royal-flush-crm
 INFO: -------------  Scan royal-flush-crm_mei-crm
-INFO: Base dir: D:\WWW\Sm
-INFO: Working dir: D:\WWW\Sm\.scannerwork
-INFO: Source paths: .
-INFO: Source encoding: GBK, default locale: zh_CN
-WARN: Property 'sonar.abap.file.suffixes' is not declared as multi-values/proper
-ty set but was read using 'getStringArray' method. The SonarQube plugin declarin
-g this property should be updated.
 INFO: Index files
 INFO: 15 files indexed
-INFO: Quality profile for php: Sonar way
-INFO: Quality profile for web: Sonar way
-INFO: Sensor SonarJavaXmlFileSensor [java]
-INFO: Sensor SonarJavaXmlFileSensor [java] (done) | time=2ms
-INFO: Sensor HTML [web]
 INFO: Sensor HTML [web] (done) | time=347ms
-INFO: Sensor JaCoCo XML Report Importer [jacoco]
-INFO: Sensor JaCoCo XML Report Importer [jacoco] (done) | time=6ms
-INFO: Sensor PHP sensor [php]
-INFO: 11 source files to be analyzed
-INFO: No PHPUnit test report provided (see 'sonar.php.tests.reportPath' property
-)
-INFO: No PHPUnit coverage reports provided (see 'sonar.php.coverage.reportPaths'
- property)
 INFO: Sensor PHP sensor [php] (done) | time=2136ms
-INFO: Sensor Analyzer for "php.ini" files [php]
-INFO: Sensor Analyzer for "php.ini" files [php] (done) | time=14ms
-INFO: Sensor Zero Coverage Sensor
-INFO: 11/11 source files have been analyzed
-INFO: Sensor Zero Coverage Sensor (done) | time=100ms
-INFO: Sensor JavaSecuritySensor [security]
-INFO: Reading UCFGs from: D:\WWW\Sm\.scannerwork\ucfg2\java
-INFO: UCFGs: 0, excluded: 0, source entrypoints: 0
-INFO: No UCFGs have been included for analysis.
-INFO: Sensor JavaSecuritySensor [security] (done) | time=23ms
-INFO: Sensor CSharpSecuritySensor [security]
-INFO: Reading UCFGs from: D:\WWW\Sm\ucfg_cs2
-INFO: UCFGs: 0, excluded: 0, source entrypoints: 0
-INFO: No UCFGs have been included for analysis.
-INFO: Sensor CSharpSecuritySensor [security] (done) | time=1ms
 INFO: SCM provider for this project is: git
 INFO: 12 files to be analyzed
 INFO: 12/12 files analyzed
-INFO: 2 files had no CPD blocks
-INFO: Calculating CPD for 10 files
 INFO: CPD calculation finished
 INFO: Analysis report generated in 316ms, dir size=158 KB
 INFO: Analysis reports compressed in 89ms, zip size=52 KB
 INFO: Analysis report uploaded in 2002ms
 INFO: ANALYSIS SUCCESSFUL, you can browse https://sonarcloud.io/dashboard?id=roy
 al-flush-crm_mei-crm
-INFO: Note that you will be able to access the updated dashboard once the server
- has processed the submitted analysis report
 INFO: More about the report processing at https://sonarcloud.io/api/ce/task?id=A
 WfkWnRDqDdpA2vNWgTj
 INFO: Task total time: 31.581 s
