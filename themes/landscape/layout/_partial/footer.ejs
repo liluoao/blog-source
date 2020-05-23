@@ -4,8 +4,13 @@
   <% } %>
   <div class="outer">
     <div id="footer-info" class="inner">
-      <div style="width:300px;margin:0 auto; padding:20px 0;">
-          &copy; <%= date(new Date(), 'YYYY') %> <%= config.author || config.title %>
+      <div style="width: 300px; margin: 0 auto; text-align: center;">
+        传送门
+        &nbsp;<a href="<%= config.github_url %>" target="_blank" title="GitHub">GitHub</a>&nbsp;
+        &nbsp;<a href="<%= config.sf_url %>" target="_blank" title="SegmentFault">思否</a>
+      </div>
+      <div style="width: 300px; margin:0 auto; padding: 20px 0; text-align: center;">
+          &copy; <%= date(new Date(), 'YYYY') %> <%= config.title %>
           <%= __('powered_by') %> <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>

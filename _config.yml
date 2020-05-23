@@ -80,3 +80,7 @@ deploy:
   type: git
   repo: https://github.com/liluoao/liluoao.github.io.git
   branch: master
+
+# Customize
+sf_url: https://segmentfault.com/u/liluoao
+github_url: https://github.com/liluoao
