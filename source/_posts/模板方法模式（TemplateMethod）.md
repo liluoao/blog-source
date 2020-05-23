@@ -20,7 +20,7 @@ use ApiTemplate;
 
 在 *ApiTemplate* 中规定了流程：
 
-```php
+```php ApiTemplate.php
 trait ApiTemplate
 {
     protected $response;
@@ -52,7 +52,3 @@ trait ApiTemplate
 ```
 
 让开发们按约定设置好 *请求参数和响应的配置*，只需要关心逻辑处理并写在 `exec()` 中，请求时统一都转到 *xxx/run* 方法，整个流程就统一了。
-
-## 状态模式 State
-
-

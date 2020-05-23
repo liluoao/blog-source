@@ -16,9 +16,9 @@ tags: [php,yaf]
 
 ## 实现Laravel结构
 
-可以通过修改配置来变更代码结构，例如在 `public/index.php` 入口修改配置文件夹
+可以通过修改配置来变更代码结构，例如在入口修改配置文件夹
 
-```php
+```php public/index.php
 define('APP_ROOT', dirname(__DIR__));
 
 $app = new Yaf\Application(APP_ROOT.'/config/application.ini');
@@ -33,9 +33,9 @@ try {
 }
 ```
 
-在 `application.ini` 中修改应用目录和启动文件位置
+修改应用目录和启动文件位置
 
-```ini
+```ini application.ini
 application.directory = APP_ROOT "/app/"
 application.bootstrap = APP_ROOT "/bootstrap/app.php"
 application.library = APP_ROOT "/app/Library"
