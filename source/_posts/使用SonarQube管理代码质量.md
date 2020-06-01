@@ -64,3 +64,7 @@ INFO: ------------------------------------------------------------------------
 完成后可以添加 Badge
 
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=liluoao_api-doc&metric=alert_status)](https://sonarcloud.io/dashboard?id=liluoao_api-doc)
+
+### 后续
+
+[《SonarQube再续前缘》](/2020/build-sonarqube-and-rules.html)
