@@ -120,6 +120,4 @@ tags: mongo
 |$skip/$limit|结果限制|SKIP/LIMIT|
 |$lookup|左外连接|LEFT OUTER JOIN|
 
-```php
-see MongoDB\Collection::aggregate()
-```
+see `MongoDB\Collection::aggregate()`
