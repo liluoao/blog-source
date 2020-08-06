@@ -1,10 +1,14 @@
 ---
-title: Laravel中处理图像
-urlname: use-intervention-image
+title: Laravel中处理图像与Excel
+urlname: image-and-excel-in-laravel
 date: 2018-05-03 14:36:58
 category: PHP框架
 tags: laravel
+photos: /images/laravel-top-package.jpg
 ---
+
+
+## 图像处理
 
 [Intervention/image](http://image.intervention.io/) 是一个图片处理工具，它提供了一套容易理解的方式来创建、编辑图片。它实现了 ServiceProvider、Facade 等来方便地在 Laravel 中使用。
 
@@ -12,13 +16,13 @@ tags: laravel
 
 Composer 安装
 
-```
+```bash
 composer require intervention/image
 ```
 
-修改 *app/config/app.php* ，添加 `ServiceProvider`：
+添加 `ServiceProvider`：
 
-```php
+```php config/app.php
 'providers' => [
     // ...
     Intervention\Image\ImageServiceProvider::class,
@@ -49,7 +53,7 @@ php artisan vendor:publish
 $manager = new ImageManager(['driver' => 'imagick']);
 ```
 
-## 例子
+#### 例子
 
 ```php
 use Intervention\Image\ImageManager;
@@ -78,3 +82,67 @@ $image->save('uploads/1.jpg');
 - 缓存功能
 - 过滤功能: 将图片按照统一规则进行转换
 - 动态处理: 根据访问图片的 URL 参数自动调整图片大小
+
+## Excel 处理
+
+[Laravel Excel](https://laravel-excel.com/) 是建议在 Laravel 中使用的 Excel 处理包，它把原来 PHPOffice 的 **PHPExcel** 的强大功能在 Laravel 5.x 框架中再实现，还实现了 Laravel 的集合、模型、视图、配置等。
+
+Composer 安装：
+
+```
+composer require maatwebsite/excel
+```
+
+添加 `ServiceProvider`：
+
+```php config/app.php
+'providers' => [
+    // ...
+    Maatwebsite\Excel\ExcelServiceProvider::class,
+],
+'aliases' => [
+    // ...
+    'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+],
+```
+
+使用如下命令创建一个配置文件 *config/excel.php*
+
+```
+php artisan vendor:publish
+```
+
+#### Import 导入
+
+```php
+use Maatwebsite\Excel\Facades\Excel;
+Excel::load('file.xls', function($reader) {
+    $results = $reader->get();
+    $results = $reader->all();
+});
+```
+
+这里对 `$reader` 使用 `get()` 或 `all()` 方法时会生成 Sheet 集合（单个工作簿），可以使用 `getTitle()`，`toArray()`，`toObject()` 等方法。
+
+使用 `first()` 或通过 `each()` 或 `foreach()` 遍历时，会生成 Row 集合（一行数据），这时 `toArray()` 就是最终结果了。
+
+工具默认会把第一行当作 title，最后数据从 A2 单元格开始。
+第一行的大写字母会转成小写输出，汉字为空。
+
+整个结果集是 *LaravelExcelReader* 对象。
+
+#### Export 导出
+
+```php
+$model = AdminModel::query()->get();
+$array = [
+    ['data1','data2'],
+    ['data3','data4']
+];
+Excel::create('test', function ($excel) use ($model) {
+    $excel->sheet('sheet1', function ($sheet) use ($model) {
+        $sheet->fromModel($model);//从 Model 导出
+        //$sheet->fromArray($array);//从数组导出
+    });
+})->export('xls');
+```

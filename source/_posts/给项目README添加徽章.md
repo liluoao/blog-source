@@ -9,6 +9,8 @@ photos: /images/badge-style.png
 
 在许多项目的 `README` 中，我们经常会看到下面这种 `徽章（Badge）`，这是如何制作的呢？
 
+<!-- more -->
+
 - CI结果
 [![AppVeyor](https://img.shields.io/appveyor/ci/liluoao/blog-source.svg?longCache=true&logo=appveyor)](https://ci.appveyor.com/project/liluoao/blog-source)
 - 项目许可
@@ -17,8 +19,6 @@ photos: /images/badge-style.png
 [![Packagist](https://img.shields.io/packagist/v/liluoao/phalcon.svg?longCache=true)](https://packagist.org/packages/liluoao/phalcon)
 - 包/环境版本要求
 [![PHP 版本](https://img.shields.io/packagist/php-v/liluoao/phalcon.svg?longCache=true)](https://packagist.org/packages/liluoao/phalcon)
-
-<!-- more -->
 
 这些 SVG 图标的来源都是 [Shields.io](https://shields.io/) 
 
