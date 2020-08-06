@@ -4,6 +4,7 @@ urlname: mongodb-aggregation
 date: 2019-05-28 10:15:54
 category: 数据库
 tags: mongo
+photos: /images/mongo-aggregation.jpg
 ---
 
 ## 引子
@@ -108,8 +109,6 @@ tags: mongo
 ```
 
 意犹未尽的你可以再去看看文档，是否能进一步优化你的日常开发。
-
-![聚合介绍](/images/mongo-aggregation.jpg)
 
 |步骤|作用|SQL等价运算符|
 |-|-|-|

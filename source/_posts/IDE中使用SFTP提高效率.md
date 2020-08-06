@@ -4,6 +4,7 @@ urlname: phpstorm-use-ftp
 date: 2018-02-04 16:51:42
 category: 工具
 tags: tool
+photos: /images/remote-host.png
 ---
 
 ## 前言
@@ -22,7 +23,3 @@ tags: tool
 依次填入项目名称，FTP主机地址，用户名，密码，项目的浏览器访问地址，然后点击 `Test FTP connection` 测试是否连接成功
 
 ![输入SFTP配置](/images/ftp-config.png)
-
-查看远程文件：
-
-![服务器文件列表](/images/remote-host.png)

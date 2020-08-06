@@ -4,6 +4,7 @@ urlname: upload-library-to-packagist
 date: 2018-03-18 10:37:19
 category: 工具
 tags: tool
+photos: /images/packagist-final.png
 ---
 
 作为 PHP 使用者，平常会接触到 Composer 与很多包。如何发布一个自己的包让别人使用呢，下面介绍下实现步骤。
@@ -84,9 +85,7 @@ Composer 的安装方式见[文档](https://docs.phpcomposer.com/00-intro.html)
 
 ![GitHub项目开启服务](/images/composer-setting.png)
 
-以上面例子项目发布成功后结果如下：
-
-![Packagist成功创建项目](/images/packagist-final.png)
+以上面例子项目发布成功后结果如文章封面图所示
 
 ## 镜像
 

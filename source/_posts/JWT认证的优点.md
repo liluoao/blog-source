@@ -3,6 +3,7 @@ title: JWT认证的优点
 urlname: what-is-jwt
 date: 2018-02-09 10:37:19
 category: 杂谈
+photos: images/jwt.png
 ---
 
 ## 介绍
@@ -44,11 +45,7 @@ Token 一般放在请求头里
 
 ## JWT 的格式
 
-JWT 是由三段信息构成的，将这三段用 `"."` 连接在一起就构成了 JWT 字符串。就像这样:
-
-![JWT的构成](/images/jwt.png)
-
-第一部分我们称它为**头部（Header)**，第二部分我们称其为**载荷（Payload）**，第三部分是**签证（Signature)**
+JWT 是由三段信息构成的，将这三段用 `"."` 连接在一起就构成了 JWT 字符串。第一部分我们称它为**头部（Header)**，第二部分我们称其为**载荷（Payload）**，第三部分是**签证（Signature)**
 
 ### 头部Header
 

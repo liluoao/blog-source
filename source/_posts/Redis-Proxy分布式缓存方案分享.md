@@ -4,6 +4,7 @@ urlname: redis-proxy-distributed-cache-project
 date: 2020-04-20 18:56:46
 category: 工具
 tags: redis
+photos: /images/RedisProxy-structure.png
 ---
 
 ## 前言
@@ -62,7 +63,5 @@ c. 针对报表问题，我们也可以通过日志统计报表，也可以在 K
 ## 现状介绍
 
 RedisProxy 作为一套分布式系统，由一个配置节点、多个访问代理节点、以及一系列主备服务器组成，配置节点我们称其为 config-server，访问代理节点为 proxy-server，一套 redis 主备服务器为一个 redis-group。
-
-![RedisProxy架构图](/images/RedisProxy-structure.png)
 
 ![日志统计](/images/RedisProxy-stat.jpg)

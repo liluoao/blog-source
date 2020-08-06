@@ -4,6 +4,7 @@ urlname: add-project-badge
 date: 2018-02-03 14:47:05
 category: 工具
 tags: tool
+photos: /images/badge-style.png
 ---
 
 在许多项目的 `README` 中，我们经常会看到下面这种 `徽章（Badge）`，这是如何制作的呢？
@@ -41,9 +42,7 @@ https://img.shields.io/badge/<SUBJECT>-<STATUS>-<COLOR>.svg
 - *for-the-badge*
 - *social*
 
-以参数 *style=xx* 拼接在后面即可。
-
-![狗牌样式](/images/badge-style.png)
+以参数 *style=xx* 拼接在后面即可
 
 ## 效果
 
