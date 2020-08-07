@@ -92,8 +92,8 @@ permalink: /live2d.html
             document.getElementById("live2dcanvas").style.width = '150px';
             document.getElementById("live2dcanvas").style.height = '300px';
         } else if (typeof (device) === 'undefined') console.error('Cannot find current-device script.');
-        loadScript("/live2d/script.js", function () {
-            loadlive2d("live2dcanvas", "/live2d/assets/tororo.model.json", 0.5);
+        loadScript("/js/live2d/script.js", function () {
+            loadlive2d("live2dcanvas", "/js/live2d/assets/tororo.model.json", 0.5);
         });
     })();
 </script>
