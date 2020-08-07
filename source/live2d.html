@@ -55,12 +55,15 @@ permalink: /live2d.html
 
     </script>
     <style>
-        #live2dcanvas{
+        body {
+            background-color: #1a9fe0;
+        }
+        #live2dcanvas {
             position: fixed;
             width: 150px;
             height: 300px;
-            opacity:0.7;
-            right: 0px;
+            opacity: 0.7;
+            left: 45%;
             z-index: 999;
             pointer-events: none;
             bottom: 60px;
@@ -73,14 +76,25 @@ permalink: /live2d.html
 </div>
 <script type="text/javascript" src="/js/live2d/device.min.js"></script>
 <script type="text/javascript">
-    const loadScript = function loadScript(c,b){var a=document.createElement("script");a.type="text/javascript";"undefined"!=typeof b&&(a.readyState?a.onreadystatechange=function(){if("loaded"==a.readyState||"complete"==a.readyState)a.onreadystatechange=null,b()}:a.onload=function(){b()});a.src=c;document.body.appendChild(a)};
-    (function(){
-        if((typeof(device) != 'undefined') && (device.mobile())){
-            document.getElementById("live2dcanvas").style.width = '75px';
-            document.getElementById("live2dcanvas").style.height = '150px';
-        }else
-        if (typeof(device) === 'undefined') console.error('Cannot find current-device script.');
-        loadScript("/js/live2d/script.js", function(){loadlive2d("live2dcanvas", "/js/live2d/assets/tororo.model.json", 0.5);});
+    const loadScript = function loadScript(c, b) {
+        var a = document.createElement("script");
+        a.type = "text/javascript";
+        "undefined" != typeof b && (a.readyState ? a.onreadystatechange = function () {
+            if ("loaded" == a.readyState || "complete" == a.readyState) a.onreadystatechange = null, b()
+        } : a.onload = function () {
+            b()
+        });
+        a.src = c;
+        document.body.appendChild(a)
+    };
+    (function () {
+        if ((typeof (device) != 'undefined') && (device.mobile())) {
+            document.getElementById("live2dcanvas").style.width = '150px';
+            document.getElementById("live2dcanvas").style.height = '300px';
+        } else if (typeof (device) === 'undefined') console.error('Cannot find current-device script.');
+        loadScript("/live2d/script.js", function () {
+            loadlive2d("live2dcanvas", "/live2d/assets/tororo.model.json", 0.5);
+        });
     })();
 </script>
 </body>
