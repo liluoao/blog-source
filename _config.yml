@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 码之力，三段
+title: 码之力三段
 subtitle: To be a Web Artisan
 description: 李罗奥的博客
 author: 李罗奥
@@ -50,7 +50,7 @@ highlight:
 # order_by: Posts order. (Order by date descending by default)
 index_generator:
   path: ''
-  per_page: 5
+  per_page: 10
   order_by: -date
   
 # Category & Tag
