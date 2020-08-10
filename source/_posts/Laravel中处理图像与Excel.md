@@ -4,7 +4,7 @@ urlname: image-and-excel-in-laravel
 date: 2018-05-03 14:36:58
 category: PHP框架
 tags: laravel
-photos: /images/laravel-top-package.jpg
+photos: /images/laravel-top-package.png
 ---
 
 

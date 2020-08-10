@@ -8,17 +8,14 @@ permalink: /live2d.html
     <title>live2d</title>
     <link rel="icon" href="/favicon.png">
     <script>
-
-        //网页当前状态判断
-        var hidden, state, visibilityChange, timer;
-        var leaveTitle = '(●-●) 我奔溃啦~';
-        var stayTitle = '(*´∇｀*) 被发现啦~';
-        var defaultTitle = document.title;
-        var resetTime = 1000;
+        let hidden, state, visibilityChange, timer;
+        let leaveTitle = '(●-●) 我奔溃啦~';
+        let stayTitle = '(*´∇｀*) 被发现啦~';
+        const defaultTitle = document.title;
+        const resetTime = 1000;
 
         leaveTitle += document.title;
         stayTitle += document.title;
-
 
         if (typeof document.hidden !== "undefined") {
             hidden = "hidden";
@@ -37,7 +34,7 @@ permalink: /live2d.html
             visibilityChange = "webkitvisibilitychange";
             state = "webkitVisibilityState";
         }
-        // 添加监听器，在title里显示状态变化
+
         document.addEventListener(visibilityChange, function () {
             if (timer != null) clearTimeout(timer);
             if (document[state] === 'visible') {
@@ -50,15 +47,14 @@ permalink: /live2d.html
                 document.title = leaveTitle;
             }
         }, false);
-        //初始化页面状态
-        document.title = document[state] === 'visible' ? stayTitle : leaveTitle;
 
+        document.title = document[state] === 'visible' ? stayTitle : leaveTitle;
     </script>
     <style>
         body {
             background-color: #1a9fe0;
         }
-        #live2dcanvas {
+        #live2d-canvas {
             position: fixed;
             width: 150px;
             height: 300px;
@@ -72,7 +68,7 @@ permalink: /live2d.html
 </head>
 <body>
 <div id="hexo-helper-live2d">
-    <canvas id="live2dcanvas" width="150" height="300"></canvas>
+    <canvas id="live2d-canvas" width="150" height="300"></canvas>
 </div>
 <script type="text/javascript" src="/js/live2d/device.min.js"></script>
 <script type="text/javascript">
@@ -89,11 +85,11 @@ permalink: /live2d.html
     };
     (function () {
         if ((typeof (device) != 'undefined') && (device.mobile())) {
-            document.getElementById("live2dcanvas").style.width = '150px';
-            document.getElementById("live2dcanvas").style.height = '300px';
+            document.getElementById("live2d-canvas").style.width = '150px';
+            document.getElementById("live2d-canvas").style.height = '300px';
         } else if (typeof (device) === 'undefined') console.error('Cannot find current-device script.');
         loadScript("/js/live2d/script.js", function () {
-            loadlive2d("live2dcanvas", "/js/live2d/assets/tororo.model.json", 0.5);
+            loadlive2d("live2d-canvas", "/js/live2d/assets/tororo.model.json", 0.5);
         });
     })();
 </script>

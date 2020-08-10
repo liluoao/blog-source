@@ -1,15 +1,21 @@
 ---
-title: 使用MongoDB的聚合
-urlname: mongodb-aggregation
+title: 初识MongoDB的聚合
+urlname: use-mongodb-aggregation
 date: 2019-05-28 10:15:54
 category: 数据库
 tags: mongo
-photos: /images/mongo-aggregation.jpg
+photos: /images/mongodb.png
 ---
 
-## 引子
+最近需要做个统计，计算一个销售或部门（n 个销售），在一段时间内（n 天）的成交数据
 
-最近需要做个统计，计算一个销售或部门（n 个销售），在一段时间内（n 天）的成交数据。数据在 Mongo，大致结构如下：
+每个销售每天一条记录（*si_id* 和 *date* 组合索引），*data* 数组存放了每个产品的成交数量。简单分析后，我们需要得到的就是每个 *product_id* 的 *num* 之和
+
+在查询出来后，进行循环处理，结果由于数据量太大导致**内存溢出**。能不能像 MySQL 中直接进行 `GROUP BY` + `SUM()` 呢？
+
+<!-- more -->
+
+数据在 Mongo，大致结构如下：
 
 ```php
 [
@@ -30,14 +36,6 @@ photos: /images/mongo-aggregation.jpg
     ],
 ]
 ```
-
-每个销售每天一条记录（*si_id* 和 *date* 组合索引），*data* 数组存放了每个产品的成交数量。简单分析后，我们需要得到的就是每个 *product_id* 的 *num* 之和。
-
-在查询出来后，进行循环处理，结果由于数据量太大导致**内存溢出**。能不能像 MySQL 中直接进行 `GROUP BY` + `SUM()` 呢？
-
-<!-- more -->
-
-## 管道模式
 
 查看文档后发现了 Mongo 的聚合 Aggregation，其中有几种实现方式。这里分享的是管道方式，Map-Reduce和单用途聚合可以查看[官方文档](https://docs.mongodb.com/manual/aggregation/)
 
@@ -120,3 +118,5 @@ photos: /images/mongo-aggregation.jpg
 |$lookup|左外连接|LEFT OUTER JOIN|
 
 see `MongoDB\Collection::aggregate()`
+
+![PPT](/images/mongo-aggregation.jpg)

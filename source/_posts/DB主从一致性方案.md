@@ -4,7 +4,7 @@ urlname: consistency-of-master-and-slave-database
 date: 2020-01-22 13:45:49
 category: 数据库
 tags: other
-photos: /images/semi-sync.jpg
+photos: /images/master-and-slave-database.png
 ---
 
 实际工作中，大部分项目和业务都是读多写少。为了保证高可用性，提升读速度，一般会采用读写分离、一主多从的数据库架构。
@@ -14,6 +14,8 @@ photos: /images/semi-sync.jpg
 <!-- more -->
 
 ### 半同步复制
+
+![半同步复制](/images/semi-sync.jpg)
 
 普通的主从同步是使用 MySQL 的异步复制，依靠二进制日志（binary log）进行。从 5.5 版本开始，MySQL 引入了半同步复制（semi-sync）：一个事务提交时，日志至少要保证有一个从接收到，那么它的提交才能继续。
 
