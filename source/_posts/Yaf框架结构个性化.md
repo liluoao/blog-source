@@ -7,11 +7,11 @@ tags: [php,yaf]
 photos: /images/yaf.png
 ---
 
-## 执行流程
-
 由于 Yaf 只提供一个 MVC 的基本骨架，所以我们有很大的开发自由度，可以实现一个自己最习惯的项目。
 
 <!-- more -->
+
+## 执行流程
 
 ![Yaf生命流程](/images/yaf-life-cycle.png)
 

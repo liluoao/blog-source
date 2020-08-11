@@ -4,7 +4,7 @@ urlname: use-mongodb-aggregation
 date: 2019-05-28 10:15:54
 category: 数据库
 tags: mongo
-photos: /images/mongodb.png
+photos: /images/mongo-aggregation.png
 ---
 
 最近需要做个统计，计算一个销售或部门（n 个销售），在一段时间内（n 天）的成交数据
@@ -37,11 +37,11 @@ photos: /images/mongodb.png
 ]
 ```
 
-查看文档后发现了 Mongo 的聚合 Aggregation，其中有几种实现方式。这里分享的是管道方式，Map-Reduce和单用途聚合可以查看[官方文档](https://docs.mongodb.com/manual/aggregation/)
+查看文档后发现了 Mongo 的聚合 Aggregation，其中有几种实现方式
 
-![Map-Reduce方式](https://docs.mongodb.com/manual/_images/map-reduce.bakedsvg.svg)
+这里分享的是管道方式，Map-Reduce和单用途聚合可以查看[官方文档](https://docs.mongodb.com/manual/aggregation/)
 
-管道模式顾名思义就是像个 `pipeline` 一样，经过层层筛选，最终得到你想要的结果。下面看下具体如何使用。
+管道模式顾名思义就是像个 `pipeline` 一样，经过层层筛选，最终得到你想要的结果
 
 ## 第一阶段
 
@@ -106,7 +106,7 @@ photos: /images/mongodb.png
 ]
 ```
 
-意犹未尽的你可以再去看看文档，是否能进一步优化你的日常开发。
+意犹未尽的你可以再去看看文档，是否能进一步优化你的日常开发
 
 |步骤|作用|SQL等价运算符|
 |-|-|-|

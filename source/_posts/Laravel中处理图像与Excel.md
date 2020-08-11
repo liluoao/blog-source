@@ -7,12 +7,13 @@ tags: laravel
 photos: /images/laravel-top-package.png
 ---
 
+今天介绍两个 Laravel5 中非常受欢迎的包
+
+<!-- more -->
 
 ## 图像处理
 
 [Intervention/image](http://image.intervention.io/) 是一个图片处理工具，它提供了一套容易理解的方式来创建、编辑图片。它实现了 ServiceProvider、Facade 等来方便地在 Laravel 中使用。
-
-<!-- more -->
 
 Composer 安装
 

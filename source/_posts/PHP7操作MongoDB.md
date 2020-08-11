@@ -4,24 +4,26 @@ urlname: php-7-use-mongodb
 date: 2018-07-23 18:54:24
 category: 数据库
 tags: [php,mongo]
+photos: /images/mongodb.png
 ---
 
-## 前言
+使用 MongoDB 的用户很多，因为它的文档型存储一些变化的内容很方便
 
-使用 MongoDB 的用户很多，因为它的文档型存储一些变化的内容很方便。
 在 PHP5 及以前，官方提供了两个扩展，[Mongo](http://php.net/manual/zh/book.mongo.php) 和 [MongoDB](http://php.net/manual/zh/set.mongodb.php)，其中 Mongo 是对以 `MongoClient` 等几个核心类为基础的类群进行操作，封装得很方便，所以基本上都会选择 Mongo 扩展。
 
-但是随着 PHP 升级到 PHP7，官方不再支持 Mongo 扩展，只支持 MongoDB，所以怎么把 Mongo 无缝替换成 MongoDB 成为了一个亟待解决的问题。
-MongoDB 引入了命名空间，但是功能封装非常差，如果非要用原生的扩展，几乎意味着写原生的 Mongo 语句。
-这种想法很违背 ORM 的初衷：简化 DB 操作带来的语法问题而专注逻辑优化。
+但是随着 PHP 升级到 PHP7，官方不再支持 Mongo 扩展，只支持 MongoDB，所以怎么把 Mongo 无缝替换成 MongoDB 成为了一个亟待解决的问题
 
 <!-- more -->
+
+MongoDB 引入了命名空间，但是功能封装非常差，如果非要用原生的扩展，几乎意味着写原生的 Mongo 语句
+
+这种想法很违背 ORM 的初衷：简化 DB 操作带来的语法问题而专注逻辑优化
 
 ## MongoDB 驱动
 
 如果使用原驱动的话，大致语法如下：
 
-```php
+```php MongoDb.php
 <?php
 
 use MongoDB\Driver\Manager;
@@ -107,8 +109,11 @@ class MongoDb {
 }
 ```
 
-这样的语法和之前差异太大，改动不方便。
-在这种情况之下，MongoDB 官方忍不住了，为了方便使用，增加市场占有率，推出了基于 MongoDB 扩展的库：[mongo-php-library](https://github.com/mongodb/mongo-php-library)，该库的详细文档见：[docs.mongodb.com](https://docs.mongodb.com/php-library/current/reference/)
+这样的语法和之前差异太大，改动不方便
+
+在这种情况之下，MongoDB 官方忍不住了，为了方便使用，增加市场占有率，推出了基于 MongoDB 扩展的库：[mongo-php-library](https://github.com/mongodb/mongo-php-library)
+
+该库的详细文档见：[docs.mongodb.com](https://docs.mongodb.com/php-library/current/reference/)
 
 composer 下载：
 
