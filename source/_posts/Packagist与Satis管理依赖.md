@@ -1,6 +1,6 @@
 ---
-title: 发布包到Packagist
-urlname: upload-library-to-packagist
+title: Packagist与Satis管理依赖
+urlname: dependency-management-with-packagist-and-satis
 date: 2018-03-18 10:37:19
 category: 工具
 tags: tool
@@ -13,19 +13,16 @@ photos: /images/packagist.png
 
 ## Composer 介绍
 
-Composer 是 PHP 的依赖管理工具，它为你解决这类问题：
+[Composer](https://docs.phpcomposer.com/00-intro.html) 是 PHP 的依赖管理工具，它为你解决这类问题：
 
-1. 你有一个项目依赖于若干个库
-2. 其中一些库依赖于其他库
-3. 你声明你所依赖的东西
-4. 找出哪个版本的包需要安装，并安装它们（将它们下载到你的项目中）
+- 你有一个项目依赖于若干个库
+- 其中一些库依赖于其他库
+- 你声明你所依赖的东西
+- 找出哪个版本的包需要安装，并安装它们（将它们下载到你的项目中）
 
-Composer 的安装方式见[文档](https://docs.phpcomposer.com/00-intro.html)
+要想使用 Composer，就必须要一个 *composer.json* 文件，该文件包含了项目的依赖和其它的一些元数据
 
-## composer.json
-
-要想使用 Composer，就必须要一个 *composer.json* 文件，该文件包含了项目的依赖和其它的一些元数据。
-下面以我的一个项目配置为例：
+下面是项目配置示例：
 
 ```json
 {
