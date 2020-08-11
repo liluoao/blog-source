@@ -21,97 +21,74 @@ MongoDB 引入了命名空间，但是功能封装非常差，如果非要用原
 
 ## MongoDB 驱动
 
-如果使用原驱动的话，大致语法如下：
+使用新驱动的部分代码如下：
 
-```php MongoDb.php
-<?php
-
-use MongoDB\Driver\Manager;
-use MongoDB\Driver\BulkWrite;
+```php MongoDbDriver.php
 use MongoDB\Driver\WriteConcern;
-use MongoDB\Driver\Query;
-use MongoDB\Driver\Command;
 
-class MongoDb {
+class MongoDb
+{
+    //属性略
 
-    protected $mongodb;
-    protected $database;
-    protected $collection;
-    protected $bulk;
-    protected $writeConcern;
-    protected $defaultConfig
-        = [
-            'hostname' => 'localhost',
-            'port' => '27017',
-            'username' => '',
-            'password' => '',
-            'database' => 'test'
-        ];
-
-    public function __construct($config) {
-        $config = array_merge($this->defaultConfig, $config);
-        $mongoServer = "mongodb://";
-        if ($config['username']) {
-            $mongoServer .= $config['username'] . ':' . $config['password'] . '@';
-        }
-        $mongoServer .= $config['hostname'];
-        if ($config['port']) {
-            $mongoServer .= ':' . $config['port'];
-        }
-        $mongoServer .= '/' . $config['database'];
-
-        $this->mongodb = new Manager($mongoServer);
+    public function __construct($config)
+    {
+        //解析拼接配置过程略
+        $this->mongodb = new \MongoDB\Driver\Manager($mongoServer);
         $this->database = $config['database'];
         $this->collection = $config['collection'];
-        $this->bulk = new BulkWrite();
+        $this->bulk = new \MongoDB\Driver\BulkWrite();
         $this->writeConcern = new WriteConcern(WriteConcern::MAJORITY, 100);
     }
 
-    public function query($where = [], $option = []) {
-        $query = new Query($where, $option);
-        $result = $this->mongodb->executeQuery("$this->database.$this->collection", $query);
-
-        return json_encode($result);
-    }
-
-    public function count($where = []) {
-        $command = new Command(['count' => $this->collection, 'query' => $where]);
-        $result = $this->mongodb->executeCommand($this->database, $command);
-        $res = $result->toArray();
-        $count = 0;
-        if ($res) {
-            $count = $res[0]->n;
-        }
-
-        return $count;
-    }
-
-    public function update($where = [], $update = [], $upsert = false) {
-        $this->bulk->update($where, ['$set' => $update], ['multi' => true, 'upsert' => $upsert]);
-        $result = $this->mongodb->executeBulkWrite("$this->database.$this->collection", $this->bulk, $this->writeConcern);
-
-        return $result->getModifiedCount();
-    }
-
-    public function insert($data = []) {
+    public function insert($data = [])
+    {
         $this->bulk->insert($data);
-        $result = $this->mongodb->executeBulkWrite("$this->database.$this->collection", $this->bulk, $this->writeConcern);
+        $result = $this->mongodb->executeBulkWrite(
+            "$this->database.$this->collection",
+            $this->bulk,
+            $this->writeConcern
+        );
 
         return $result->getInsertedCount();
     }
 
-    public function delete($where = [], $limit = 1) {
+    public function delete($where = [], $limit = 1)
+    {
         $this->bulk->delete($where, ['limit' => $limit]);
-        $result = $this->mongodb->executeBulkWrite("$this->database.$this->collection", $this->bulk, $this->writeConcern);
+        $result = $this->mongodb->executeBulkWrite(
+            "$this->database.$this->collection",
+            $this->bulk,
+            $this->writeConcern
+        );
 
         return $result->getDeletedCount();
+    }
+
+    public function update($where = [], $update = [], $upsert = false)
+    {
+        $this->bulk->update($where, ['$set' => $update], ['multi' => true, 'upsert' => $upsert]);
+        $result = $this->mongodb->executeBulkWrite(
+            "$this->database.$this->collection",
+            $this->bulk,
+            $this->writeConcern
+        );
+
+        return $result->getModifiedCount();
+    }
+
+    public function query($where = [], $option = [])
+    {
+        $query = new \MongoDB\Driver\Query($where, $option);
+        $result = $this->mongodb->executeQuery("$this->database.$this->collection", $query);
+
+        return json_encode($result);
     }
 }
 ```
 
 这样的语法和之前差异太大，改动不方便
 
-在这种情况之下，MongoDB 官方忍不住了，为了方便使用，增加市场占有率，推出了基于 MongoDB 扩展的库：[mongo-php-library](https://github.com/mongodb/mongo-php-library)
+在这种情况之下，MongoDB 官方为了方便使用，增加市场占有率，推出了基于 MongoDB 扩展的库：[mongo-php-library](https://github.com/mongodb/mongo-php-library)
 
 该库的详细文档见：[docs.mongodb.com](https://docs.mongodb.com/php-library/current/reference/)
 
@@ -121,7 +98,7 @@ composer 下载：
 composer require mongodb/mongodb
 ```
 
-## MongoDB 操作包
+## MongoDB 操作包与旧 Mongo 对比
 
 #### 1.连接
 
@@ -205,9 +182,7 @@ $collention->deleteMany($condition, $options);
 $result->getDeletedCount();
 ```
 
-## 补充
-
-有些人可能习惯以类似 MySQL 的自增 ID 来处理数据，以前可能使用 `findAndModify()` 方法来查询并修改：
+有业务可能需要以类似 MySQL 的自增 ID 来处理数据，PHP5 可能使用的 `findAndModify()` 方法来查询并修改：
 
 ```php
 $collention->findAndModify([
@@ -235,3 +210,61 @@ $collention->findOneAndUpdate([
 ```
 
 类似的还有 `findOneAndDelete()` `findOneAndReplace()`，更多内容可见 [findOneAndUpdate文档](https://docs.mongodb.com/php-library/current/reference/method/MongoDBCollection-findOneAndUpdate/)
+
+## ODM
+
+在开发一个业务中，由于条件非常复杂，会出现各种 `$and` `$or` 嵌套，想添加新条件时容易出问题
+
+所以在基类中引入了 [ODM](https://github.com/sokil/php-mongo)，支持链式查询的写法，使查询条件直观易理解
+
+![ODM](/images/mongo-odm.png)
+
+改造了项目中老的 Mongo 操作类，引入了新 Trait
+
+```php MongoODMTrait.php
+trait MongoODM
+{
+    public $mongoOdm;
+
+    public function connectOdm($db)
+    {
+        //解析拼接配置过程略
+        $client = new \Sokil\Mongo\Client($mongoServer);
+        $database = $client->getDatabase($config['database']);
+        $this->mongoOdm = new MongoOdm($database);
+    }
+}
+```
+
+在原有操作类中新增一行 ODM 连接
+
+```php Mongo.php
+use MongoODM;
+
+$this->connectOdm(self::Key);
+```
+
+查询时部分示例代码如下：
+
+```php QueryTest.php
+$collection = $bean->mongoOdm->collection;
+$builder = $bean->mongoOdm->find();
+
+$builder->whereIn('sale_id', [1,2,3]);
+$builder->where('identity', ['$bitsAnySet' => [$bit]]);
+
+$builder->whereAnd(
+    $collection->expression()->whereOr(
+        $collection->expression()->whereGreaterOrEqual('last_time', strtotime(date('Y-m-d'))),
+        $collection->expression()->whereLike('desc', "{$desc}", true)
+    )
+);
+
+$total = $builder->count();
+
+$result = $builder->fields(explode(','), $fields)
+    ->sort($sort)
+    ->limit($size)
+    ->skip($offset)
+    ->findAll();
+```
