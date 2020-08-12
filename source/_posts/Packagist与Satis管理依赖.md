@@ -93,3 +93,73 @@ photos: /images/packagist.png
 更新：
 [《Laravel China 镜像完成历史使命，将于两个月后停用》](https://learnku.com/articles/30758)
 [《Composer 国内加速：可用镜像列表 》](https://learnku.com/php/wikis/30594)
+
+## 用 Satis 处理私有资源包
+
+以下为入职同花顺后更新
+
+- 由于公司的架构是内外网分离，开发在内部局域网，无法拉取到公网的 Packagist
+- 顺便维护一些私有的包
+
+好在 Composer 官方提供了这样的静态代码库生成器——[Satis](https://docs.phpcomposer.com/articles/handling-private-packages-with-satis.html)
+
+```
+composer create-project composer/satis --stability=dev --keep-vcs
+```
+
+Satis 的配置是通过 satis.json 进行的
+
+```json satis.json
+{
+  "name": "crm",
+  "homepage": "http://10.0.20.252:10450",//本项目地址，生成后可访问
+  "config": {
+    "disable-tls": true,
+    "secure-http": false
+  },
+  //镜像缓存设置，该设置会缓存require配置项中各个仓库的代码
+  "archive": {
+    "directory": "dist"//目录名
+  },
+  "require": {
+    "monolog/monolog": "1.24.0"
+    //...
+  },
+  "require-all": false,//为true时将从仓库获取所有相关的依赖包
+  "repositories": [
+    {
+      "type": "git",
+      "url": "http://10.0.20.254:10080/library/monolog/monolog.git"
+    }
+    //...
+  ]
+}
+```
+
+生成项目
+
+```
+php bin/satis build satis.json public/
+# 添加新的repo
+php bin/satis add http://10.0.20.254:10080/library/guzzlehttp/guzzle.git satis.json
+```
+
+使用静态库时修改 composer.json 文件
+
+```json composer.json
+{
+  "repositories": [
+    {
+      "packagist": false
+    },
+    {
+      "type": "composer",
+      "url": "http://10.0.20.252:10450"
+    } 
+  ],
+  "config": {
+      "disable-tls": true,
+      "secure-http": false//非HTTPS
+  }
+}
+```
