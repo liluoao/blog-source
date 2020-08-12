@@ -1,9 +1,9 @@
 ---
-title: DB主从一致性方案
+title: MySQL主从一致性方案
 urlname: consistency-of-master-and-slave-database
 date: 2020-01-22 13:45:49
 category: 数据库
-tags: other
+tags: mysql
 photos: /images/master-and-slave-database.png
 ---
 
@@ -17,13 +17,16 @@ photos: /images/master-and-slave-database.png
 
 ![半同步复制](/images/semi-sync.jpg)
 
-普通的主从同步是使用 MySQL 的异步复制，依靠二进制日志（binary log）进行。从 5.5 版本开始，MySQL 引入了半同步复制（semi-sync）：一个事务提交时，日志至少要保证有一个从接收到，那么它的提交才能继续。
+普通的主从同步是使用 MySQL 的异步复制，依靠二进制日志（binary log）进行
+
+从 5.5 版本开始，MySQL 引入了半同步复制（semi-sync）：一个事务提交时，日志至少要保证有一个从接收到，那么它的提交才能继续
 
 1. 系统先对主库进行了一个写操作
 2. 等主从同步完成，写主库的请求才返回
 3. 读从库，读到最新的数据（如果读请求先完成，写请求后完成，读取到的是“当时”最新的数据）
 
-这个方案的优点是原生功能，使用简单。
+这个方案的优点是原生功能，使用简单
+
 在线加载插件安装：
 
 ```mysql
@@ -39,7 +42,7 @@ plugin-dir=/usr/local/mysql/lib/plugin
 plugin-load="rpl_semi_sync_master:semisync_master.so;rpl_semi_sync_slave:semisync_slave.so"
 ```
 
-缺点是主库的写请求时延会增长，吞吐量会降低。
+缺点是主库的写请求时延会增长，吞吐量会降低
 
 ### 强制读主库
 
@@ -51,11 +54,13 @@ plugin-load="rpl_semi_sync_master:semisync_master.so;rpl_semi_sync_slave:semisyn
 2. 记录所有路由到写库的 key，在经验主从同步时间窗口内，如果有读请求访问中间件，此时有可能从库还是旧数据，就把这个key上的读请求路由到主库
 3. 经验主从同步时间过完后，对应 key 的读请求继续路由到从库
 
-市面上的开源中间件相当少了，可能只有原当当网的 [apache/incubator-shardingsphere](https://github.com/apache/incubator-shardingsphere) 还在维护。
+市面上的开源中间件相当少了，可能只有原当当网的 [apache/incubator-shardingsphere](https://github.com/apache/incubator-shardingsphere) 还在维护
 
 ![早期主流的开源中间件](/images/mysql-middleware.jpg)
 
-想新开发的话要看公司技术实力如何，时间人力成本都相当高。使用市场上的中间件也要注意信息安全。
+想自主开发的话要看公司技术实力，时间人力成本都相当高
+
+使用市场上的中间件也要注意信息安全
 
 ### 缓存记录写 key
 
@@ -72,4 +77,4 @@ plugin-load="rpl_semi_sync_master:semisync_master.so;rpl_semi_sync_slave:semisyn
 2. 缓存命中，将本次读操作路由给主库，查新数据
 3. 缓存未命中，依旧从库处理
 
-这个方案成本低，付出的代价是在读写时都多了一步缓存操作。
+这个方案成本低，付出的代价是在读写时都多了一步缓存操作

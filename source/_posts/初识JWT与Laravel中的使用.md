@@ -1,10 +1,10 @@
 ---
-title: 初识JWT与在Laravel中使用
+title: 初识JWT与Laravel中的使用
 urlname: what-is-jwt-and-use-in-laravel
 date: 2018-02-09 10:37:19
 category: PHP框架
 tags: laravel
-photos: images/jwt.png
+photos: images/jwt-laravel.png
 ---
 
 [JWT](https://jwt.io/introduction/) (Json web token)，是为了在网络应用环境间传递声明而执行的一种基于 *JSON* 格式的开放标准 ([RFC 7519](https://tools.ietf.org/html/rfc7519))，它一般被用来做身份认证。
@@ -45,6 +45,8 @@ Token 一般放在请求头里
 ## JWT 的格式
 
 JWT 是由三段信息构成的，将这三段用 `"."` 连接在一起就构成了 JWT 字符串
+
+![JWT格式](/images/jwt.png)
 
 第一部分我们称它为**头部（Header)**，第二部分我们称其为**载荷（Payload）**，第三部分是**签证（Signature)**
 
@@ -204,3 +206,5 @@ Route::middleware('jwt.auth')->get('users', function () {
     return auth('api')->user();
 });
 ```
+
+想了解更多可以阅读 [JWT 扩展具体实现详解](https://learnku.com/articles/10889/detailed-implementation-of-jwt-extensions)
