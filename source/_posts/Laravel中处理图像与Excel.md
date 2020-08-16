@@ -136,14 +136,16 @@ Excel::load('file.xls', function($reader) {
 
 ```php
 $model = AdminModel::query()->get();
+/**
 $array = [
     ['data1','data2'],
     ['data3','data4']
 ];
+*/
 Excel::create('test', function ($excel) use ($model) {
     $excel->sheet('sheet1', function ($sheet) use ($model) {
         $sheet->fromModel($model);//从 Model 导出
-        //$sheet->fromArray($array);//从数组导出
+        //$sheet->fromArray($array);从数组导出
     });
 })->export('xls');
 ```
