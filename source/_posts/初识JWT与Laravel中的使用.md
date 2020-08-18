@@ -7,7 +7,7 @@ tags: laravel
 photos: images/jwt-laravel.png
 ---
 
-[JWT](https://jwt.io/introduction/) (Json web token)，是为了在网络应用环境间传递声明而执行的一种基于 *JSON* 格式的开放标准 ([RFC 7519](https://tools.ietf.org/html/rfc7519))，它一般被用来做身份认证。
+[JWT](https://jwt.io/introduction/) (Json web token)，是为了在网络应用环境间传递声明而执行的一种基于 JSON 格式的开放标准 ([RFC 7519](https://tools.ietf.org/html/rfc7519))，它一般被用来做身份认证。
 
 <!-- more -->
 
@@ -69,7 +69,7 @@ JWT 的头部承载两部分信息：
 但不建议添加敏感信息，因为该部分在客户端可解密
 3. 私有的声明
 私有声明是提供者和消费者所共同定义的声明，一般不建议存放敏感信息，
-因为 *base64* 是对称解密的，意味着该部分信息可以归类为明文信息
+因为 base64 是对称解密的，意味着该部分信息可以归类为明文信息
 
 标准中注册的声明 (建议但不强制使用) ：
 
@@ -83,7 +83,7 @@ JWT 的头部承载两部分信息：
 |iat|Issued At|JWT 的签发时间|
 |jti|JWT ID|JWT 的唯一身份标识，主要用来作为一次性 Token ，从而回避重放攻击|
 
-同样将这个 JSON 进行 *base64* 编码，得到 JWT 的第二部分
+同样将这个 JSON 进行 base64 编码，得到 JWT 的第二部分
 
 对于已签名的令牌，此信息虽然不受篡改，但任何人都可读
 
@@ -93,8 +93,8 @@ JWT 的头部承载两部分信息：
 
 JWT 的第三部分是一个签证信息，这个签证信息由三部分组成：
 
-1. *base64* 后的 header
-2. *base64* 后的 payload
+1. base64 后的 header
+2. base64 后的 payload
 3. secret 盐值
 
 把前面 2 个字符串连接起来，通过 header 中声明的加密方式进行加盐 `secret` 组合加密，就构成了 JWT 的第三部分
