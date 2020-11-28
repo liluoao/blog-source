@@ -1,5 +1,5 @@
 ---
-title: 状态模式（State）
+title: 设计模式——State
 urlname: php-structural-design-patterns-state
 date: 2019-06-18 09:23:38
 category: 设计模式

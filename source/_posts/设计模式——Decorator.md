@@ -1,5 +1,5 @@
 ---
-title: 装饰器模式（Decorator）
+title: 设计模式——Decorator
 urlname: php-structural-design-patterns-decorator
 date: 2019-04-18 09:23:38
 category: 设计模式

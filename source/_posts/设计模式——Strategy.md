@@ -1,12 +1,12 @@
 ---
-title: 策略模式（Strategy）
+title: 设计模式——Strategy
 urlname: php-structural-design-patterns-strategy
 date: 2018-08-18 09:23:38
 category: 设计模式
 tags: design-patterns
 ---
 
-也称为政策模式（Policy），定义一系列算法，将每一个算法封装起来，并让它们可以相互替换
+策略模式，也称为政策模式（Policy），定义一系列算法，将每一个算法封装起来，并让它们可以相互替换
 
 策略模式让算法独立于使用它的客户而变化，使他们之间能互相快速切换
 

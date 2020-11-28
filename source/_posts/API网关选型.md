@@ -1,5 +1,5 @@
 ---
-title: 选择Kong作为API网关
+title: API网关选型
 urlname: use-kong-for-api-gateway
 date: 2018-11-09 20:17:07
 category: 工具

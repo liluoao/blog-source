@@ -1,5 +1,5 @@
 ---
-title: PHP发送文件给Go服务
+title: Golang接收上传文件
 urlname: php-upload-file-to-go-server
 date: 2020-10-23 16:47:45
 category: 杂谈

@@ -1,12 +1,12 @@
 ---
-title: 门面模式（Facade）
+title: 设计模式——Facade
 urlname: php-structural-design-patterns-facade
 date: 2018-04-02 09:23:38
 category: 设计模式
 tags: design-patterns
 ---
 
-也叫外观模式。为子系统中的一组接口提供一个一致的界面，定义一个高层接口，这个接口使得这一子系统更加容易使用。
+门面模式，也叫外观模式。为子系统中的一组接口提供一个一致的界面，定义一个高层接口，这个接口使得这一子系统更加容易使用。
 
 为什么需要外观模式
 

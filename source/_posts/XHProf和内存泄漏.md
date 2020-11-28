@@ -1,5 +1,5 @@
 ---
-title: PHP7中XHProf内存泄漏
+title: XHProf和内存泄漏
 urlname: xhprof-memory-leak-in-php7
 date: 2019-01-18 13:35:48
 category: 工具

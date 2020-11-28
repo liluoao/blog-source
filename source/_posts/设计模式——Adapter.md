@@ -1,12 +1,12 @@
 ---
-title: 适配器模式（Adapter）
+title: 设计模式——Adapter
 urlname: php-structural-design-patterns-adapter
 date: 2018-06-18 09:23:38
 category: 设计模式
 tags: design-patterns
 ---
 
-适配器使原本由于接口不兼容而不能一起工作的那些类可以一起工作
+适配器模式使原本由于接口不兼容而不能一起工作的那些类可以一起工作
 
 <!-- more -->
 

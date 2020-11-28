@@ -1,5 +1,5 @@
 ---
-title: 模板方法模式（TemplateMethod）
+title: 设计模式——TemplateMethod
 date: 2019-12-16 14:58:00
 urlname: php-structural-design-patterns-template-method
 category: 设计模式
