@@ -1,6 +1,6 @@
 ---
-title: PHP7操作MongoDB
-urlname: php-7-use-mongodb
+title: MongoDB In PHP7
+urlname: use-mongodb-in-php-7
 date: 2018-07-23 18:54:24
 category: 数据库
 tags: [php,mongo]

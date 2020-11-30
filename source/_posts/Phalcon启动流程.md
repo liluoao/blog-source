@@ -1,13 +1,13 @@
 ---
-title: Phalcon安装与启动流程
+title: Phalcon启动流程
 urlname: phalcon-installation-and-startup-process
 date: 2018-03-17 10:37:19
 category: PHP框架
-tags: phalcon
+tags: other framework
 photos: /images/phalcon.png
 ---
 
-Phalcon 是一个使用 C 编写、高性能的 PHP 框架。
+Phalcon 是一个使用 C 编写、高性能的 PHP 框架
 
 <!-- more -->
 

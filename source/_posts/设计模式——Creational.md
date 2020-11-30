@@ -1,42 +1,57 @@
 ---
-title: 常见的创建型设计模式
+title: 设计模式——Creational
 urlname: php-creational-design-patterns
 date: 2018-04-01 22:50:50
 category: 设计模式
 tags: design-patterns
 ---
 
-#### 单例模式（Singleton）
+简单介绍下几种常见的创建型设计模式：
+
+- Singleton
+- Factory
+- Prototype
+- Builder
+
+<!-- more -->
+
+#### Singleton
 
 单例模式也是最常见的模式之一，它确保一个类只有一个实例，并提供一个全局的访问点。
 
 主要是为了避免因为创建了多个实例造成资源的浪费，且多个实例由于多次调用容易导致结果出现错误。比如 Redis、MySQL 连接、CURL 句柄等。
 
-<!-- more -->
-
 ```php
-class RedisUtil {
+class RedisUtil
+{
     protected $redis = null;
     protected static $instance = null;
 
     private function __construct() {}
+
     private function __clone() {}
+
     private function __sleep() {}
+
     private  function __wakeup() {}
+
     public static function getInstance()
     {
         if (!self::$instance instanceof self) {
             self::$instance = new self();
             self::$instance->connect();
         }
+
         return self::$instance;
     }
 }
 ```
 
-#### 工厂模式（Factory）
+#### Factory
 
-工厂模式是另一种非常常用的模式，它根据参数的不同返回不同类的实例。简单工厂模式专门定义一个类来负责创建其他类的实例，被创建的实例通常都具有共同的父类。
+工厂模式是另一种常用的模式，它根据参数的不同返回不同类的实例
+
+定义一个类来负责创建其他类的实例，被创建的实例通常都具有共同的父类
 
 ```php
 class Factory
@@ -67,9 +82,9 @@ class Factory
 }
 ```
 
-#### 原型模式（Prototype）
+#### Prototype
 
-有些时候，部分对象需要被初始化多次。相比正常创建一个对象 (`new Foo ()`)，首先创建一个原型，然后克隆它会更节省开销。
+有些时候，部分对象需要被初始化多次。创建一个原型然后克隆它，比正常创建一个对象 (`new Foo ()`)会更节省开销
 
 ```php
 //抽象原型类
@@ -79,14 +94,14 @@ abstract class BookPrototype
     protected $author;
     abstract public function __clone();
 }
+
 //子原型类
 class YellowBookPrototype extends BookPrototype
 {
     protected $author = 'LiLuoao';
-    public function __clone()
-    {
-    }
+    public function __clone() {}
 }
+
 //使用
 $yellowPrototype = new YellowBookPrototype();
 for ($i = 0; $i < 10; $i++) {
@@ -95,7 +110,7 @@ for ($i = 0; $i < 10; $i++) {
 }
 ```
 
-#### 建造者模式（Builder）
+#### Builder
 
 建造者模式是一步一步创建一个复杂的对象，它允许用户只通过指定复杂对象的类型和内容就可以构建它们，用户不需要知道内部的具体构建细节。
 
@@ -109,53 +124,64 @@ class Hero {
     public $hp;
     public $range;
 }
+
 //抽象建造者类
 abstract class Builder
 {
     public $hero;//getter略
+
     public abstract function setHp();
     public abstract function setRange();
+
     public function __construct(Hero $hero)
     {
         $this->hero = $hero;
     }
 }
+
 //射手建造者
 class ADCarryBuider extends Builder
 {
     public function setHp()
     {
-        $this->hero->hp = 1980;
+        $this->hero->hp = 2200;
     }
+
     public function setRange(){
         $this->hero->range = 575;
     }
 }
+
 //坦克建造者
 class TankBuider extends Builder
 {
     public function setHp()
     {
-        $this->hero->hp = 4780;
+        $this->hero->hp = 4396;
     }
+
     public function setRange(){
         $this->hero->range = 125;
     }
 }
+
 //建造指挥者
 class Director
 {
     private $builder;
+
     public function __construct(Builder $builder)
     {
         $this->builder = $builder;
     }
+
     public function built()
     {
         $this->builder->setHp();
         $this->builder->setRange();
     }
 }
+
 //实例化一个射手建造者
 $adcBuilder = new ADCarryBuider(new Hero);
 //实例化指挥者并建造

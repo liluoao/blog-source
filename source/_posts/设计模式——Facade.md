@@ -28,6 +28,7 @@ interface CharacterInterface
     //获取角色名
     public function getName(): string;
 }
+
 interface GameInterface
 {
     //游戏设置

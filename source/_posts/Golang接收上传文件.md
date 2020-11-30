@@ -3,7 +3,7 @@ title: Golang接收上传文件
 urlname: php-upload-file-to-go-server
 date: 2020-10-23 16:47:45
 category: 杂谈
-tags: [php,go]
+tags: [php,golang]
 ---
 
 最近业务需要用 SFTP 发送文件到对接公司的服务器中，在实现时碰到了一些问题

@@ -24,7 +24,7 @@ class LadyStrategy extends Strategy
 {
     public function peddle()
     {
-        echo '看看这款Dior豆沙色哑光口红，不行还有YSL、Mac等' . PHP_EOL;
+        echo '看看这款Dior豆沙色哑光口红，不行还有YSL、MAC等' . PHP_EOL;
     }
 }
 //男性用户策略

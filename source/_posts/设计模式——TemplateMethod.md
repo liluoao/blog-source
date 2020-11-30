@@ -1,6 +1,6 @@
 ---
 title: 设计模式——TemplateMethod
-date: 2019-12-16 14:58:00
+date: 2019-10-16 14:58:00
 urlname: php-structural-design-patterns-template-method
 category: 设计模式
 tags: design-patterns
@@ -12,15 +12,13 @@ tags: design-patterns
 
 <!-- more -->
 
-半年前有个任务是为认证中心部门制作一个 **API 统一框架**，技术选型是 Yaf 框架，原因是它的轻量级和速度快。但是正因为太过简略，开发拥有很大的自主性，需要制定一个统一的开发流程。
+半年前有个任务是为认证中心部门制作一个 **API 统一框架**，技术选型是 Yaf 框架，原因是它的轻量级和速度快
 
-一般思路是需要一个控制器抽象基类直接继承 `Yaf\Controller_Abstract`，普通的控制器再继承基类。我们是用 `trait` 来把流程的模板脱离出控制器。
+但是正因为太过简略，开发不受控制，拥有很大的自主性，需要制定一个统一的开发流程
 
-```php
-use ApiTemplate;
-```
+一般思路是需要一个控制器抽象基类直接继承 `Yaf\Controller_Abstract`，普通的控制器再继承基类
 
-在 *ApiTemplate* 中规定了流程：
+用 `trait` 来把流程的模板脱离出控制器大致如下
 
 ```php ApiTemplate.php
 trait ApiTemplate
@@ -53,4 +51,4 @@ trait ApiTemplate
 }
 ```
 
-让开发们按约定设置好 *请求参数和响应的配置*，只需要关心逻辑处理并写在 `exec()` 中，请求时统一都转到 *xxx/run* 方法，整个流程就统一了。
+让开发们按约定设置好 *请求参数和响应的配置*，只需要关心逻辑处理并写在 `exec()` 中，请求时统一都转到 *xxx/run* 方法，整个流程就统一了

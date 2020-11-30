@@ -1,13 +1,13 @@
 ---
-title: Yaf框架结构个性化
+title: Yaf结构自定义
 urlname: yaf-individualization
 date: 2019-09-21 14:14:44
 category: PHP框架
-tags: [php,yaf]
+tags: other framework
 photos: /images/yaf.png
 ---
 
-由于 Yaf 只提供一个 MVC 的基本骨架，所以我们有很大的开发自由度，可以实现一个自己最习惯的项目。
+由于 Yaf 只提供一个 MVC 的基本骨架，所以我们有很大的开发自由度，可以实现一个自己最习惯的项目
 
 <!-- more -->
 
