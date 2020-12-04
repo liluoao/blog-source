@@ -4,8 +4,9 @@ urlname: phalcon-installation-and-startup-process
 date: 2018-03-17 10:37:19
 category: PHP框架
 tags: other framework
-photos: /images/phalcon.png
 ---
+
+![](/images/phalcon.png)
 
 Phalcon 是一个使用 C 编写、高性能的 PHP 框架
 
@@ -19,7 +20,7 @@ extension = php_phalcon.dll
 
 Linux 安装方法见：[Linux/Unix/Mac](https://phalcon.io/zh-cn/download/linux)
 
-#### 安装 Phalcon-devtool
+## 安装 Phalcon-devtool
 
 [phalcon-devtools](https://github.com/phalcon/phalcon-devtools) 是 Phalcon 开发者工具，可以自动生成代码，为 IDE 创建 Phalcon 语法提示。
 
@@ -54,7 +55,7 @@ Available commands:
   console          (alias of: shell, psysh)
 ```
 
-#### 为 IDE 创建语法提示
+## 为 IDE 创建语法提示
 
 进入 *~/phalcon-devtools/ide* 文件夹，运行命令：
 
@@ -64,7 +65,7 @@ php gen-stubs.php
 
 它会在本文件夹中生成相应版本语法目录，在你的 PHPStorm 中配置 `Configure PHP Include Paths` 即可。
 
-#### 框架文件
+## 框架文件
 
 Phalcon 对于结构要求不固定，单模块例子如下：
 
@@ -103,7 +104,7 @@ Phalcon 对于结构要求不固定，单模块例子如下：
 
 入口文件简化后一共5行，包含了整个 Phalcon 的启动流程，以下将按顺序说明
 
-### 1.DI 注册阶段
+### DI 注册阶段
 
 Phalcon的所有组件服务都是通过[DI（依赖注入）](https://docs.phalcon.io/4.0/zh-cn/api/phalcon_di)进行组织的，这也是目前大部分主流框架所使用的方法
 
@@ -151,7 +152,7 @@ $application = new Phalcon\Mvc\Application();
 $application->setDI($di);
 ```
 
-### 2.模块注册阶段
+### 模块注册阶段
 
 与 DI 一样，Phalcon 建议通过引入一个独立文件的方式注册所有需要的模块：
 
@@ -173,7 +174,7 @@ $application->registerModules(array(
 
 可以看到 Phalcon 的模块注册其实只是告诉框架 MVC 模块的引导文件 `Module.php` 所在位置及类名是什么
 
-### 3.MVC阶段
+### MVC阶段
 
 `$application->handle()` 是整个MVC的核心，这个函数中处理了路由、模块、分发等MVC的全部流程
 

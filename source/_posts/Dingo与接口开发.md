@@ -4,12 +4,13 @@ urlname: use-dingo-api-and-interface-development
 date: 2018-10-10 10:42:37
 category: PHP框架
 tags: [laravel,tool]
-photos: images/dingo.png
 ---
 
-接口版本化算是历史难题，大致规则如下：
+![](/images/dingo.png)
 
 <!-- more -->
+
+接口版本化算是历史难题，大致规则如下：
 
 - 大版本
 
@@ -33,7 +34,7 @@ photos: images/dingo.png
 php artisan vendor:publish --provider="Dingo\Api\Provider\LaravelServiceProvider"
 ```
 
-#### 路由
+## 路由
 
 ```php
 $api = app('Dingo\Api\Routing\Router');
@@ -53,7 +54,7 @@ $api->version('v3', function ($api) {
 });
 ```
 
-#### 响应
+## 响应
 
 控制器需要使用 `Dingo\Api\Routing\Helpers` Trait：
 

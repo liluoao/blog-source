@@ -4,8 +4,9 @@ urlname: use-mongodb-in-php-7
 date: 2018-07-23 18:54:24
 category: 数据库
 tags: [php,mongo]
-photos: /images/mongodb.png
 ---
+
+![](/images/mongodb.png)
 
 使用 MongoDB 的用户很多，因为它的文档型存储一些变化的内容很方便
 
@@ -100,7 +101,7 @@ composer require mongodb/mongodb
 
 ## MongoDB 操作包与旧 Mongo 对比
 
-#### 1.连接
+### 1.连接
 
 ```php
 //old
@@ -109,7 +110,7 @@ new MongoClient();
 new MongoDB\Client();
 ```
 
-#### 2.新增
+### 2.新增
 
 ```php
 //old
@@ -121,7 +122,7 @@ $resultMany = $collention->insertMany($array, $options);//多
 $count = $resultMany->getInsertedCount();
 ```
 
-#### 3.修改
+### 3.修改
 
 ```php
 //old
@@ -142,7 +143,7 @@ $updateResult = $collection->updateMany(
 $count = $updateResult->getModifiedCount();
 ```
 
-#### 4.查询
+### 4.查询
 
 ```php
 //old
@@ -167,7 +168,7 @@ $cursor = $collection->find($condition, [
 ]);
 ```
 
-#### 5.删除
+### 5.删除
 
 ```php
 //old

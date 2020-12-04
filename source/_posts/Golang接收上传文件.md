@@ -10,6 +10,8 @@ tags: [php,golang]
 
 <!-- more -->
 
+## Golang 接收上传文件
+
 一开始由于公司已经有个 Golang 实现的 SFTP 下载文件的服务，所以在它的基础上增加了上传功能
 
 ```go
@@ -90,7 +92,9 @@ _, _ = io.Copy(dstFile, r.Body)
 
 由于在拼接地址时，多了一个 `/`，客户端使用 `//upload` POST 请求，Golang 会响应 301 到 `/upload`，并转为 GET 请求，不会重新发送 Body
 
-虽然解决了这个问题，但是在考虑业务流程长度上，还是去掉了 Golang 服务这步，直接用 PHP 连接 STFP 发文件
+## PHP 使用 SFTP 发送文件
+
+虽然解决了这个问题，但是在考虑业务流程长度上，还是去掉了 Golang 服务这步，直接用 PHP 连接 SFTP 发文件
 
 ```php
 $connection = ssh2_connect($this->host, $this->port);

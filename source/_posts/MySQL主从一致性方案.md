@@ -4,8 +4,9 @@ urlname: consistency-of-master-and-slave-database
 date: 2020-01-22 13:45:49
 category: 数据库
 tags: mysql
-photos: /images/master-and-slave-database.png
 ---
+
+![](/images/master-and-slave-database.png)
 
 实际工作中，大部分项目和业务都是读多写少。为了保证高可用性，提升读速度，一般会采用读写分离、一主多从的数据库架构。
 

@@ -4,8 +4,9 @@ urlname: what-is-jwt-and-use-in-laravel
 date: 2018-02-09 10:37:19
 category: PHP框架
 tags: laravel
-photos: images/jwt-laravel.png
 ---
+
+![](/images/jwt-laravel.png)
 
 [JWT](https://jwt.io/introduction/) (Json web token)，是为了在网络应用环境间传递声明而执行的一种基于 JSON 格式的开放标准 ([RFC 7519](https://tools.ietf.org/html/rfc7519))，它一般被用来做身份认证。
 

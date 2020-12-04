@@ -4,8 +4,9 @@ urlname: yaf-individualization
 date: 2019-09-21 14:14:44
 category: PHP框架
 tags: other framework
-photos: /images/yaf.png
 ---
+
+![](/images/yaf.png)
 
 由于 Yaf 只提供一个 MVC 的基本骨架，所以我们有很大的开发自由度，可以实现一个自己最习惯的项目
 

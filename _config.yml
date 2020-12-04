@@ -3,10 +3,14 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 码之力三段
+title: 码之气三段
 subtitle: To be a Web Artisan
-description: 李罗奥的博客
-author: 李罗奥
+description: 丶基调的博客
+keywords:
+  - 丶基调
+  - Blog
+  - 博客
+author: 丶基调
 language: zh-CN
 timezone: Asia/Shanghai
 
@@ -14,7 +18,7 @@ timezone: Asia/Shanghai
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: https://liluoao.github.io/
 root: /
-permalink: :year/:urlname.html
+permalink: :urlname.html
 permalink_defaults:
 
 # Directory
@@ -39,10 +43,17 @@ post_asset_folder: false
 relative_link: false
 future: true
 highlight:
+  enable: false
+  line_number: false
+  auto_detect: false
+  tab_replace: ""
+  wrap: true
+  hljs: false
+prismjs:
   enable: true
-  line_number: true
-  auto_detect: true
-  tab_replace:
+  preprocess: true
+  line_number: false
+  tab_replace: ""
   
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
@@ -80,7 +91,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: yun
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html

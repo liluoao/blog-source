@@ -4,8 +4,9 @@ urlname: yii-codeception-and-laravel-phpunit
 date: 2019-08-02 17:03:53
 category: PHP框架
 tags: [other framework,laravel]
-photos: /images/codeception.png
 ---
+
+![](/images/codeception.png)
 
 最近一个老项目前端机所在的服务器之一宕机了，在更换新服务器后发现这个项目没有单元测试，在验证时比较麻烦
 
@@ -59,7 +60,7 @@ E LoginFormTest: Login wrong password (2.01s)
 E LoginFormTest: Login correct (2.00s)
 ```
 
-#### 启动引导
+### 启动引导
 
 但是像我的项目经过了各种删减，原用例和配置都不在了，需要重新生成：
 
@@ -69,7 +70,7 @@ vendor\bin\codecept bootstrap
 
 这个命令会在当前目录中生成配置文件和一个 *tests/* 目录
 
-#### 添加套件
+### 添加套件
 
 如果是刚安装好的，在 *tests/* 下已经有了 `functional` 和 `unit` 两个套件。自己想添加新的套件，使用 *generate:suite* 命令：
 
@@ -85,7 +86,7 @@ vendor\bin\codecept generate:cest api GetChatLog
 
 然后使用 *build* 命令构建测试
 
-#### 运行测试
+### 运行测试
 
 在写好你的 GetChatLog 用例后：
 
@@ -111,7 +112,7 @@ vendor\bin\codecept run api
 
 如果是使用 Laravel 安装器创建的项目，则已经安装好了 PHPUnit
 
-#### 快速创建用例
+### 快速创建用例
 
 ```bash
 php artisan make:test UserTest
@@ -137,7 +138,7 @@ class UserTest extends TestCase
 }
 ```
 
-#### Web测试
+### Web测试
 
 断言某 GET 请求的响应码为 200 的示例方法 ExampleTest 如下：
 
@@ -150,7 +151,7 @@ public function testBasicTest()
 }
 ```
 
-#### 接口测试
+### 接口测试
 
 下面的测试是断言 `/user` 这个 POST 接口会返回给定数组的 JSON 格式：
 
@@ -165,7 +166,7 @@ $this->json('POST', '/user', ['name' => 'Sally'])
 
 所以，如果响应中还含有其他 JSON 属性，那么这个测试依然会被通过
 
-#### 验证完全匹配的 JSON
+### 验证完全匹配的 JSON
 
 如果希望验证完整的 JSON 响应，你可以使用 `seeJsonEquals()` 方法，JSON 与所给定的数组完全匹配：
 
@@ -176,7 +177,7 @@ $this->json('POST', '/user', ['name' => 'Sally'])
     ]);
 ```
 
-#### 验证匹配 JSON 结构
+### 验证匹配 JSON 结构
 
 使用 `seeJsonStructure()` 方法并传递嵌套的键列表：
 

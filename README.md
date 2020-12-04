@@ -13,4 +13,4 @@ hexo server
 
 更多使用方式见 [Hexo](https://hexo.io/zh-cn/docs/)
 
-default theme [Landscape](http://hexo.io/hexo-theme-landscape/)
+Theme [Yun](https://yun.yunyoujun.cn/)

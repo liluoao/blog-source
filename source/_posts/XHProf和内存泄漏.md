@@ -4,8 +4,9 @@ urlname: xhprof-memory-leak-in-php7
 date: 2018-12-18 13:35:48
 category: 工具
 tags: tool
-photos: /images/tideways.png
 ---
+
+![](/images/tideways.png)
 
 最近我们认证中心部门将定时脚本切换为 `PHP7` 命令执行时，发现过一段时间脚本就内存泄漏，且该释放内存的地方都做了处理。
 

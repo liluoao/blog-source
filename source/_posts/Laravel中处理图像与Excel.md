@@ -4,13 +4,15 @@ urlname: image-and-excel-in-laravel
 date: 2018-05-03 14:36:58
 category: PHP框架
 tags: laravel
-photos: /images/laravel-top-package.png
 ---
 
-今天介绍两个 Laravel5 中非常受欢迎的包
+![](/images/laravel-top-package.png)
+
+今天介绍两个 Laravel5 中非常受欢迎的包和 Carbon
 
 - Intervention Image
 - Laravel Excel
+- Carbon
 
 <!-- more -->
 
@@ -44,7 +46,7 @@ composer require intervention/image
 php artisan vendor:publish
 ```
 
-#### 配置
+### 配置
 
 先确定本地已经安装好 GD 或 Imagick
 
@@ -56,7 +58,7 @@ php artisan vendor:publish
 $manager = new ImageManager(['driver' => 'imagick']);
 ```
 
-#### 例子
+### 例子
 
 ```php
 use Intervention\Image\ImageManager;
@@ -116,7 +118,7 @@ composer require maatwebsite/excel
 php artisan vendor:publish
 ```
 
-#### Import 导入
+### Import 导入
 
 ```php
 use Maatwebsite\Excel\Facades\Excel;
@@ -136,7 +138,7 @@ Excel::load('file.xls', function($reader) {
 
 整个结果集是 *LaravelExcelReader* 对象。
 
-#### Export 导出
+### Export 导出
 
 有模型和数组两种方式：
 
@@ -174,7 +176,7 @@ use Illuminate\Support\Carbon;
 
 后者除了继承于前者，还实现了 `JsonSerializable` interface 和 `Macroable` trait
 
-#### 实例化
+### 实例化
 
 ```php
 Carbon::now();//同Laravel辅助函数now()
@@ -185,7 +187,7 @@ Carbon::now()->year(2008)->month(5)->day(21)->hour(22)->minute(32)->second(5);
 Carbon::now()->setDate(1975, 5, 21)->setTime(22, 32, 5);
 ```
 
-#### 字符串输出
+### 字符串输出
 
 ```php
 $dt = Carbon::create(1975, 12, 25, 14, 15, 16);
@@ -196,7 +198,7 @@ echo $dt->toDateTimeString();                      // 1975-12-25 14:15:16
 echo $dt->toDayDateTimeString();                   // Thu, Dec 25, 1975 2:15 PM
 ```
 
-#### 比较
+### 比较
 
 常用比较如
 
@@ -227,7 +229,7 @@ $dt->isWednesday();
 $dt->isDayOfWeek(Carbon::SATURDAY);
 ```
 
-#### 自增自减
+### 自增自减
 
 可以对世纪、年、季度、月、周、时、分、秒进行 `add()` 加或 `sub()` 减
 
@@ -242,7 +244,7 @@ echo $dt->addWeekday();
 echo $dt->subWeekday();
 ```
 
-#### 求差
+### 求差
 
 有时我们会使一件事在一个周期里只允许一次，例如发年终奖，这时我们可以判断 `今天` 和 `上次发年终奖` 对于 `发年终奖日期` 是否在同一年
 
@@ -258,7 +260,7 @@ if ($todayPassYearNum === $dividendDatePassYearNum) {
 
 同理也有 `diffInHours()` `diffInDays()` 等方法
 
-#### 常量
+### 常量
 
 Carbon 提供了许多方便的常量，例如：
 
