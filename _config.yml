@@ -18,7 +18,7 @@ timezone: Asia/Shanghai
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: https://liluoao.github.io/
 root: /
-permalink: :urlname.html
+permalink: posts/:urlname.html
 permalink_defaults:
 
 # Directory
