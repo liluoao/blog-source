@@ -78,6 +78,7 @@ interface CacheInterface
 
     public function set($key, $value, $ttl);
 }
+
 class FileSystemAdapter implements CacheInterface
 {
     private $fileSystem;
@@ -123,6 +124,7 @@ $redis->connect('','');
 $cache = new Cache($redis);
 $cache->set('stock_price_300033', '200', 60);
 $stockPrice = $cache->get('stock_price_300033');
+
 //文件系统方式
 $cache = new FileSystemAdapter(new FileSystem('/data/www/data'));
 $cache->set('stock_price_300033', '201', 60);

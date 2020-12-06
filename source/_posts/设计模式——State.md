@@ -12,7 +12,7 @@ tags: design-patterns
 
 <!-- more -->
 
-几年前在做一个订单系统时，设计过订单类，简化后大致如下：
+以前在做一个商城中的订单时，设计的订单类大致意思如下：
 
 ```php
 class Order
@@ -20,9 +20,13 @@ class Order
     private $state;
 
     const UN_PAY_STATE = 0;
+
     const PAY_STATE = 1;
+
     const EVALUATE_STATE = 2;
+
     const FINISH_STATE = 3;
+
 
     public function handle()
     {
@@ -44,7 +48,7 @@ class Order
 }
 ```
 
-使用时可能是这样的，思路就是单独状态单独处理，手动设置状态，比较僵硬：
+单独状态单独处理，手动设置状态，非常僵硬：
 
 ```php
 $order = new Order();
@@ -52,11 +56,11 @@ $order->setState(Order::PAY_STATE);
 $order->handle();
 ```
 
-用状态模式替代的时，主要是状态类的设计，下面写个已付款状态的例子：
+下面用状态模式替代，已付款状态的例子：
 
 > State 接口规定了 `doAction(Order $order)`
 
-```php
+```php PayState.php
 class PayState implements State
 {
     const STATE = 1;
@@ -64,9 +68,9 @@ class PayState implements State
     public function doAction(Order $order)
     {
         if (self::STATE === $order->getCurrentState()) {
-            //是这个状态（该收钱了）
+            //调用API收钱
         } else {
-            //转向下一个状态（去评价）
+            //转向下一个评价状态
             $order->setState(new EvaluateState());
             $order->handle();
         }
@@ -74,9 +78,11 @@ class PayState implements State
 }
 ```
 
-原来的订单类中需要加上新属性： `$currentState`，存放当前状态，原来的 `$state` 属性存放的就不是值了，而是一个状态对象：
+原来的订单类中需要加上新属性： `$currentState`，存放当前状态
 
-```php
+而原来的 `$state` 属性存放的就不是值了，而是一个状态对象：
+
+```php Order.php
 class Order
 {
     private $state;

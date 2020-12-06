@@ -3,7 +3,7 @@ title: Yii2大数据处理
 urlname: query-and-paging-under-big-data-in-yii2
 date: 2019-02-19 15:39:11
 category: PHP框架
-tags: other framework
+tags: yii
 ---
 
 对于公司千万级的客户数据，在数据库查询时要特别小心，避免出现内存溢出与慢查询的问题

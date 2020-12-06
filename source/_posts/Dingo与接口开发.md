@@ -3,7 +3,7 @@ title: Dingo与接口开发
 urlname: use-dingo-api-and-interface-development
 date: 2018-10-10 10:42:37
 category: PHP框架
-tags: [laravel,tool]
+tags: [laravel, api]
 ---
 
 ![](/images/dingo.png)

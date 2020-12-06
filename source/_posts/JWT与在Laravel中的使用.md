@@ -3,7 +3,7 @@ title: JWT与在Laravel中的使用
 urlname: what-is-jwt-and-use-in-laravel
 date: 2018-02-09 10:37:19
 category: PHP框架
-tags: laravel
+tags: [laravel, api]
 ---
 
 ![](/images/jwt-laravel.png)

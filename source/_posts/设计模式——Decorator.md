@@ -14,7 +14,7 @@ tags: design-patterns
 
 我们先创建好装饰器接口：
 
-```php
+```php Decorator.php
 interface Decorator
 {
    public function beforeDress();
@@ -24,7 +24,7 @@ interface Decorator
 
 实现一个警察装扮：
 
-```php
+```php PoliceDecorator.php
 class PoliceDecorator implements Decorator
 {
     public function beforeDress()
@@ -45,7 +45,7 @@ class PoliceDecorator implements Decorator
 
 再实现一个护士装扮：
 
-```php
+```php NurseDecorator.php
 class NurseDecorator implements Decorator
 {
     public function beforeDress()
@@ -65,7 +65,7 @@ class NurseDecorator implements Decorator
 
 最后实现一个穿衣服的人：
 
-```php
+```php Person.php
 class Person
 {
     protected $decorators = []];
@@ -90,7 +90,6 @@ class Person
         }
     }
 
-    //穿衣
     public function dress()
     {
         $this->beforeDress();
@@ -100,7 +99,7 @@ class Person
 }
 ```
 
-现在我们可以创建一个混搭女生了：
+现在我们可以创建一个混搭~~女生~~青年了：
 
 ```php
 $girl = new Person;

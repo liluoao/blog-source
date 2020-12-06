@@ -21,10 +21,11 @@ tags: design-patterns
 
 主要是为了避免因为创建了多个实例造成资源的浪费，且多个实例由于多次调用容易导致结果出现错误。比如 Redis、MySQL 连接、CURL 句柄等。
 
-```php
+```php RedisUtil.php
 class RedisUtil
 {
     protected $redis = null;
+
     protected static $instance = null;
 
     private function __construct() {}
@@ -53,15 +54,9 @@ class RedisUtil
 
 定义一个类来负责创建其他类的实例，被创建的实例通常都具有共同的父类
 
-```php
+```php Factory.php
 class Factory
 {
-    /**
-     * 获取数据库驱动实例
-     *
-     * @param string $type
-     * @return Base
-     */
     public static function getDb($type = 'mysql')
     {
         $connection = null;
@@ -86,27 +81,32 @@ class Factory
 
 有些时候，部分对象需要被初始化多次。创建一个原型然后克隆它，比正常创建一个对象 (`new Foo ()`)会更节省开销
 
-```php
-//抽象原型类
+```php BookPrototype.php 抽象原型类
 abstract class BookPrototype
 {
-    protected $title;//getter和setter略
+    protected $title;
+
     protected $author;
+
     abstract public function __clone();
 }
+```
 
-//子原型类
-class YellowBookPrototype extends BookPrototype
+```php NovelPrototype.php 子原型类
+class NovelPrototype extends BookPrototype
 {
     protected $author = 'LiLuoao';
+
     public function __clone() {}
 }
+```
 
-//使用
-$yellowPrototype = new YellowBookPrototype();
+```php
+$novelPrototype = new NovelPrototype();
+
 for ($i = 0; $i < 10; $i++) {
-    $book = clone $yellowPrototype;
-    $book->setTitle('Yellow Book No ' . $i);
+    $book = clone $novelPrototype;
+    $book->setTitle('Adult Book No ' . $i);
 }
 ```
 
@@ -119,18 +119,22 @@ for ($i = 0; $i < 10; $i++) {
 
 如果我们想创造出一个英雄类，我们通过实例化时设置的属性不同，让一个是射程远血量少的射手，一个是射程短血量厚的坦克：
 
-```php
-class Hero {
+```php Hero.php 英雄类
+class Hero
+{
     public $hp;
+
     public $range;
 }
+```
 
-//抽象建造者类
+```php Builder.php 抽象建造者类
 abstract class Builder
 {
-    public $hero;//getter略
+    public $hero;
 
     public abstract function setHp();
+
     public abstract function setRange();
 
     public function __construct(Hero $hero)
@@ -138,8 +142,9 @@ abstract class Builder
         $this->hero = $hero;
     }
 }
+```
 
-//射手建造者
+```php ADCarryBuider.php 射手建造者
 class ADCarryBuider extends Builder
 {
     public function setHp()
@@ -151,8 +156,9 @@ class ADCarryBuider extends Builder
         $this->hero->range = 575;
     }
 }
+```
 
-//坦克建造者
+```php TankBuider.php 坦克建造者
 class TankBuider extends Builder
 {
     public function setHp()
@@ -164,8 +170,9 @@ class TankBuider extends Builder
         $this->hero->range = 125;
     }
 }
+```
 
-//建造指挥者
+```php Director.php 建造指挥者
 class Director
 {
     private $builder;
@@ -181,7 +188,9 @@ class Director
         $this->builder->setRange();
     }
 }
+```
 
+```php
 //实例化一个射手建造者
 $adcBuilder = new ADCarryBuider(new Hero);
 //实例化指挥者并建造

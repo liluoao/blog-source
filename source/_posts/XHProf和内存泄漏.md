@@ -3,7 +3,7 @@ title: XHProf和内存泄漏
 urlname: xhprof-memory-leak-in-php7
 date: 2018-12-18 13:35:48
 category: 工具
-tags: tool
+tags: xhprof
 ---
 
 ![](/images/tideways.png)
@@ -51,8 +51,9 @@ GUI 分析界面我们使用的：https://github.com/gajus/xhprof.io
 
 ## 编译PHP扩展总结
 
-在 Windows 下我们需要开启某个扩展，很容易。一般情况下，*.dll* 文件都已经躺在 *extension* 目录下，只等待你在 *php.ini* 里将它前面的 `;` 去掉。
-而在 Linux，你发现 *extensions* 目录是空空的，或许只有几个 *.so* 文件落寞地待着。
+在 Windows 下我们需要开启某个扩展，很容易。一般情况下，*.dll* 文件都已经躺在 *extension* 目录下，只等待你在 *php.ini* 里将它前面的 `;` 去掉
+
+而在 Linux，你发现 *extensions* 目录是空空的，或许只有几个 *.so* 文件落寞地待着
 
 这里以编译 *fileinfo* 扩展为例（内置扩展，如果编译的是第三方扩展请自行下载源码）
 

@@ -1,3 +1,14 @@
+mode: auto
+
+favicon: /favicon.ico
+
+toc:
+  list_number: true
+  max_depth: 6
+  min_depth: 1
+  placeholder: 很遗憾，咱没写啥目录
+  collapse: true
+
 social:
   - name: GitHub
     link: https://github.com/liluoao
@@ -24,13 +35,21 @@ social:
     icon: icon-twitter-line
     color: "#1da1f2"
 
+pages:
+
 avatar:
   enable: true
   url: /avatar.jpg
 
-favicon: /favicon.ico
+archive:
+  last_word: 无了无了
 
-pages:
+wordcloud:
+  enable: true
+
+banner:
+  enable: true
+  title: 码之气三段
 
 reward:
   enable: false
@@ -42,26 +61,14 @@ footer:
     animated: true
     color: "#ff0000"
 
-github_issues:
-  enable: true
-  username: liluoao
-  repository: blog-source
-  filters: is:issue
-
 mourn:
   enable: true
   days:
     - "5-12"
     - "9-18"
 
-albums:
+github_issues:
   enable: true
-  icon: icon-gallery-line
-  src: /js/gallery-decrypt.js
-
-girls:
-  enable: true
-
-banner:
-  enable: true
-  title: 码之气三段
+  username: liluoao
+  repository: blog-source
+  filters: is:issue

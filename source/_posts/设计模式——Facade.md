@@ -19,7 +19,7 @@ tags: design-patterns
 举这样一个例子：比如神庙逃亡、地铁跑酷这种游戏，选择角色，从开始到死亡游戏结束。
 先定义好游戏角色接口，和游戏接口
 
-```php
+```php CharacterInterface.php 游戏角色
 interface CharacterInterface
 {
     //角色死亡
@@ -28,7 +28,9 @@ interface CharacterInterface
     //获取角色名
     public function getName(): string;
 }
+```
 
+```php GameInterface.php 游戏
 interface GameInterface
 {
     //游戏设置
@@ -47,8 +49,7 @@ interface GameInterface
 
 然后是玩家感知到的一个操作门面：
 
-```php
-//对外门面
+```php Facade.php
 class Facade
 {
     private $game;
@@ -77,8 +78,9 @@ class Facade
 }
 ```
 
-具体的游戏类和角色类的实现就省略了，假装我们已经有了地铁跑酷类 `SubwaySurfers` 和琪琪（角色）类 `Tricky`
-只需要下面的代码就可以实现我们想要的功能了：
+具体的游戏类和角色类的实现就省略了
+
+假装我们已经有了地铁跑酷类 `SubwaySurfers` 和琪琪（角色）类 `Tricky`，只需要下面的代码就可以实现我们想要的功能了：
 
 ```php
 $game = new SubwaySurfers();

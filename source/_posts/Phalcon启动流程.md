@@ -3,7 +3,7 @@ title: Phalcon启动流程
 urlname: phalcon-installation-and-startup-process
 date: 2018-03-17 10:37:19
 category: PHP框架
-tags: other framework
+tags: phalcon
 ---
 
 ![](/images/phalcon.png)
@@ -106,12 +106,11 @@ Phalcon 对于结构要求不固定，单模块例子如下：
 
 ### DI 注册阶段
 
-Phalcon的所有组件服务都是通过[DI（依赖注入）](https://docs.phalcon.io/4.0/zh-cn/api/phalcon_di)进行组织的，这也是目前大部分主流框架所使用的方法
+Phalcon的所有组件服务都是通过 [DI（依赖注入）](https://docs.phalcon.io/4.0/zh-cn/api/phalcon_di)进行组织的，这也是目前大部分主流框架所使用的方法
 
 通过 DI，可以灵活的控制框架中的服务：哪些需要启用，哪些不启用，组件的内部细节等等，因此 Phalcon 是一个松耦合可替换的框架，完全可以通过 DI 替换 MVC 中任何一个组件
 
-```php public/index.php
-//line 1
+```php public/index.php line 1
 require  __DIR__ . '/../config/services.php';
 ```
 
@@ -146,8 +145,7 @@ foreach ($services as $key => $service) {
 
 而每一个服务都可以通过 DI 进行替换。接下来实例化一个标准的 MVC 应用，然后将我们定义好的 DI 注入进去
 
-```php public/index.php
-//line 2-3
+```php public/index.php line 2-3
 $application = new Phalcon\Mvc\Application();
 $application->setDI($di);
 ```
@@ -156,8 +154,7 @@ $application->setDI($di);
 
 与 DI 一样，Phalcon 建议通过引入一个独立文件的方式注册所有需要的模块：
 
-```php public/index.php
-//line 4
+```php public/index.php line 4
 require __DIR__ . '/../config/modules.php';
 ```
 
@@ -246,7 +243,6 @@ Phalcon 没有准备默认的 View 服务，需要从外部注入，如果始终
 
 HTTP 头部发送后一般把响应的内容也发送出去：
 
-```php public/index.php
-//line 5
+```php public/index.php line 5
 echo $application->handle()->getContent();
 ```

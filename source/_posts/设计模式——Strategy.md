@@ -14,12 +14,14 @@ tags: design-patterns
 
 先定义一个抽象策略，并且新增 2 个具体实现：
 
-```php
+```php Strategy.php
 abstract class Strategy
 {
     abstract function peddle();
 }
-//女性用户策略
+```
+
+```php LadyStrategy.php 女性用户策略
 class LadyStrategy extends Strategy
 {
     public function peddle()
@@ -27,7 +29,9 @@ class LadyStrategy extends Strategy
         echo '看看这款Dior豆沙色哑光口红，不行还有YSL、MAC等' . PHP_EOL;
     }
 }
-//男性用户策略
+```
+
+```php GentlemanStrategy.php 男性用户策略
 class GentlemanStrategy extends Strategy
 {
     public function peddle()
@@ -39,7 +43,7 @@ class GentlemanStrategy extends Strategy
 
 下面是需要传入策略的宣传语：
 
-```php
+```php Slogan.php 标语
 class Slogan
 {
     protected $strategy;
@@ -61,6 +65,7 @@ class Slogan
 ```php
 $ladySlogan = new Slogan(new LadyStrategy);
 $ladySlogan->request();
+
 $gentlemanSlogan = new Slogan(new GentlemanStrategy);
 $gentlemanSlogan->request();
 ```
