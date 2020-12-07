@@ -86,8 +86,11 @@ mourn:
     - "5-12"
     - "9-18"
 
+comment:
+  enable: false
+
 github_issues:
-  enable: true
+  enable: false
   username: liluoao
   repository: blog-source
   filters: is:issue
