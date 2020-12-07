@@ -41,8 +41,27 @@ avatar:
   enable: true
   url: /avatar.jpg
 
+menu:
+  home:
+    path: /
+    icon: icon-home-4-line
+  list:
+    - type: archives
+      path: /archives/
+      icon: icon-archive-line
+    - type: categories
+      path: /categories/
+      icon: icon-folder-2-line
+    - type: tags
+      path: /tags/
+      icon: icon-price-tag-3-line
+  custom:
+    title: SegmentFault
+    path: https://segmentfault.com/u/liluoao
+    icon: icon-men-line
+
 archive:
-  last_word: 无了无了
+  last_word: 无了无了_(:з」∠)_
 
 wordcloud:
   enable: true
