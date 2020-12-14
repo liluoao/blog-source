@@ -3,7 +3,7 @@ title: Golang接收上传文件
 urlname: php-upload-file-to-go-server
 date: 2020-10-23 16:47:45
 category: 杂谈
-tags: [php,golang]
+tags: [php,golang,laravel]
 ---
 
 最近业务需要用 SFTP 发送文件到对接公司的服务器中，在实现时碰到了一些问题
@@ -132,4 +132,40 @@ $sftp = ssh2_sftp($connection);
 $stream = @fopen("ssh2.sftp://$sftp$this->path/$filename", 'w+');
 fwrite($stream, $fileContent);
 fclose($stream);
+```
+
+## Laravel File Storage
+
+Laravel 内置了 Flysystem 扩展包，能够使用简单的 API 来操作，未来需要更换驱动时也方便
+
+> 在使用 SFTP 前需要下载依赖 league/flysystem-sftp ~1.0
+
+在配置文件中增加此 “磁盘” 的配置：
+
+```php config/filesystems.php
+'disks' => [
+    'remote' => [
+        'driver'   => 'sftp',//Supported Drivers: "local", "ftp", "sftp", "s3"
+        'host'     => env('REMOTE_HOST'),
+        'port'     => env('REMOTE_PORT'),
+        'username' => env('REMOTE_USER'),
+        'password' => env('REMOTE_PASSWORD'),
+        'root'     => env('REMOTE_PATH'),
+    ],
+],
+```
+
+使用门面来获取实例，以获取文件夹内所有文件名为例：
+
+```php
+$remoteDisk = Storage::disk('remote');
+dd($remoteDisk->allFiles());
+```
+
+上面的业务逻辑通过简单的 2 个方法就能完成：
+
+```php
+Storage::disk('remote')->put($filename, self::TABLE_HEADER . PHP_EOL);
+
+Storage::disk('remote')->append($filename, $content);
 ```
