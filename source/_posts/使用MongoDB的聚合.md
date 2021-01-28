@@ -40,7 +40,7 @@ tags: mongo
 
 查看文档后发现了 Mongo 的聚合 Aggregation，其中有几种实现方式
 
-![mongo-aggregation](/images/mongo-aggregation.png)
+![mongo-aggregation](https://cdn.jsdelivr.net/gh/liluoao/cdn@0.0.3/image/mongo-aggregation.png)
 
 这里分享的是管道方式，Map-Reduce和单用途聚合可以查看[官方文档](https://docs.mongodb.com/manual/aggregation/)
 
@@ -122,4 +122,4 @@ tags: mongo
 
 see `MongoDB\Collection::aggregate()`
 
-![PPT](/images/mongo-aggregation.jpg)
+![PPT](https://cdn.jsdelivr.net/gh/liluoao/cdn@0.0.3/image/mongo-aggregation.jpg)

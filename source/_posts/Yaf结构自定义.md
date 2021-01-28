@@ -6,7 +6,7 @@ category: PHP框架
 tags: yaf
 ---
 
-![](/images/yaf.png)
+![](https://cdn.jsdelivr.net/gh/liluoao/cdn@0.0.3/image/yaf.png)
 
 由于 Yaf 只提供一个 MVC 的基本骨架，所以我们有很大的开发自由度，可以实现一个自己最习惯的项目
 
@@ -14,7 +14,7 @@ tags: yaf
 
 ## 执行流程
 
-![Yaf生命流程](/images/yaf-life-cycle.png)
+![Yaf生命流程](https://cdn.jsdelivr.net/gh/liluoao/cdn@0.0.3/image/yaf-life-cycle.png)
 
 ## 实现Laravel结构
 
