@@ -39,7 +39,7 @@ pages:
 
 avatar:
   enable: true
-  url: https://cdn.jsdelivr.net/gh/liluoao/cdn@0.0.3/image/avatar.jpg
+  url: https://cdn.jsdelivr.net/gh/liluoao/cdn@0.0.4/image/avatar.jpg
 
 menu:
   home:

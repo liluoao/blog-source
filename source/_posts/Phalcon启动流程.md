@@ -6,7 +6,7 @@ category: PHP框架
 tags: phalcon
 ---
 
-![](https://cdn.jsdelivr.net/gh/liluoao/cdn@0.0.3/image/phalcon.png)
+![](https://cdn.jsdelivr.net/gh/liluoao/cdn@0.0.4/image/phalcon.png)
 
 Phalcon 是一个使用 C 编写、高性能的 PHP 框架
 
