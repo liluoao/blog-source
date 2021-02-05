@@ -6,7 +6,7 @@ category: PHP框架
 tags: [yii,laravel]
 ---
 
-![](https://cdn.jsdelivr.net/gh/liluoao/cdn@0.0.4/image/codeception.png)
+![](https://cdn.jsdelivr.net/gh/liluoao/cdn@main/image/codeception.png)
 
 最近一个老项目前端机所在的服务器之一宕机了，在更换新服务器后发现这个项目没有单元测试，在验证时比较麻烦
 

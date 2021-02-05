@@ -6,7 +6,7 @@ category: 数据库
 tags: [php,mongo]
 ---
 
-![](https://cdn.jsdelivr.net/gh/liluoao/cdn@0.0.4/image/mongodb.png)
+![](https://cdn.jsdelivr.net/gh/liluoao/cdn@main/image/mongodb.png)
 
 使用 MongoDB 的用户很多，因为它的文档型存储一些变化的内容很方便
 
@@ -218,7 +218,7 @@ $collention->findOneAndUpdate([
 
 所以在基类中引入了 [ODM](https://github.com/sokil/php-mongo)，支持链式查询的写法，使查询条件直观易理解
 
-![ODM](https://cdn.jsdelivr.net/gh/liluoao/cdn@0.0.4/image/mongo-odm.png)
+![ODM](https://cdn.jsdelivr.net/gh/liluoao/cdn@main/image/mongo-odm.png)
 
 改造了项目中老的 Mongo 操作类，引入了新 Trait
 

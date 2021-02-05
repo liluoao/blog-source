@@ -14,7 +14,7 @@ tags: [api, kong, lua]
 
 <!-- more -->
 
-![](https://cdn.jsdelivr.net/gh/liluoao/cdn@0.0.4/image/different-of-kong.png)
+![](https://cdn.jsdelivr.net/gh/liluoao/cdn@main/image/different-of-kong.png)
 
 在微服务架构之下，服务被拆的非常零散，降低了耦合度的同时也给服务的统一管理增加了难度。如上图左所示，在旧的服务治理体系之下，鉴权、限流、日志、监控等通用功能需要在每个服务中单独实现，这使得系统维护者没有一个全局的视图来统一管理这些功能。API 网关致力于解决的问题便是为微服务纳管这些通用的功能，在此基础上提高系统的可扩展性。如右图所示，微服务搭配上 API 网关，可以使得服务本身更专注于自己的领域，很好地对服务调用者和服务提供者做了隔离。
 
@@ -38,7 +38,7 @@ tags: [api, kong, lua]
 
 重点需要关注的是 11 个用户可介入阶段：
 
-![ngx_lua 的 11 个用户可介入阶段](https://cdn.jsdelivr.net/gh/liluoao/cdn@0.0.4/image/openresty_phases.png)
+![ngx_lua 的 11 个用户可介入阶段](https://cdn.jsdelivr.net/gh/liluoao/cdn@main/image/openresty_phases.png)
 
 对比这些阶段，再看 Kong 框架的入口文件，就容易理解的多了：
 

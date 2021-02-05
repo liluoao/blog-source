@@ -6,7 +6,7 @@ category: PHP框架
 tags: laravel
 ---
 
-![](https://cdn.jsdelivr.net/gh/liluoao/cdn@0.0.4/image/laravel-top-package.png)
+![](https://cdn.jsdelivr.net/gh/liluoao/cdn@main/image/laravel-top-package.png)
 
 今天介绍两个 Laravel5 中非常受欢迎的包和 Carbon
 
