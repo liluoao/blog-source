@@ -5,7 +5,7 @@ urlname: workspace-enviroment-backup
 category: 杂谈
 ---
 
-由于几个星期内经历了新电脑报修、换旧电脑、再配了台全新的电脑这一系列操作，所以有必要把整个操作记录下来，以备不时之需
+由于几个星期内经历了入职配的新电脑报修、换旧电脑、配新电脑一系列操作，所以有必要把整个操作记录下来，以备不时之需😅
 
 <!-- more -->
 
@@ -19,13 +19,13 @@ category: 杂谈
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [Sublime Text](https://www.sublimetext.com/)
 - [Typora](https://typora.io/)
-- XMind
+- [XMind](https://www.xmind.cn/)
 
-先下个 Chrome 把书签同步回来，咱需要用到 [ShadowsocksX-NG](https://github.com/shadowsocks/ShadowsocksX-NG)
+先下个 Chrome 把书签同步回来，咱需要用到 [ShadowsocksX-NG](https://github.com/shadowsocks/ShadowsocksX-NG) 来登录
 
 安装 XCode Command Line Tools
 
-```
+```bash
 xcode-select --install
 ```
 
@@ -50,7 +50,7 @@ cd rpc-app-base
 docker-compose up -d
 ```
 
-Git 设置下用户名
+Git 设置下用户名，在公司里用花名🤣
 
 ```
 git config --global user.name "斯内普"
@@ -70,7 +70,7 @@ brew tap shivammathur/php
 brew install php@7.4
 ```
 
-安装 `Composer` 并回退版本
+安装 `Composer` 并回退版本（部分项目依赖需要）
 
 ```
 brew install composer
@@ -81,7 +81,7 @@ composer config -g repo.packagist composer https://packagist.phpcomposer.com
 
 ## Apache
 
-有个本地项目独立在微服务外，那就安排个 Web 服务器
+有个项目独立在微服务外，那就安排个 Web 服务器
 
 ```
 brew install httpd
@@ -128,7 +128,7 @@ sudo apachectl restart
 
 ## PHP扩展
 
-安装提到过的 `SSH2` 扩展
+安装 `SSH2` 扩展（传文件的业务）
 
 ```
 brew install libssh2
@@ -150,7 +150,7 @@ open -e /usr/local/etc/php/7.4/php.ini
 
 ## 博客
 
-顺便装下这个项目需要的环境
+顺便装下咱这个项目需要的环境
 
 ```
 brew install node
@@ -161,7 +161,7 @@ npm install
 npm install hexo-cli -g
 ```
 
-下载子模块
+下载子模块（主题）
 
 ```
 git submodule init

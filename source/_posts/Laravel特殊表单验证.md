@@ -6,6 +6,8 @@ category: PHP框架
 tags: laravel
 ---
 
+举几个密码、数组、数据库唯一的例子🧏‍♂️
+
 <!-- more -->
 
 ## 表单验证
