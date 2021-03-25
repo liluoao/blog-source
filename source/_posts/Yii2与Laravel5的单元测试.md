@@ -8,11 +8,11 @@ tags: [yii,laravel]
 
 ![](https://cdn.jsdelivr.net/gh/liluoao/cdn@main/image/codeception.png)
 
+<!-- more -->
+
 最近一个老项目前端机所在的服务器之一宕机了，在更换新服务器后发现这个项目没有单元测试，在验证时比较麻烦
 
 现在需要一步步为这个 Yii2.0.12 项目引入单元测试
-
-<!-- more -->
 
 ## Yii2 Codeception
 

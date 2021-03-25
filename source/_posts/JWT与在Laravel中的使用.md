@@ -8,9 +8,9 @@ tags: [laravel, api]
 
 ![](https://cdn.jsdelivr.net/gh/liluoao/cdn@main/image/jwt-laravel.png)
 
-[JWT](https://jwt.io/introduction/) (Json web token)，是为了在网络应用环境间传递声明而执行的一种基于 JSON 格式的开放标准 ([RFC 7519](https://tools.ietf.org/html/rfc7519))，它一般被用来做身份认证。
-
 <!-- more -->
+
+[JWT](https://jwt.io/introduction/) (Json web token)，是为了在网络应用环境间传递声明而执行的一种基于 JSON 格式的开放标准 ([RFC 7519](https://tools.ietf.org/html/rfc7519))，它一般被用来做身份认证。
 
 我们来对比一下基于 Token 的认证和传统的 SESSION 认证
 

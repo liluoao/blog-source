@@ -1,6 +1,6 @@
 ---
-title: XHProf和内存泄漏
-urlname: xhprof-memory-leak-in-php7
+title: XHProf和扩展编译
+urlname: xhprof-and-compiler-extension
 date: 2018-12-18 13:35:48
 category: 工具
 tags: xhprof
@@ -8,11 +8,9 @@ tags: xhprof
 
 ![](https://cdn.jsdelivr.net/gh/liluoao/cdn@main/image/tideways.png)
 
-最近我们认证中心部门将定时脚本切换为 `PHP7` 命令执行时，发现过一段时间脚本就内存泄漏，且该释放内存的地方都做了处理。
-
 <!-- more -->
 
-经过一段时间排查后发现是 XHProf 造成的，关闭后就可以了
+最近部门将定时脚本切换为 `PHP7` 命令执行时，发现过一段时间脚本就内存泄漏，且该释放内存的地方都做了处理，经过排查后发现是 XHProf 造成的，关闭后就正常。
 
 XHProf 是 **Facebook** 开源的一个轻量级的 PHP 性能分析工具，跟 Xdebug 类似，但性能开销更低。可以用在生产环境中，也可以由程序开关来控制是否进行 profile
 
@@ -57,7 +55,7 @@ GUI 分析界面我们使用的：https://github.com/gajus/xhprof.io
 
 这里以编译 *fileinfo* 扩展为例（内置扩展，如果编译的是第三方扩展请自行下载源码）
 
-#### 找到扩展包
+### 找到扩展包
 
 你需要到 PHP 源码包里寻找，希望源码包没被你删除。
 
@@ -67,7 +65,7 @@ GUI 分析界面我们使用的：https://github.com/gajus/xhprof.io
 cd ./php/ext/fileinfo
 ```
 
-#### 编译
+### 编译
 
 ```bash
 /usr/local/php/bin/phpize
@@ -82,7 +80,7 @@ make && make install
 没有意外的话，经过上面的编译，你会生成：*php/lib/php/extensions/fileinfo.so*
 扩展目录根据 *php.ini* 的 `extension_dir` 来找
 
-#### 添加配置
+### 添加配置
 
 最后只需要在配置里把扩展添加进去就好了
 

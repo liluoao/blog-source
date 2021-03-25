@@ -8,9 +8,9 @@ tags: phalcon
 
 ![](https://cdn.jsdelivr.net/gh/liluoao/cdn@main/image/phalcon.png)
 
-Phalcon 是一个使用 C 编写、高性能的 PHP 框架
-
 <!-- more -->
+
+Phalcon 是一个使用 C 编写、高性能的 PHP 框架
 
 Windows 用户下载 *.dll* 文件，加入 *php.ini* ：
 

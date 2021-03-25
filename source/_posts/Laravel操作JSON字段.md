@@ -6,9 +6,7 @@ category: PHP框架
 tags: [laravel, mysql]
 ---
 
-MySQL 5.7.8 开始支持 JSON 类型
-
-Laravel 从 5.3 开始加入了 JSON 类型支持
+MySQL 5.7.8 开始支持 JSON 类型，Laravel 从 5.3 开始加入了 JSON 类型支持
 
 下面用一个示例表来学习本类型的 CURD
 

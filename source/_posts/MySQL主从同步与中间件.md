@@ -10,7 +10,7 @@ tags: mysql
 
 实际工作中，大部分项目和业务都是读多写少。为了保证高可用性，提升读速度，一般会采用读写分离、一主多从的数据库架构。
 
-但是主从同步是延时的，如果在写操作同步完成前发生了读操作，就会导致脏读，如何解决？
+但是主从同步是延时的，如果在写操作同步完成前发生了读操作，就会导致脏读，如何解决🧐
 
 <!-- more -->
 
@@ -71,7 +71,7 @@ plugin-load="rpl_semi_sync_master:semisync_master.so;rpl_semi_sync_slave:semisyn
 
 社区爱好者在阿里 Cobar 基础上进行二次开发，解决了 Cobar 的一些问题，且加入了新的功能
 
-![](https://cdn.jsdelivr.net/gh/liluoao/cdn@main/image/mycat.jpg)
+![](https://cdn.jsdelivr.net/gh/liluoao/cdn@main/image/mycat.jpeg)
 
 1. 遵守 MySQL 原生协议
 
@@ -85,7 +85,7 @@ plugin-load="rpl_semi_sync_master:semisync_master.so;rpl_semi_sync_slave:semisyn
 
 6. 安全，IP 白名单、SQL 注入攻击拦截、prepare 预编译
 
-![](https://cdn.jsdelivr.net/gh/liluoao/cdn@main/image/mycat-tool.jpg)
+![](https://cdn.jsdelivr.net/gh/liluoao/cdn@main/image/mycat-tool.jpeg)
 
 #### DBproxy
 
