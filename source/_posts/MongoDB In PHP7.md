@@ -101,7 +101,7 @@ composer require mongodb/mongodb
 
 ## MongoDB 操作包与旧 Mongo 对比
 
-### 1.连接
+### 连接
 
 ```php
 //old
@@ -110,7 +110,7 @@ new MongoClient();
 new MongoDB\Client();
 ```
 
-### 2.新增
+### 新增
 
 ```php
 //old
@@ -122,7 +122,7 @@ $resultMany = $collention->insertMany($array, $options);//多
 $count = $resultMany->getInsertedCount();
 ```
 
-### 3.修改
+### 修改
 
 ```php
 //old
@@ -143,7 +143,7 @@ $updateResult = $collection->updateMany(
 $count = $updateResult->getModifiedCount();
 ```
 
-### 4.查询
+### 查询
 
 ```php
 //old
@@ -168,7 +168,7 @@ $cursor = $collection->find($condition, [
 ]);
 ```
 
-### 5.删除
+### 删除
 
 ```php
 //old
