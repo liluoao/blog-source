@@ -4,7 +4,7 @@ environment:
     access_token:
         secure: 855kciMXrCGEcKW+P87C5nMrvYN47FH/Zjz9yHjZ53yeijLyb6/0oZ4CVv7j0VbE
 install:
-    - ps: Install-Product node 10.13
+    - ps: Install-Product node 16.4
     - node --version
     - npm --version
     - npm i npm@latest -g
