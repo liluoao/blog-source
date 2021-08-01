@@ -4,7 +4,7 @@ date: 2018-10-12 10:47:16
 type: about
 ---
 
-在决定写自己的博客时，了解了几款市面上的博客系统，最后选择了使用人数多、自由度高的 [Hexo](https://hexo.io/zh-cn/docs/)
+了解了市面上的几款博客系统，最后选择了使用人数多、自由度高的 [Hexo](https://hexo.io/zh-cn/docs/)
 
 ## Hexo
 
@@ -74,7 +74,7 @@ hexo deploy
 
 可以使用 GitHub 账号授权登陆，快速导入自己的项目。在 `/projects` 页面选择你的博客源码仓库
 
-点击项目中 `SETTINGS` 选项卡，如果项目分支不是默认的，修改 `Default branch` 
+点击项目中 `SETTINGS` 选项卡，如果项目分支不是默认的，修改 `Default branch`
 
 再点击 `Environment` 栏目，设置如下 4 个环境变量：
 
@@ -116,7 +116,7 @@ environment:
     access_token:
         secure: # 自己的加密token
 install:
-    - ps: Install-Product node 6.9 # 默认node版本太老，具体版本根据包要求来
+    - ps: Install-Product node ''
     - node --version
     - npm --version
     - npm install
