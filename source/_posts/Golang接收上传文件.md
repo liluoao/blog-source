@@ -6,13 +6,11 @@ category: 杂谈
 tags: golang
 ---
 
-最近业务对接需要用 SFTP 发送文件到对方服务器中🤨
+一个 Golang 的简单尝试
 
 <!-- more -->
 
-## Golang 接收上传文件
-
-一开始由于公司已经有个 Golang 实现的 SFTP 下载文件的服务，所以在它的基础上增加了上传功能
+由于公司已经有个 Golang 实现的 SFTP 下载文件的服务，所以在它的基础上增加了上传功能
 
 ```go
 func (s *Server) Upload(w http.ResponseWriter, r *http.Request) {
@@ -59,7 +57,7 @@ fileHeader := r.MultipartForm.File["xxx"][0]
 
 在搜索解决方案时，都说是请求头不对，不要加
 
-但是这个请求头是 Guzzlehttp 自己生成的，我手动改写后又返回了其它错误，例如 **no multipart boundary param in Content-Type**
+但是这个请求头是 GuzzleHttp 自己生成的，我手动改写后又返回了其它错误，例如 **no multipart boundary param in Content-Type**
 
 我想，这种不行就换种吧，直接整个 body 放文件流
 
@@ -69,7 +67,7 @@ $response = (new Client())->post($this->apiUrlRoot.'/upload', [
         'token'    => $this->token,
         'filename' => $filename,
     ],
-    'body'      => torage::readStream($filename),
+    'body'      => Storage::readStream($filename),
 ]);
 ```
 
@@ -81,9 +79,9 @@ _, _ = io.Copy(dstFile, r.Body)
 
 再经过一次次的测试后，目标文件总是空的，打印请求的内容也是
 
-这让我陷入了思考，到底是哪出了问题（滑稽，所以在两种方法间横跳
+陷入沉思，到底是哪出了问题（滑稽，所以在两种方法间横跳
 
-回到表单方法，发到本地测试的 PHP 服务上，打印 $_FILES，成功显示
+回到表单方法，发到本地测试的 PHP 服务上，打印 `$_FILES`，成功显示
 
 然后在网上各种搜 Golang 上传文件的例子看，也没看出有啥区别，所以就请教了公司大佬
 
