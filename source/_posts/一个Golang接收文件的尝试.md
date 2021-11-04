@@ -1,12 +1,10 @@
 ---
-title: Golang接收上传文件
+title: 一个Golang接收文件的尝试
 urlname: golang-receive-upload-file
 date: 2020-10-23 16:47:45
 category: 杂谈
 tags: golang
 ---
-
-一个 Golang 的简单尝试
 
 <!-- more -->
 

@@ -1,12 +1,10 @@
 ---
-title: PHP传递文件
-urlname: php-send-file
+title: 用SFTP传个文件
+urlname: use-sftp-send-file
 date: 2020-10-25 16:47:45
 category: 杂谈
-tags: php
+tags: [php, laravel]
 ---
-
-文件传递是个比较常见的业务。
 
 <!-- more -->
 
