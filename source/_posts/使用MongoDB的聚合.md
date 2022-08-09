@@ -122,4 +122,4 @@ tags: mongo
 
 see `MongoDB\Collection::aggregate()`
 
-![PPT](https://cdn.jsdelivr.net/gh/liluoao/cdn@main/image/mongo-aggregation.jpg)
+![PPT](https://i.imgtg.com/2022/08/09/A4zdp.jpg)

@@ -6,7 +6,7 @@ category: PHP框架
 tags: [laravel, api]
 ---
 
-![](https://cdn.jsdelivr.net/gh/liluoao/cdn@main/image/jwt-laravel.png)
+![](https://i.imgtg.com/2022/08/09/A4TFi.png)
 
 <!-- more -->
 
@@ -47,7 +47,7 @@ Token 一般放在请求头里
 
 JWT 是由三段信息构成的，将这三段用 `"."` 连接在一起就构成了 JWT 字符串
 
-![JWT格式](https://cdn.jsdelivr.net/gh/liluoao/cdn@main/image/jwt.png)
+![JWT格式](https://i.imgtg.com/2022/08/09/A4W9t.png)
 
 第一部分我们称它为**头部（Header)**，第二部分我们称其为**载荷（Payload）**，第三部分是**签证（Signature)**
 
@@ -121,7 +121,7 @@ fetch('api/user/1', {
 
 服务端会验证 Token，如果验证通过就会返回相应的资源:
 
-![客户端与服务端的交互](https://cdn.jsdelivr.net/gh/liluoao/cdn@main/image/jwt-http.png)
+![客户端与服务端的交互](https://i.imgtg.com/2022/08/09/AtWKD.png)
 
 ## 优点总结
 

@@ -6,7 +6,7 @@ category: 数据库
 tags: mysql
 ---
 
-![](https://cdn.jsdelivr.net/gh/liluoao/cdn@main/image/master-and-slave-database.png)
+![](https://i.imgtg.com/2022/08/09/A4xvj.png)
 
 实际工作中，大部分项目和业务都是读多写少。为了保证高可用性，提升读速度，一般会采用读写分离、一主多从的数据库架构。
 
@@ -16,7 +16,7 @@ tags: mysql
 
 ### 半同步复制
 
-![半同步复制](https://cdn.jsdelivr.net/gh/liluoao/cdn@main/image/semi-sync.jpg)
+![半同步复制](https://i.imgtg.com/2022/08/09/ADNQS.jpg)
 
 普通的主从同步是使用 MySQL 的异步复制，依靠二进制日志（binary log）进行
 
@@ -59,7 +59,7 @@ plugin-load="rpl_semi_sync_master:semisync_master.so;rpl_semi_sync_slave:semisyn
 
 [apache/shardingsphere](https://github.com/apache/shardingsphere) 是当当应用框架 ddframe 中，从关系型数据库模块 dd-rdb 中分离出来的数据库水平分片框架
 
-![](https://cdn.jsdelivr.net/gh/liluoao/cdn@main/image/shardingsphere.png)
+![](https://i.imgtg.com/2022/08/09/ADeCN.png)
 
 1. 以 jar 包形式提供服务
 
@@ -85,7 +85,7 @@ plugin-load="rpl_semi_sync_master:semisync_master.so;rpl_semi_sync_slave:semisyn
 
 6. 安全，IP 白名单、SQL 注入攻击拦截、prepare 预编译
 
-![](https://cdn.jsdelivr.net/gh/liluoao/cdn@main/image/mycat-tool.jpeg)
+![](https://i.imgtg.com/2022/08/09/A4eRr.jpg)
 
 #### DBproxy
 

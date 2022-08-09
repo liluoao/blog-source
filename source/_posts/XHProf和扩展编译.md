@@ -6,7 +6,7 @@ category: 工具
 tags: xhprof
 ---
 
-![](https://cdn.jsdelivr.net/gh/liluoao/cdn@main/image/tideways.png)
+![](https://i.imgtg.com/2022/08/09/ADZ6i.png)
 
 <!-- more -->
 

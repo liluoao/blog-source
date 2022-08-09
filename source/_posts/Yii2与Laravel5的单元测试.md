@@ -6,7 +6,7 @@ category: PHP框架
 tags: [yii,laravel]
 ---
 
-![](https://cdn.jsdelivr.net/gh/liluoao/cdn@main/image/codeception.png)
+![](https://i.imgtg.com/2022/08/09/AtODc.png)
 
 <!-- more -->
 

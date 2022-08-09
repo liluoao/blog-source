@@ -6,7 +6,7 @@ category: PHP框架
 tags: [laravel, api]
 ---
 
-![](https://cdn.jsdelivr.net/gh/liluoao/cdn@main/image/dingo.png)
+![](https://i.imgtg.com/2022/08/09/At5pG.png)
 
 <!-- more -->
 
