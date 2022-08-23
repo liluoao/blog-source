@@ -17,6 +17,7 @@
     "hexo-renderer-marked": "^2.0.0",
     "hexo-renderer-stylus": "^0.3.3",
     "hexo-server": "^0.2.0",
+    "hexo-theme-yun": "^1.10.6",
     "popper.js": "^1.16.0"
   }
 }

@@ -2,9 +2,10 @@
 title: Laravel特殊表单验证
 urlname: special-form-validation-in-laravel
 date: 2018-07-16 11:52:14
-category: PHP框架
-tags: laravel
+category: Laravel
 ---
+
+![](https://i.imgtg.com/2022/08/23/K68mB.png)
 
 举几个密码、数组、数据库唯一的例子🧏‍♂️
 

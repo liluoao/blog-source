@@ -2,9 +2,11 @@
 title: MySQL规范与优化
 urlname: mysql-specification-and-optimization
 date: 2019-11-15 23:36:42
-category: 数据库
+category: Database
 tags: mysql
 ---
+
+![](https://i.imgtg.com/2022/08/23/K6j2l.jpg)
 
 主要从优化库表结构、使用合适的索引、优化查询等方面
 

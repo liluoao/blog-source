@@ -2,8 +2,7 @@
 title: Yii2与Laravel5的单元测试
 urlname: yii-codeception-and-laravel-phpunit
 date: 2019-08-02 17:03:53
-category: PHP框架
-tags: [yii,laravel]
+category: Laravel
 ---
 
 ![](https://i.imgtg.com/2022/08/09/AtODc.png)

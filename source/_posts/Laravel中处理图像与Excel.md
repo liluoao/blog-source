@@ -2,8 +2,7 @@
 title: Laravel中处理图像与Excel
 urlname: image-and-excel-in-laravel
 date: 2018-05-03 14:36:58
-category: PHP框架
-tags: laravel
+category: Laravel
 ---
 
 ![](https://i.imgtg.com/2022/08/09/A4UPX.png)

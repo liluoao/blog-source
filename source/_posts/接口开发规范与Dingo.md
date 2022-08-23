@@ -2,8 +2,7 @@
 title: 接口开发规范与Dingo
 urlname: use-dingo-api-and-interface-development
 date: 2018-10-10 10:42:37
-category: PHP框架
-tags: [laravel, api]
+category: Laravel
 ---
 
 ![](https://i.imgtg.com/2022/08/09/At5pG.png)

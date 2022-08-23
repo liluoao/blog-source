@@ -2,9 +2,11 @@
 title: 初识MongoDB的聚合
 urlname: use-mongodb-aggregation
 date: 2019-05-28 10:15:54
-category: 数据库
+category: Database
 tags: mongo
 ---
+
+![](https://i.imgtg.com/2022/08/23/K8xCY.png)
 
 最近需要做个统计，计算一个销售或部门（n 个销售），在一段时间内（n 天）的成交数据
 
@@ -40,7 +42,7 @@ tags: mongo
 
 查看文档后发现了 Mongo 的聚合 Aggregation，其中有几种实现方式
 
-![mongo-aggregation](https://cdn.jsdelivr.net/gh/liluoao/cdn@main/image/mongo-aggregation.png)
+![mongo-aggregation](https://i.imgtg.com/2022/08/23/K28aU.png)
 
 这里分享的是管道方式，Map-Reduce和单用途聚合可以查看[官方文档](https://docs.mongodb.com/manual/aggregation/)
 

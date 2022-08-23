@@ -2,8 +2,8 @@
 title: MongoDB In PHP7
 urlname: use-mongodb-in-php-7
 date: 2018-07-23 18:54:24
-category: 数据库
-tags: [php,mongo]
+category: Database
+tags: mongo
 ---
 
 ![](https://i.imgtg.com/2022/08/09/A4NFc.png)

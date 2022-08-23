@@ -2,9 +2,10 @@
 title: 用SFTP传个文件
 urlname: use-sftp-send-file
 date: 2020-10-25 16:47:45
-category: 杂谈
-tags: [php, laravel]
+category: Laravel
 ---
+
+![](https://i.imgtg.com/2022/08/23/K85bX.png)
 
 <!-- more -->
 

@@ -6,6 +6,8 @@ category: 杂谈
 tags: golang
 ---
 
+![](https://i.imgtg.com/2022/08/23/K8Bmt.jpg)
+
 <!-- more -->
 
 由于公司已经有个 Golang 实现的 SFTP 下载文件的服务，所以在它的基础上增加了上传功能

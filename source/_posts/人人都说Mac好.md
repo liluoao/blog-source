@@ -5,6 +5,8 @@ urlname: workspace-enviroment-backup
 category: 杂谈
 ---
 
+![](https://i.imgtg.com/2022/08/23/K63Aa.jpg)
+
 入职配的新 Mac Pro 坏了，换了一台旧的 Air，没用多久就修好了。然后又换了台新 Pro 用，今天记录下要装的东西。
 
 > 2021-10更新，自己买了台真香，用迁移助理就搞定了🥶

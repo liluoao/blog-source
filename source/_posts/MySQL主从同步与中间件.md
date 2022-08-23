@@ -2,7 +2,7 @@
 title: MySQL主从同步与中间件
 urlname: consistency-of-master-and-slave-database
 date: 2020-01-22 13:45:49
-category: 数据库
+category: Database
 tags: mysql
 ---
 
@@ -71,7 +71,7 @@ plugin-load="rpl_semi_sync_master:semisync_master.so;rpl_semi_sync_slave:semisyn
 
 社区爱好者在阿里 Cobar 基础上进行二次开发，解决了 Cobar 的一些问题，且加入了新的功能
 
-![](https://cdn.jsdelivr.net/gh/liluoao/cdn@main/image/mycat.jpeg)
+![](/images/mycat.jpeg)
 
 1. 遵守 MySQL 原生协议
 
