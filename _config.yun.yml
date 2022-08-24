@@ -4,8 +4,8 @@ favicon: /favicon.ico
 
 bg_image:
   enable: true
-  url: https://i.imgtg.com/2022/08/24/K3FcG.jpg
-  dark: /images/bg.jpg
+  url: https://i.imgtg.com/2022/08/24/K31LD.jpg
+  dark: https://i.imgtg.com/2022/08/24/K3FcG.jpg
 
 toc:
   list_number: true
