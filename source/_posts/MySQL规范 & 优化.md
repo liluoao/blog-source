@@ -6,7 +6,7 @@ category: Database
 tags: mysql
 ---
 
-![mysql优化](https://i.imgtg.com/2022/08/23/K6j2l.jpg)
+![mysql优化](https://i.imgtg.com/2022/08/24/K3rPP.png)
 
 <!-- more -->
 

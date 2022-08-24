@@ -1,11 +1,11 @@
 ---
-title: 初识大中台
+title: About 大中台
 urlname: about-middle-office
 date: 2019-12-07 16:20:59
 category: 分享
 ---
 
-![](https://i.imgtg.com/2022/08/23/K66bg.png)
+![大中台](https://i.imgtg.com/2022/08/23/K66bg.png)
 
 <!-- more -->
 
