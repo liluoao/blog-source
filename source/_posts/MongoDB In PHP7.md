@@ -6,15 +6,15 @@ category: Database
 tags: mongo
 ---
 
-![](https://i.imgtg.com/2022/08/09/A4NFc.png)
+![mongodb slogan](https://i.imgtg.com/2022/08/09/A4NFc.png)
+
+<!-- more -->
 
 使用 MongoDB 的用户很多，因为它的文档型存储一些变化的内容很方便
 
 在 PHP5 及以前，官方提供了两个扩展，[Mongo](http://php.net/manual/zh/book.mongo.php) 和 [MongoDB](http://php.net/manual/zh/set.mongodb.php)，其中 Mongo 是对以 `MongoClient` 等几个核心类为基础的类群进行操作，封装得很方便，所以基本上都会选择 Mongo 扩展。
 
 但是随着 PHP 升级到 PHP7，官方不再支持 Mongo 扩展，只支持 MongoDB，所以怎么把 Mongo 无缝替换成 MongoDB 成为了一个亟待解决的问题
-
-<!-- more -->
 
 MongoDB 引入了命名空间，但是功能封装非常差，如果非要用原生的扩展，几乎意味着写原生的 Mongo 语句
 

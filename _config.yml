@@ -59,7 +59,7 @@ prismjs:
 # order_by: Posts order. (Order by date descending by default)
 index_generator:
   path: ''
-  per_page: 7
+  per_page: 20
   order_by: -date
   
 # Category & Tag
@@ -73,6 +73,7 @@ category_map:
   Database: database
   分享: share
   Vue: vue
+  Bilibili: bilibili
 tag_map:
 
 # Date / Time format
@@ -84,7 +85,7 @@ time_format: HH:mm:ss
 
 # Pagination
 ## Set per_page to 0 to disable pagination
-per_page: 20
+per_page: 0
 pagination_dir: page
 
 # Extensions

@@ -6,9 +6,11 @@ category: PHP框架
 tags: yii
 ---
 
-对于公司千万级的客户数据，在数据库查询时要特别小心，避免出现内存溢出与慢查询的问题
+![big data](https://i.imgtg.com/2022/08/24/KI4BM.jpg)
 
 <!-- more -->
+
+对于公司千万级的客户数据，在数据库查询时要特别小心，避免出现内存溢出与慢查询的问题
 
 Yii2 [大数据处理](https://www.yiiframework.com/doc/guide/2.0/en/db-query-builder#batch-query) 官方文档中是这样说的：
 
@@ -76,7 +78,6 @@ $unbufferedDb->close();
 ```
 
 在项目的 [Issue](https://github.com/yiisoft/yii2/issues/8420#issuecomment-296109257) 中举了个很常见的例子，**使用数字类型的主键或索引循环取**，这也是最常用的解决方法。
-
 
 ## 分页
 
