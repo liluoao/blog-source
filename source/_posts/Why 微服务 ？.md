@@ -5,7 +5,7 @@ urlname: about-micro-services
 category: 分享
 ---
 
-![微服务](https://i.imgtg.com/2022/08/24/K3A9b.png)
+![许光汉](https://i.imgtg.com/2022/08/27/ZF4Tt.jpg)
 
 <!-- more -->
 
@@ -46,6 +46,8 @@ category: 分享
 此场景，与平时调用第三方 API 类似，都属于远端调用
 
 第三方 API 可以释放开发人员大量的时间成本
+
+![微服务](https://i.imgtg.com/2022/08/24/K3A9b.png)
 
 ## 服务 -> 微服务
 

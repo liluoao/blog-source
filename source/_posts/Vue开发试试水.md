@@ -5,6 +5,10 @@ urlname: use-vue-js-in-frontend-develop
 category: Vue
 ---
 
+![Vue logo](https://i.imgtg.com/2022/08/27/Zz8pX.png)
+
+<!--more-->
+
 之前和很多位前端合作开发过项目，对 `Vue` 有一点了解，今天就用 `Vue` + `Element UI` 来实际开发项目
 
 从现成的 [Vue Element Admin](https://panjiachen.github.io/vue-element-admin-site/zh/guide/) 新建项目，目录如下：
@@ -211,3 +215,5 @@ created() {
     this.fetchData()
 }
 ```
+
+![龙与梯田](https://i.imgtg.com/2022/08/27/ZFQLY.webp)
