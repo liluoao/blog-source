@@ -5,7 +5,7 @@ urlname: upload-file-with-vue-js
 category: Vue
 ---
 
-![](https://i.imgtg.com/2022/08/23/K8m8b.png)
+![上传文件](https://i.imgtg.com/2022/08/23/K8m8b.png)
 
 <!-- more -->
 
@@ -19,7 +19,7 @@ npm install xlsx
 
 此时没有限制包版本，跑起来时候报了个错：
 
-> export 'default' (imported as 'XLSX') was not found in 'xlsx'
+> `export 'default' (imported as 'XLSX') was not found in 'xlsx'`
 
 经过尝试后把版本降到 0.16 后解决
 
