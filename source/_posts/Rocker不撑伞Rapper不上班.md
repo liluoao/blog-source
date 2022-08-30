@@ -37,7 +37,7 @@ category: Python
 
 > 支持定时 `schedule` 与手动 `workflow_dispatch` 执行脚本 *main.py*，并且把设置中写的配置读出来
 
-```yml .github/workflows/main.yml
+```yaml .github/workflows/main.yml
 name: morning
 on:
   schedule:
