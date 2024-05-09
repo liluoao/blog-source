@@ -1,9 +1,12 @@
 mode: auto
 
+# image setting
 favicon: /favicon.ico
-
-bg_image:
+avatar:
   enable: true
+  url: https://i.imgtg.com/2022/08/09/AR3SY.jpg
+bg_image:
+  enable: false
   url: https://i.imgtg.com/2022/08/24/K31LD.jpg
   dark: https://i.imgtg.com/2022/08/24/K3FcG.jpg
 
@@ -11,9 +14,83 @@ toc:
   list_number: true
   max_depth: 6
   min_depth: 1
-  placeholder: 很遗憾，咱没写啥目录
+  placeholder: 暂无目录
   collapse: true
 
+archive:
+  last_word: 感谢观看
+
+banner:
+  enable: true
+  title: 大梦成空
+
+reward:
+  enable: false
+
+footer:
+  since: 2018
+  icon:
+    name: ri:heart-line
+    animated: true
+    color: "#ff0000"
+  powered:
+    enable: true
+
+comment:
+  enable: false
+
+github_issues:
+  enable: false
+  username: liluoao
+  repository: blog-source
+  filters: is:issue
+
+# 名言
+say:
+  api: https://cdn.jsdelivr.net/gh/ElpsyCN/say@gh-pages/sentences.json
+  hitokoto:
+    enable: true
+    api: https://v1.hitokoto.cn
+
+post_meta:
+  item_text: false
+  created_at: true
+  updated_at: false
+  categories: true
+  tags: false
+
+# 透明度
+post_card:
+  opacity: 0.5
+
+# edit link
+post_edit:
+  enable: true
+  url: https://github.com/liluoao/blog-source/tree/master/source/
+
+# 默哀
+mourn:
+  enable: true
+  days:
+    - 4-4
+    - 5-12
+    - 9-18
+
+# Algorithmically generated triangle art
+# https://github.com/qrohlf/trianglify
+trianglify:
+  enable: true
+  cellSize: 75
+  width: 1980
+  height: 1600
+  palette: '["YlGnBu", "GnBu", "Purples", "Blues"]'
+  opacity: 0.5
+
+# Material Design Cursors
+cursor:
+  enable: true
+
+# category color
 categories:
   Laravel: '#F4645F'
   Vue: '#4fc08d'
@@ -22,9 +99,12 @@ categories:
   设计模式: '#ff9933'
   工具: '#5298d1'
   分享: '#ff66ff'
-  Bilibili: '#ff99cc'
   Python: '#3366ff'
 
+wordcloud:
+  enable: true
+
+# social link
 social:
   - name: GitHub
     link: https://github.com/liluoao
@@ -51,53 +131,5 @@ social:
     icon: ri:twitter-line
     color: "#1da1f2"
 
+# 侧边栏链接
 pages:
-
-avatar:
-  enable: true
-  url: https://i.imgtg.com/2022/08/09/AR3SY.jpg
-
-archive:
-  last_word: 无了无了_(:з」∠)_
-
-wordcloud:
-  enable: true
-
-banner:
-  enable: true
-  title: 码之气三段
-
-reward:
-  enable: false
-
-footer:
-  since: 2018
-  icon:
-    name: ri:heart-line
-    animated: true
-    color: "#ff0000"
-
-comment:
-  enable: false
-
-github_issues:
-  enable: false
-  username: liluoao
-  repository: blog-source
-  filters: is:issue
-
-post_edit:
-  enable: true
-  url: https://github.com/liluoao/blog-source/tree/master/source/
-
-say:
-  api: https://el-bot-api.vercel.app/api/words/young
-  hitokoto:
-    enable: false
-
-post_meta:
-  item_text: false
-  created_at: true
-  updated_at: false
-  categories: true
-  tags: false

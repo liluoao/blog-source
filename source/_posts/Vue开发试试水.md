@@ -115,7 +115,7 @@ handleFilter() {
 
 单元格点击方法是统一触发的，需要自己判断是哪一列：
 
-> 需要实现`电话`字段需要默认展示中间带 * 号的，点击一次显示不带 * 的，第二次复制到剪贴板
+> 需要实现`电话`字段需要默认展示中间带 *号的，点击一次显示不带* 的，第二次复制到剪贴板
 
 ```js
 handleCellClick(row, column, cell, event) {
@@ -215,5 +215,3 @@ created() {
     this.fetchData()
 }
 ```
-
-![龙与梯田](https://i.imgtg.com/2022/08/27/ZFQLY.webp)

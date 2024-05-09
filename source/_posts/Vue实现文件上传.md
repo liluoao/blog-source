@@ -289,5 +289,3 @@ public function rules (): array {
     ];
 }
 ```
-
-![潜龙勿用](https://i.imgtg.com/2022/08/27/ZFSuv.webp)

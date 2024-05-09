@@ -55,4 +55,4 @@ category: 分享
 
 目前中台还处于完善阶段，除了接口，还添加了 UI 组件、ELK 日志及图表、Mock 工具、公共 Kafka 等
 
-![目前提供的服务](/images/arsenal-service.jpg)
+![目前提供的服务](https://ooo.0x0.ooo/2024/05/09/OJamSi.jpg)

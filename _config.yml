@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 码之气三段
+title: 大梦成空
 subtitle: To be a Web Artisan
 description: 李罗奥的博客
 keywords:
@@ -59,7 +59,7 @@ prismjs:
 # order_by: Posts order. (Order by date descending by default)
 index_generator:
   path: ''
-  per_page: 20
+  per_page: 5
   order_by: -date
   
 # Category & Tag
@@ -73,7 +73,6 @@ category_map:
   Database: database
   分享: share
   Vue: vue
-  Bilibili: bilibili
   Python: python
 tag_map:
 
