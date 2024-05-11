@@ -6,9 +6,15 @@ category: Database
 tags: mongo
 ---
 
-![mongodb slogan](https://i.imgtg.com/2022/08/09/A4NFc.png)
+[MongoDB](https://www.mongodb.com/) 是一个基于分布式文件存储的数据库，也介于关系数据库和非关系数据库之间的产品，是非关系数据库当中功能最丰富，最像关系数据库的
+
+![OJUsHb.jpg](https://ooo.0x0.ooo/2024/05/11/OJUsHb.jpg)
 
 <!-- more -->
+
+它支持的数据结构非常松散，是类似 json 的 bson 格式，因此可以存储比较复杂的数据类型
+
+Mongo 最大的特点是它支持的查询语言非常强大，其语法有点类似于面向对象的查询语言，几乎可以实现类似关系数据库单表查询的绝大部分功能，而且还支持对数据建立索引。
 
 使用 MongoDB 的用户很多，因为它的文档型存储一些变化的内容很方便
 

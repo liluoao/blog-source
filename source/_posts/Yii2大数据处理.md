@@ -6,11 +6,13 @@ category: PHP框架
 tags: yii
 ---
 
-![big data](https://i.imgtg.com/2022/08/24/KI4BM.jpg)
+Yii Framework 是一个基于组件、用于开发大型 Web 应用的高性能 PHP 框架，也是最有效率的PHP框架之一
 
-<!-- more -->
+![OJUG5I.jpg](https://ooo.0x0.ooo/2024/05/11/OJUG5I.jpg)
 
 对于公司千万级的客户数据，在数据库查询时要特别小心，避免出现内存溢出与慢查询的问题
+
+<!-- more -->
 
 Yii2 [大数据处理](https://www.yiiframework.com/doc/guide/2.0/en/db-query-builder#batch-query) 官方文档中是这样说的：
 

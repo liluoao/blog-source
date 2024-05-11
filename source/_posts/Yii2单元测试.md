@@ -6,7 +6,9 @@ category: PHP框架
 tags: yii
 ---
 
-![](https://i.imgtg.com/2022/08/09/AtODc.png)
+Yii 的单元测试框架 [Codeception](https://codeception.com/for/yii) 基于 PHPUnit，使用方式几乎一模一样
+
+![OJU0w6.jpg](https://ooo.0x0.ooo/2024/05/11/OJU0w6.jpg)
 
 <!-- more -->
 
@@ -16,15 +18,13 @@ tags: yii
 
 ## Yii2 Codeception
 
-Yii 的单元测试框架 [Codeception](https://codeception.com/for/yii) 基于 PHPUnit，使用方式几乎一模一样
-
 首先看是否已安装了本包，在 Yii 项目中使用 Composer 可能会提示如下错误：
 
-> yiisoft/yii2 * requires bower-asset/jquery *@stable -> no matching package found.
+> yiisoft/yii2 *requires bower-asset/jquery*@stable -> no matching package found.
 
 这时需要安装这个 Composer 管理前端依赖的包，在下载中需要配置一个 GitHub 的 Token：
 
-```
+```bash
 composer global require "fxp/composer-asset-plugin"
 ```
 
@@ -46,7 +46,7 @@ settings:
 
 如果是项目是完整的，里面已经包含了单元测试的例子，部分结果如下：
 
-```
+```bash
 $ vendor/bin/codecept run
 Codeception PHP Testing Framework v2.5.6
 Powered by PHPUnit 7.5.18 by Sebastian Bergmann and contributors.
@@ -64,7 +64,7 @@ E LoginFormTest: Login correct (2.00s)
 
 但是像我的项目经过了各种删减，原用例和配置都不在了，需要重新生成：
 
-```
+```bash
 vendor\bin\codecept bootstrap
 ```
 
@@ -74,13 +74,13 @@ vendor\bin\codecept bootstrap
 
 如果是刚安装好的，在 *tests/* 下已经有了 `functional` 和 `unit` 两个套件。自己想添加新的套件，使用 *generate:suite* 命令：
 
-```
+```bash
 vendor\bin\codecept generate:suite api
 ```
 
 这将在 *tests/* 目录下创建 *api.suite.yml* 配置文件和 *api/* 目录，现在使用 *generate:cest* 命令生成具体测试用例
 
-```
+```bash
 vendor\bin\codecept generate:cest api GetChatLog
 ```
 
@@ -102,9 +102,11 @@ public function tryToTest(ApiTester $I)
 
 运行测试查看结果
 
-```
+```bash
 vendor\bin\codecept run api
 ```
+
+![Codeception](https://i.imgtg.com/2022/08/09/AtODc.png)
 
 ## Laravel5 PHPUnit
 

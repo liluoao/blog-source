@@ -6,7 +6,11 @@ category: Database
 tags: mysql
 ---
 
-![mysql优化](https://i.imgtg.com/2022/08/24/K3rPP.png)
+MySQL 是一个关系型数据库管理系统，由瑞典 MySQL AB 公司开发，属于 Oracle 旗下产品
+
+是最流行的关系型数据库管理系统之一，在 WEB 应用方面，MySQL 是最好的RDBMS (Relational Database Management System，关系数据库管理系统)应用软件之一
+
+![OJULf1.jpg](https://ooo.0x0.ooo/2024/05/11/OJULf1.jpg)
 
 <!-- more -->
 
@@ -150,3 +154,14 @@ MySQL 客户端和服务器之间的通信协议是“半双工”的，在任�
 
  > 对于选择性比较低的索引键，如果创建 Hash 索引，那么将会存在大量记录指针信息存于同一个 Hash 值相关联
  > 从表中删除一行时，存储引擎需要遍历对应哈希值的链表中的每一行，找到并删除对应行的引用，冲突越多，代价越大
+
+## 配置优化
+
+- innodb_buffer pool_size，约50%~70%
+- innodb_data_file_path,ibdata1初始化时，至少1GB以上
+- innodb_log_buffer_size，一般8-32MB足够了
+- innodb_log_file_size，5.5以上可设置1-2GB，5.5以下建议256-512MB
+- innodb_flush_log_at_trx_commit，0=>最快数据最不安全，1=>最慢数据最安全，2=>折中
+- innodb_max_dirty_pages_pct，25%~50%为宜
+- innodb_io_capacity，普通机械盘=>1000左右，SSD=>10000左右，PCIe SSD=>20000以上
+- transaction_isolation，默认的RR一般OK，有需要的话可改成RC

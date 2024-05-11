@@ -5,9 +5,25 @@ date: 2020-10-25 16:47:45
 category: Laravel
 ---
 
-![](https://i.imgtg.com/2022/08/23/K85bX.png)
+SFTP 全名SSH文件传输协议 Secret File Transfer Protocol，是一种数据流连线档案存取、传输和管理功能的网络传输协议
+
+与 FTP相比，SFTP 使用了加密技术，保证了数据在传输过程中的安全性。同时，SFTP 也提供了丰富的文件操作功能，如文件上传、下载、删除等
+
+因此，SFTP 被广泛应用于各种需要安全文件传输的场景，如远程服务器备份、数据同步等
+
+![SFTP](https://i.imgtg.com/2022/08/23/K85bX.png)
 
 <!-- more -->
+
+使用 SFTP 进行文件传输前，需要进行登录操作。SFTP 登录过程包括以下步骤：
+
+客户端向服务器发起连接请求，指定服务器的 IP 地址和 SFTP 端口号（默认为 22）
+
+服务器收到连接请求后，会向客户端发送 SSH 协议的密钥，用于建立加密连接
+
+客户端使用 SSH 协议对服务器进行身份验证，验证成功后，会创建一个安全的加密通道
+
+在安全通道上，客户端使用 SFTP 协议进行文件传输
 
 ## PHP 使用 SFTP 发送文件
 
@@ -27,7 +43,7 @@ Storage::delete($filename);
 
 惊讶的是同一份代码在测试服务器上正常运行，在对方的服务器上 SCP 就报错
 
-**ssh2_scp_send(): Failure creating remote file: (-28)**
+> ssh2_scp_send(): Failure creating remote file: (-28)
 
 而用 IDE 自带的远程管理登录后，读写权限都是正常的
 

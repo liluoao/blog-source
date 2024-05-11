@@ -6,11 +6,11 @@ category: Database
 tags: mongo
 ---
 
-![](https://i.imgtg.com/2022/08/23/K8xCY.png)
+最近需要做个统计，计算一个销售或部门（n 个销售），在一段时间内（n 天）的成交数据
+
+![OJUd1P.jpg](https://ooo.0x0.ooo/2024/05/11/OJUd1P.jpg)
 
 <!-- more -->
-
-最近需要做个统计，计算一个销售或部门（n 个销售），在一段时间内（n 天）的成交数据
 
 每个销售每天一条记录（si_id 和 date 组合索引），data 数组存放了每个产品的成交数量
 

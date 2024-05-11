@@ -5,15 +5,15 @@ date: 2018-05-03 14:36:58
 category: Laravel
 ---
 
+今天介绍两个 Laravel5 中非常受欢迎的包和 Carbon
+
+- Intervention Image 图像处理
+- Laravel Excel 表格处理
+- Carbon 时间处理
+
 ![laravel热门包](https://i.imgtg.com/2022/08/09/A4UPX.png)
 
 <!-- more -->
-
-今天介绍两个 Laravel5 中非常受欢迎的包和 Carbon
-
-- Intervention Image
-- Laravel Excel
-- Carbon
 
 ## 图像处理
 
@@ -41,7 +41,7 @@ composer require intervention/image
 
 使用如下命令创建一个配置文件 *config/image.php*
 
-```
+```bash
 php artisan vendor:publish
 ```
 
@@ -94,7 +94,7 @@ $image->save('uploads/1.jpg');
 
 Composer 安装：
 
-```
+```bash
 composer require maatwebsite/excel
 ```
 
@@ -113,7 +113,7 @@ composer require maatwebsite/excel
 
 使用如下命令创建一个配置文件 *config/excel.php*
 
-```
+```bash
 php artisan vendor:publish
 ```
 
@@ -163,7 +163,7 @@ Excel::create('test', function ($excel) use ($model, $array) {
 
 使用方式：
 
-```
+```bash
 composer require nesbot/carbon
 ```
 

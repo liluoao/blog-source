@@ -5,17 +5,15 @@ date: 2018-11-09 20:17:07
 category: 工具
 ---
 
-![](https://i.imgtg.com/2022/08/23/K6doI.png)
-
-<!-- more -->
-
 随着移动互联网的兴起、开放合作思维的盛行，不同终端和第三方开发者都需要大量的接入企业核心业务能力，此时各业务系统将会面临同一系列的问题，例如：如何让调用方快速接入、如何让业务方安全地对外开放能力，如何应对和控制业务洪峰调用等等
 
 于是就诞生了一个隔离企业内部业务系统和外部系统调用的屏障 - API 网关，它负责在上层抽象出各业务系统需要的通用功能，例如：鉴权、限流、ACL、降级等
 
 另外随着近年来微服务的流行，API 网关已经成为一个微服务架构中的标配组件
 
-![](https://i.imgtg.com/2022/08/09/AtqxM.png)
+<!-- more -->
+
+![API 网关](https://i.imgtg.com/2022/08/23/K6doI.png)_API Gateway 网关架构设计_
 
 在微服务架构之下，服务被拆的非常零散，降低了耦合度的同时也给服务的统一管理增加了难度。如上图左所示，在旧的服务治理体系之下，鉴权、限流、日志、监控等通用功能需要在每个服务中单独实现，这使得系统维护者没有一个全局的视图来统一管理这些功能。API 网关致力于解决的问题便是为微服务纳管这些通用的功能，在此基础上提高系统的可扩展性。如右图所示，微服务搭配上 API 网关，可以使得服务本身更专注于自己的领域，很好地对服务调用者和服务提供者做了隔离。
 
@@ -35,11 +33,13 @@ category: 工具
 - 动态负载均衡 Dynamic Load Balancing：在多个上游服务之间平衡流量
 - 插件 Plugins: [Kong Hub](https://docs.konghq.com/hub/) 提供众多开箱即用的插件
 
+![Kong与传统对比](https://i.imgtg.com/2022/08/09/AtqxM.png)_选择 Kong 的原因_
+
 在入手前，需要学习 OpenResty 的相关知识，还有 Lua 的语法。我看的李明江的《Nginx Lua开发实战》，内容大量搬运文档，不推荐
 
 重点需要关注的是 11 个用户可介入阶段：
 
-![ngx_lua 的 11 个用户可介入阶段](https://i.imgtg.com/2022/08/09/A4Zy1.png)
+![ngx_lua 的 11 个用户可介入阶段](https://i.imgtg.com/2022/08/09/A4Zy1.png)_ngx-lua 的 11 个用户可介入阶段_
 
 对比这些阶段，再看 Kong 框架的入口文件，就容易理解的多了：
 
@@ -118,8 +118,9 @@ Kong 的代码运行于 worker 进程，数据存储在数据库，同时在缓�
 ### 本地事件-共享内存
 
 Kong 实现了一套基于 Nginx 共享内存的事件发布-订阅（PUB/SUB）机制
- - post_local() 方法在 worker 进程内进行事件发布
- - post() 方法在同属于一台机器上的 worker 进程间进行事件发布
+
+- post_local() 方法在 worker 进程内进行事件发布
+- post() 方法在同属于一台机器上的 worker 进程间进行事件发布
 
 这 2 个方法需要指定 `source` 和 `event` 来确定事件源。
 
@@ -143,7 +144,7 @@ worker 启动的时候会在 init_worker 阶段注册这些事件的订阅方法
 
  这个事件会通知 apis 数据的修改
  这里对缓存中对 key 为 `api_router:version` 进行 invalidate 操作会发送一条 channel=invalidations 集群事件
- 
+
 - source=crud, event=routes
 
  这个事件会通知 routes 数据的修改
@@ -164,7 +165,7 @@ worker 启动的时候会在 init_worker 阶段注册这些事件的订阅方法
 
 ### 集群事件-数据库
 
-集群事件通过数据库实现。表 *cluster_events* 存放用于集群间分发的事件，表结构如下:
+集群事件通过数据库实现。表 _cluster_events_ 存放用于集群间分发的事件，表结构如下:
 
 ```sql
 CREATE TABLE cluster_events (
@@ -206,15 +207,15 @@ channel 的类型有:
 
  表示 target 的健康状态发生变更。由于被动健康检查拉出实例后，kong 不会在对该实例进行自动拉入，需要通过该事件来拉入实例。
 
-调用 `cluster_events:broadcast()` 方法会往 *cluster_events* 表中新增一条记录
+调用 `cluster_events:broadcast()` 方法会往 _cluster_events_ 表中新增一条记录
 
 在 init_worker 阶段通过调用 `cluster_events:subscribe()` 会开启一个定时器，定时查询出表中新增的记录
 
 这里要注意的是同一台机器上只会有一个 worker 进程会对数据库进行查询（通过加锁实现，代码见 get_lock()），查询出来后再通过共享内存的方式通知给这台机器上的其他 worker
 
-配置参数 *db_update_frequency* 确定查询数据库的间隔，默认为 5 秒。数据范围根据 at 字段是否落在 **(起始时间, 结束时间]** 确定。起始时间第一次设置在 init_worker 阶段，调用 ngx.now() 获取当前时间（精确到毫秒）并放入 key 为 `cluster_events:at` 的共享内存中。
+配置参数 _db_update_frequency_ 确定查询数据库的间隔，默认为 5 秒。数据范围根据 at 字段是否落在 **(起始时间, 结束时间]** 确定。起始时间第一次设置在 init_worker 阶段，调用 ngx.now() 获取当前时间（精确到毫秒）并放入 key 为 `cluster_events:at` 的共享内存中。
 
-之后抢到锁的 worker 会从共享内存中取出该时间，该时间需要减去 db_update_propagation + 0.001 来确定起始时间，以防止事件丢失。配置参数 *db_update_propagation* 默认为 0。结束时间取 ngx.now() 的值。
+之后抢到锁的 worker 会从共享内存中取出该时间，该时间需要减去 db_update_propagation + 0.001 来确定起始时间，以防止事件丢失。配置参数 _db_update_propagation_ 默认为 0。结束时间取 ngx.now() 的值。
 
 查询成功后会把结束时间覆盖之前的起始时间，并把该事件分发到本机的其他 worker
 

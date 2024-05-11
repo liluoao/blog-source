@@ -6,11 +6,19 @@ category: PHP框架
 tags: phalcon
 ---
 
-![](https://i.imgtg.com/2022/08/09/A4gaD.png)
+Phalcon 是一个 C 扩展的 PHP 框架，它是一个提供了丰富的 Web 开发组件的框架，可帮助开发人员快速构建稳健且高性能的Web 应用程序
+
+相较于其他 PHP 框架，Phalcon 在性能上具有很大的优势，因为Phalcon 的核心组件是以 C 扩展的形式编写的，而不是纯 PHP 代码
+
+这意味着它的代码是按照 PHP 的语法规则编写的，但是它被编译成二进制代码并与 PHP 一起运行
+
+Phalcon 框架在使用时不需要另外安装扩展，因为它是一个内置的 PHP 扩展
+
+使用 Phalcon 框架进行 Web 应用开发，可以提高应用程序的性能和响应速度，同时也能够使开发人员更加专注于业务逻辑的编写
+
+![OJTKoF.jpg](https://ooo.0x0.ooo/2024/05/11/OJTKoF.jpg)
 
 <!-- more -->
-
-Phalcon 是一个使用 C 编写、高性能的 PHP 框架
 
 Windows 用户下载 *.dll* 文件，加入 *php.ini* ：
 
@@ -64,6 +72,8 @@ php gen-stubs.php
 ```
 
 它会在本文件夹中生成相应版本语法目录，在你的 PHPStorm 中配置 `Configure PHP Include Paths` 即可。
+
+![Phalcon](https://i.imgtg.com/2022/08/09/A4gaD.png)
 
 ## 框架文件
 
