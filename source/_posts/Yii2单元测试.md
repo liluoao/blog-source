@@ -6,11 +6,18 @@ category: PHP框架
 tags: yii
 ---
 
-Yii 的单元测试框架 [Codeception](https://codeception.com/for/yii) 基于 PHPUnit，使用方式几乎一模一样
+单元测试（Unit Testing），是指对软件中的最小可测试单元进行检查和验证
 
-![OJU0w6.jpg](https://ooo.0x0.ooo/2024/05/11/OJU0w6.jpg)
+单元测试是在软件开发过程中要进行的最低级别的测试活动，软件的独立单元将在与程序的其他部分相隔离的情况下进行测试
 
 <!-- more -->
+
+Yii 的单元测试框架 [Codeception](https://codeception.com/for/yii) 基于 PHPUnit，使用方式几乎一模一样
+
+> PHPUnit 是一个轻量级的 PHP 测试框架。它是在 PHP5 下面对 JUnit3 系列版本的完整移植，是 xUnit 测试框架家族的一员 (它们都基于模式先锋 Kent Beck 的设计)
+> 单元测试是几个现代敏捷开发方法的基础，使得 PHPUnit 成为许多大型 PHP 项目的关键工具。这个工具也可以被 Xdebug 扩展用来生成代码覆盖率报告 ，并且可以与 phing 集成来自动测试，最合它还可以和 Selenium 整合来完成大型的自动化集成测试。
+
+![OJU0w6.jpg](https://ooo.0x0.ooo/2024/05/11/OJU0w6.jpg)
 
 最近一个老项目前端机所在的服务器之一宕机了，在更换新服务器后发现这个项目没有单元测试，在验证时比较麻烦
 

@@ -8,7 +8,7 @@ tags: mysql
 
 MySQL 是一个关系型数据库管理系统，由瑞典 MySQL AB 公司开发，属于 Oracle 旗下产品
 
-是最流行的关系型数据库管理系统之一，在 WEB 应用方面，MySQL 是最好的RDBMS (Relational Database Management System，关系数据库管理系统)应用软件之一
+是最流行的关系型数据库管理系统之一，在 WEB 应用方面，MySQL 是最好的 RDBMS (Relational Database Management System，关系数据库管理系统)应用软件之一
 
 ![OJULf1.jpg](https://ooo.0x0.ooo/2024/05/11/OJULf1.jpg)
 

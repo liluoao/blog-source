@@ -8,14 +8,14 @@ tags: design-patterns
 
 简单介绍下几种常见的创建型设计模式：
 
-- Singleton
-- Factory
-- Prototype
-- Builder
+- Singleton 单例模式
+- Factory 工厂模式
+- Prototype 原型模式
+- Builder 建造者模式
 
 <!-- more -->
 
-#### Singleton
+#### Singleton 单例模式
 
 单例模式也是最常见的模式之一，它确保一个类只有一个实例，并提供一个全局的访问点。
 
@@ -48,7 +48,7 @@ class RedisUtil
 }
 ```
 
-#### Factory
+#### Factory 工厂模式
 
 工厂模式是另一种常用的模式，它根据参数的不同返回不同类的实例
 
@@ -77,7 +77,7 @@ class Factory
 }
 ```
 
-#### Prototype
+#### Prototype 原型模式
 
 有些时候，部分对象需要被初始化多次。创建一个原型然后克隆它，比正常创建一个对象 (`new Foo ()`)会更节省开销
 
@@ -110,7 +110,7 @@ for ($i = 0; $i < 10; $i++) {
 }
 ```
 
-#### Builder
+#### Builder 建造者模式
 
 建造者模式是一步一步创建一个复杂的对象，它允许用户只通过指定复杂对象的类型和内容就可以构建它们，用户不需要知道内部的具体构建细节。
 

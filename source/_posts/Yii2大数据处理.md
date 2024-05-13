@@ -8,9 +8,9 @@ tags: yii
 
 Yii Framework 是一个基于组件、用于开发大型 Web 应用的高性能 PHP 框架，也是最有效率的PHP框架之一
 
-![OJUG5I.jpg](https://ooo.0x0.ooo/2024/05/11/OJUG5I.jpg)
-
 对于公司千万级的客户数据，在数据库查询时要特别小心，避免出现内存溢出与慢查询的问题
+
+![OJUG5I.jpg](https://ooo.0x0.ooo/2024/05/11/OJUG5I.jpg)
 
 <!-- more -->
 

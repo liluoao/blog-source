@@ -25,7 +25,7 @@ Mac 电脑有着非常优秀的用户界面和易用性，这对于程序员来�
 
 Mac 电脑是专业的开发环境。Apple 提供了一些非常好的开发工具，例如 Xcode 和 Swift Playground。这些工具可以帮助程序员更好地编写代码、构建应用程序，并进行调试
 
-此外，Mac 电脑还支持许多其他的开发工具和框架，如Java、Python、Ruby和PHP等
+此外，Mac 电脑还支持许多其他的开发工具和框架，如 Java、Python、Ruby 和 PHP 等
 
 ### 设计
 
@@ -65,20 +65,20 @@ xcode-select --install
 
 下载 [Homebrew](https://brew.sh/)
 
-```
+```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
 然后装好 `wget`，并下载咱的基础容器
 
-```
+```bash
 brew install wget
 wget 'http://what/is/this.tar'
 ```
 
 下载 [Docker](https://www.docker.com/products/docker-desktop)，初始化下好的容器
 
-```
+```bash
 tar -xvf rpc.tar
 cd rpc-app-base
 docker-compose up -d
@@ -86,7 +86,7 @@ docker-compose up -d
 
 Git 设置下用户名，在公司里用花名🤣
 
-```
+```bash
 git config --global user.name "斯内普"
 ```
 
@@ -94,19 +94,19 @@ git config --global user.name "斯内普"
 
 如果需要 8，可以用 [shivammathur](https://github.com/shivammathur/homebrew-php) 的 tap
 
-```
+```bash
 brew tap shivammathur/php
 ```
 
-选择咱需要的 7.4
+选择咱需要的 7.4
 
-```
+```bash
 brew install php@7.4
 ```
 
 安装 `Composer` 并回退版本（部分项目依赖需要）
 
-```
+```bash
 brew install composer
 composer self-update --1
 
@@ -117,7 +117,7 @@ composer config -g repo.packagist composer https://packagist.phpcomposer.com
 
 有个项目独立在微服务外，那就安排个 Web 服务器
 
-```
+```bash
 brew install httpd
 brew services start httpd
 ```
@@ -126,7 +126,7 @@ brew services start httpd
 
 现在编辑下 Apache 的配置
 
-```
+```bash
 open -e /usr/local/etc/httpd/httpd.conf
 ```
 
@@ -156,7 +156,7 @@ DocumentRoot /Users/your_user/Sites
 
 最后重启下服务
 
-```
+```bash
 sudo apachectl restart
 ```
 
@@ -164,7 +164,7 @@ sudo apachectl restart
 
 安装 `SSH2` 扩展（传文件的业务）
 
-```
+```bash
 brew install libssh2
 
 cd ~/Downloads
@@ -178,7 +178,7 @@ make install
 
 把扩展 `extension="ssh2.so"` 写到配置文件中：
 
-```
+```bash
 open -e /usr/local/etc/php/7.4/php.ini
 ```
 
@@ -186,7 +186,7 @@ open -e /usr/local/etc/php/7.4/php.ini
 
 顺便装下咱这个项目需要的环境
 
-```
+```bash
 brew install node
 node -v
 npm -v
@@ -197,7 +197,7 @@ npm install hexo-cli -g
 
 下载子模块（主题）
 
-```
+```bash
 git submodule init
 git submodule update
 ```
