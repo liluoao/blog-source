@@ -99,7 +99,6 @@ categories:
   设计模式: '#ff9933'
   工具: '#5298d1'
   分享: '#ff66ff'
-  Python: '#3366ff'
 
 wordcloud:
   enable: true
