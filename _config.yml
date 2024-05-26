@@ -72,7 +72,7 @@ category_map:
   Laravel: laravel
   Database: database
   分享: share
-  Vue: vue
+  前端: frontend
 tag_map:
 
 # Date / Time format

@@ -93,12 +93,12 @@ cursor:
 # category color
 categories:
   Laravel: '#F4645F'
-  Vue: '#4fc08d'
   PHP框架: '#8892BF'
   Database: '#3776ab'
   设计模式: '#ff9933'
   工具: '#5298d1'
   分享: '#ff66ff'
+  前端: '#4fc08d'
 
 wordcloud:
   enable: true

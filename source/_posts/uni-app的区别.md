@@ -2,7 +2,7 @@
 title: uni-app的区别
 date: 2024-05-21 17:54:43
 urlname: uni-app
-category: 杂谈
+category: 工具
 ---
 
 ## 前言

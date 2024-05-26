@@ -2,7 +2,7 @@
 title: Vue实现文件上传
 date: 2022-08-23 20:48:15
 urlname: upload-file-with-vue-js
-category: Vue
+category: 前端
 ---
 
 ![上传文件](https://i.imgtg.com/2022/08/23/K8m8b.png)

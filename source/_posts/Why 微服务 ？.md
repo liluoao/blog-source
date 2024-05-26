@@ -9,9 +9,9 @@ category: 分享
 
 这些服务通常拥有自己的技术栈，包括数据库和数据管理模型；通过一个 REST API、事件流和消息代理组合彼此通信；以及按照业务能力进行组织，具有通常称为有界上下文的服务分隔线
 
-![OJxyPc.jpg](https://ooo.0x0.ooo/2024/05/13/OJxyPc.jpg)
-
 <!-- more -->
+
+![pklySMQ.jpg](https://s21.ax1x.com/2024/05/26/pklySMQ.jpg)
 
 ## 面向过程 -> 面向对象
 

@@ -2,7 +2,7 @@
 title: 人人都说Mac好
 date: 2020-12-19 14:58:53
 urlname: workspace-enviroment-backup
-category: 杂谈
+category: 工具
 ---
 
 ## Mac 优势

@@ -1,19 +1,45 @@
 ---
-title: 公众号每日自动推送
+title: 利用Github-Actions自动推送
 date: 2022-08-30 12:02:32
-urlname: good-morning-everyday
-category: 杂谈
+urlname: use-github-workflow-send-good-morning-everyday
+category: 工具
 ---
 
-利用 GitHub 的 Workflow 实现公众号每日推送消息
+## 工具介绍
 
-![OJxvFq.jpg](https://ooo.0x0.ooo/2024/05/13/OJxvFq.jpg)
+GitHub Actions 是一种持续集成和持续交付 (CI/CD) 平台，可用于自动执行生成、测试和部署管道
+
+您可以创建工作流程来构建和测试存储库的每个拉取请求，或将合并的拉取请求部署到生产环境
+
+GitHub Actions 不仅仅是 DevOps，还允许您在存储库中发生其他事件时运行工作流程。 例如，您可以运行工作流程，以便在有人在您的存储库中创建新问题时自动添加相应的标签
 
 <!--more-->
 
+> GitHub 提供 Linux、Windows 和 macOS 虚拟机来运行工作流程，或者您可以在自己的数据中心或云基础架构中托管自己的自托管运行器
+
+![pklytQe.jpg](https://s21.ax1x.com/2024/05/26/pklytQe.jpg)
+
+Workflow 是一个可配置的自动化过程，它将运行一个或多个作业。 工作流程由签入到存储库的 YAML 文件定义，并在存储库中的事件触发时运行，也可以手动触发，或按定义的时间表触发
+
+工作流程在存储库的 `.github/workflows` 目录中定义，存储库可以有多个工作流程，每个工作流程都可以执行不同的任务集
+
+例如，您可以有一个工作流程来构建和测试拉取请求，另一个工作流程用于在每次创建发布时部署应用程序，还有一个工作流程在每次有人打开新议题时添加标签
+
 ## Configuration
 
-先搞一个测试号，并且让收消息的人关注，获取 `USER_ID`：
+### Github
+
+创建项目，在项目 Setting -> Secrets -> Actions 里新建几个我们要用的配置：
+
+- 需要查询天气的城市 `CITY` 是地级市汉字
+- 生日 `BIRTHDAY` 是 `m-d` 格式
+- 纪念日 `START_DATE` 是 `Y-m-d` 格式
+
+![secrets](https://i.imgtg.com/2022/08/30/ZmN9s.png)
+
+### 微信测试号
+
+创建一个测试号（[申请测试号|微信开发文档](https://developers.weixin.qq.com/miniprogram/dev/devtools/sandbox.html)），并且让收消息的人关注，获取到他的 `USER_ID`
 
 > 有自己个人号更好（我的号没管它被自动注销了）
 
@@ -22,14 +48,6 @@ category: 杂谈
 加个消息模版，获取 `TEMPLATE_ID`，加上测试号本身的 `APP_ID` `APP_SECRET` ，配置就齐了：
 
 ![模版消息](https://i.imgtg.com/2022/08/30/ZmKdS.png)
-
-在项目 Setting -> Secrets -> Actions 里新建几个我们要用的配置：
-
-- 需要查询天气的城市 `CITY` 是地级市汉字
-- 生日 `BIRTHDAY` 是 `m-d` 格式
-- 纪念日 `START_DATE` 是 `Y-m-d` 格式
-
-![secrets](https://i.imgtg.com/2022/08/30/ZmN9s.png)
 
 ## Workflow
 
