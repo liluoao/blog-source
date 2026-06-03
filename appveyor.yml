@@ -10,7 +10,9 @@ install:
     - npm i npm@latest -g
     - npm install
     - npm install hexo-cli -g
-    
+
+build: off
+
 build_script:
     - hexo generate
     
