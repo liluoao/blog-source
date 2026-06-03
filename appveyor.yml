@@ -1,11 +1,12 @@
+version: 1.0.{build}
+image: Visual Studio 2019
 clone_depth: 5
 
 environment:
     access_token:
         secure: 855kciMXrCGEcKW+P87C5nMrvYN47FH/Zjz9yHjZ53yeijLyb6/0oZ4CVv7j0VbE
-    nodejs_version: "18"  # 指定 Node.js 版本
+    nodejs_version: "18"
 
-# 安装依赖
 install:
     - ps: Install-Product node $env:nodejs_version
     - node --version
@@ -14,38 +15,23 @@ install:
     - npm install
     - npm install hexo-cli -g
 
-build: off  # 关闭默认的 MSBuild 构建
-
-# 构建脚本
 build_script:
-    - ps: hexo generate
+    - hexo generate
     
 artifacts:
     - path: public
     
-# 部署脚本
-deploy_script:
-    - ps: |
-        git config --global credential.helper store
-        Add-Content "$env:USERPROFILE\.git-credentials" "https://$($env:access_token):x-oauth-basic@github.com`n"
-        git config --global user.email $env:GIT_USER_EMAIL
-        git config --global user.name $_NAME
-
-        $targetRepo = $env:STATIC_SITE_REPO
-        $targetBranch = $env:TARGET_BRANCH
-        $tempDir = "$env:TEMP\static-site"
-        
-        if (Test-Path $tempDir) {
-            Remove-Item -Recurse -Force $tempDir
-        }
-        
-        git clone --depth 5 -q --branch=$targetBranch $targetRepo $tempDir
-
-        Set-Location $tempDir
-        Get-ChildItem -Recurse | Remove-Item -Recurse -Force
-
-        Copy-Item -Recurse "$env:APPVEYOR_BUILD_FOLDER\public\*" $tempDir
-
-        git add -A
-        git commit -m "Update Static Site"
-        git push origin $targetBranch
+on_success:
+    - git config --global credential.helper store
+    - ps: Add-Content "$env:USERPROFILE\.git-credentials" "https://$($env:access_token):x-oauth-basic@github.com`n"
+    - git config --global user.email "%GIT_USER_EMAIL%"
+    - git config --global user.name "%GIT_USER_NAME%"
+    - git clone --depth 5 -q --branch=%TARGET_BRANCH% %STATIC_SITE_REPO% %TEMP%\static-site
+    - cd %TEMP%\static-site
+    - del * /f /q
+    - for /d %%p IN (*) do rmdir "%%p" /s /q
+    - SETLOCAL EnableDelayedExpansion & robocopy "%APPVEYOR_BUILD_FOLDER%\public" "%TEMP%\static-site" /e & IF !ERRORLEVEL! EQU 1 (exit 0) ELSE (IF !ERRORLEVEL! EQU 3 (exit 0) ELSE (exit 1))
+    - git add -A
+    - git commit -m "Update Static Site"
+    - git push origin %TARGET_BRANCH%
+    - appveyor AddMessage "Static Site Updated"
