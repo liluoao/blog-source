@@ -3,7 +3,7 @@ clone_depth: 5
 environment:
     access_token:
         secure: Rmi19zb3BzFgadef7FpPMA5wgDuIHX+13I9b1QgK1rZc63xkmgcDra1fxQWgzuXH
-    nodejs_version: "18"
+    nodejs_version: "22"
 
 install:
     - ps: Install-Product node $env:nodejs_version
